@@ -1,2 +1,2 @@
-# FinalProject_3-
+# FinalProject_team3
 3조_Web Final Project
