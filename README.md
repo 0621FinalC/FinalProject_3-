@@ -13,3 +13,6 @@
 8. 주문완료 (취소/배송조회/환불)
 
 ## 역할 분담
+
+## 웹페이지 흐름도
+<img width="1222" alt="스크린샷 2021-06-22 오후 2 35 07" src="https://user-images.githubusercontent.com/86212850/122869320-0d1c9000-d367-11eb-92e3-df5839ce6f3c.png">
