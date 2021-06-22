@@ -1,2 +1,6 @@
 # FinalProject_team3
-3조_Web Final Project
+## 프로젝트 주제
+
+## 기능
+
+## 역할 분담
