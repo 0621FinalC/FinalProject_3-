@@ -23,4 +23,7 @@
      (보류 : 주문/배송 상태 / 주문 취소/반품)
 
 ## 웹페이지 흐름도
-<img width="1222" alt="스크린샷 2021-06-22 오후 2 35 07" src="https://user-images.githubusercontent.com/86212850/122869320-0d1c9000-d367-11eb-92e3-df5839ce6f3c.png">
+<img width="1023" alt="스크린샷 2021-06-23 오후 2 39 59" src="https://user-images.githubusercontent.com/86212850/123041936-078b7c80-d431-11eb-84e7-3289ce5e009f.png">
+
+## 개발 일정 계획
+<img width="1024" alt="스크린샷 2021-06-23 오후 2 40 07" src="https://user-images.githubusercontent.com/86212850/123041948-0b1f0380-d431-11eb-8744-582dc2a012a0.png">
