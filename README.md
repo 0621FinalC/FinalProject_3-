@@ -20,9 +20,8 @@
 <img width="1024" alt="스크린샷 2021-06-23 오후 3 17 42" src="https://user-images.githubusercontent.com/86212850/123045782-48d25b00-d436-11eb-87eb-06186ed6b0dc.png">
 
 
-## DB구조 (개발하면서 필요에 따라 수정될 수 있음)
-https://docs.google.com/spreadsheets/d/14M3s8ISMB2VmWgHYZ4Fi0XwTEPBTKy9v/edit#gid=1237830282
-
+## DB구조 (개발하면서 필요에 따라 수정)
+https://drive.google.com/file/d/14M3s8ISMB2VmWgHYZ4Fi0XwTEPBTKy9v/view?usp=sharing
 
 ## 웹페이지 흐름도
 <img width="1023" alt="스크린샷 2021-06-23 오후 2 39 59" src="https://user-images.githubusercontent.com/86212850/123041936-078b7c80-d431-11eb-84e7-3289ce5e009f.png">
