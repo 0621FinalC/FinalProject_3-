@@ -21,7 +21,7 @@
 
 
 ## DB구조 (개발하면서 필요에 따라 수정될 수 있음)
-<img width="660" alt="스크린샷 2021-06-28 오전 11 44 11" src="https://user-images.githubusercontent.com/86212850/123571913-32494c80-d806-11eb-8f90-d16c0dfaacc6.png">
+https://docs.google.com/spreadsheets/d/14M3s8ISMB2VmWgHYZ4Fi0XwTEPBTKy9v/edit#gid=1237830282
 
 
 ## 웹페이지 흐름도
