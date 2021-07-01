@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.web.shop.mappers.user.UserMapper">
+  
+  <!-- 회원가입 테이블의 칼럼과 클래스 필드명 매칭시키기-->
+  <insert id="register">
+  	INSERT INTO user_t (
+  		userid,
+  		password,
+  		username )
+  		VALUES(
+  		#{userid},
+  		#{password},
+  		#{username}
+  		)
+  		
+  </insert>
+  
+  <!-- 로그인 -->
+  <select id="login" resultType="com.web.shop.user.UserVO">
+  SELECT USERID, USERPASS 
+		  FROM user_t
+		 WHERE USERID = #{userId}
+		   AND password = #{password}
+  </select>
+  
+  <update id="keepLogin"> 
+  UPDATE user_t SET 
+  	session_key = #{sessionId} , 
+  	session_limit = #{sessionLimit} 
+  	WHERE userid = #{userId} 
+  </update>
+  
+  <select id="checkUserWithSessionKey" resultMap="userVOResultMap">
+  SELECT * FROM user_t WHERE session_key = #{value}
+  </select>
+
+  
+  </mapper>

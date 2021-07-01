@@ -25,6 +25,12 @@ public class LoginDTO {
 		this.useCookie = useCookie;
 	}
 	
+	@Override
+	public String toString() {
+		return "LoginDTO{" + "usdrid='" +userid + '\'' +", password='" +password + '\'' + ", useCookie="
+				+ useCookie + '}';
+	}
+	
 	
 
 }

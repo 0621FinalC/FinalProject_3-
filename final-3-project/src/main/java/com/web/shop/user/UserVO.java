@@ -68,6 +68,11 @@ public class UserVO {
 	public void setUid(int uid) {
 		this.uid = uid;
 	}
+	
+	//비밀 번호 확인
+	public boolean matchPassword(String pw) {
+		return this.password.equals(pw);
+	}
 
 	
 }
