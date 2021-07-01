@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.web.shop.order.dto.OrderDTO;
 import com.web.shop.orderlist.dto.OrderListDTO;
 import com.web.shop.orderlist.repository.OrderListRepository;
 
@@ -15,7 +16,7 @@ public class OrderListServiceImpl implements OrderListService {
 	private OrderListRepository dao;
 	
 	@Override
-	public List<OrderListDTO> findAll(String userid) throws Exception {
+	public List<OrderDTO> findAll(String userid) throws Exception {
 		return dao.selectAll(userid);
 	}
 
