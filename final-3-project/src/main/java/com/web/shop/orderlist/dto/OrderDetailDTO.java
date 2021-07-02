@@ -1,5 +1,5 @@
 package com.web.shop.orderlist.dto;
 
-public class OrderListDTO {
+public class OrderDetailDTO {
 
 }

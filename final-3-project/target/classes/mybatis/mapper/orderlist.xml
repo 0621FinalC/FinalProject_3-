@@ -12,4 +12,14 @@
   	ORDER BY orderdate DESC
   </select>
   
+  <select id="order" parameterType="string" resultType="orderdetail">
+  	SELECT * FROM order_detail
+  	WHERE oid = #{oid}
+  </select>
+  
+  <select id="detail" parameterType="string" resultType="order">
+  	SELECT * FROM order_t
+  	WHERE oid = #{oid}
+  </select>
+  
 </mapper>

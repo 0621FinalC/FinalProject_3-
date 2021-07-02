@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.web.shop.order.dto.OrderDTO;
 import com.web.shop.order.service.OrderService;
-import com.web.shop.orderlist.dto.OrderListDTO;
 import com.web.shop.orderlist.service.OrderListService;
 
 @Controller
@@ -25,7 +24,6 @@ public class OrderListController {
 	
 	@RequestMapping(value = "/list")
 	public String orderlist(HttpServletRequest req, Model m) throws Exception {
-		String forward = "orderlist/main";
 		
 		List<OrderDTO> orderlist = null;
 		
@@ -37,12 +35,13 @@ public class OrderListController {
 		// 가져온 주문서 정보 jsp로 보내주기
 		m.addAttribute("orderlist", orderlist);
 		
-		return forward;
+		return "orderlist/main";
 	}
 	
 	@RequestMapping(value = "/detail")
-	public String orderdetail(@RequestParam String oid) throws Exception {
-		String forward = "orderlist/detail";
-		return forward;
+	public String orderdetail(@RequestParam String ordno, Model m) throws Exception {
+		m.addAttribute("product_list", order.findOrder(ordno));
+		m.addAttribute("detail", order.findDetail(ordno));
+		return "orderlist/detail";
 	}
 }

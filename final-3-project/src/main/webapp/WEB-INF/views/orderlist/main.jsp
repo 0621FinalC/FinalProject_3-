@@ -8,6 +8,11 @@
 <head>
 <meta charset="UTF-8">
 <title>주문내역</title>
+<style type="text/css">
+	img {
+		width:80px; height:80px;
+	}
+</style>
 </head>
 <body>
 	<h1>주문 내역</h1>
@@ -28,7 +33,7 @@
 						<fmt:formatDate var="odate" value="${order.getOrderdate() }" pattern="yyyy.MM.dd (hh시 mm분)"/>
 						<td>${odate }</td>
 						<c:set var="pname" value="${order.getProductname() }" />
-						<td><img src="/resources/img/product/${fn:substringBefore(pname, ' 외') }.jpg"></td>
+						<td><img src="../resources/img/product/${fn:substringBefore(pname, ' 외') }.jpg"></td>
 						<td><a href="${detail }?ordno=${order.getOid() }">${pname }</a></td>
 						<td>${order.getOid() }</td>
 						<td>${order.getTotalprice() }</td>

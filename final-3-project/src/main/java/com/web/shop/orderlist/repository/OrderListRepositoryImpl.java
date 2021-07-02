@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.web.shop.order.dto.OrderDTO;
-import com.web.shop.orderlist.dto.OrderListDTO;
+import com.web.shop.orderlist.dto.OrderDetailDTO;
 
 @Repository
 public class OrderListRepositoryImpl implements OrderListRepository {
@@ -18,6 +18,16 @@ public class OrderListRepositoryImpl implements OrderListRepository {
 	@Override
 	public List<OrderDTO> selectAll(String userid) throws Exception {
 		return sqlSession.selectList("orderlistMapper.all", userid);
+	}
+
+	@Override
+	public List<OrderDetailDTO> selectOrder(String oid) throws Exception {
+		return sqlSession.selectList("orderlistMapper.order", oid);
+	}
+
+	@Override
+	public OrderDTO selectDetail(String oid) throws Exception {
+		return sqlSession.selectOne("orderlistMapper.detail", oid);
 	}
 
 }
