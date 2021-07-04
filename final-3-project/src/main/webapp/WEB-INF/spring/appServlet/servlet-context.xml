@@ -6,7 +6,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-
+		
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
@@ -14,6 +14,8 @@
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
+	
+	
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -30,6 +32,11 @@
 	 	<beans:property name="username" value="system"></beans:property>
 	 	<beans:property name="password" value="oracle"></beans:property>
 	 </beans:bean>
+	 
+	
+ 	<beans:bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<beans:property name="dataSource" ref="dataSource"></beans:property>
+	</beans:bean>
 
 	<beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<beans:property name="dataSource" ref="dataSource"></beans:property>
@@ -40,5 +47,13 @@
 	<beans:bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 		<beans:constructor-arg index="0" ref="sqlSessionFactory"></beans:constructor-arg>
 	</beans:bean>
-
+	
+	<beans:bean id ="CartRepositoryImpl" class="com.web.shop.cart.repository.CartRepositoryImpl"/>
+	<beans:bean id ="CartRepository" class="com.web.shop.cart.repository.CartRepository"/>
+	<beans:bean id ="CartServiceImpl" class="com.web.shop.cart.service.CartServiceImpl"/>
+	<beans:bean id ="CartService" class="com.web.shop.cart.service.CartService"/>	
+	
+	<beans:bean id ="cartRepository" class="com.web.shop.cart.repository.CartRepository"/>
+	<beans:bean id ="serviceImpl" class="com.web.shop.cart.service.CartServiceImpl"/>
+		
 </beans:beans>

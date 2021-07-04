@@ -8,9 +8,14 @@ import com.web.shop.cart.repository.*;
 
 @Service
 public class CartServiceImpl implements CartService {
- 
+	
+
 	@Autowired
     private CartRepository cartRepository;
+	
+	public CartServiceImpl(CartRepository cartRepository) {
+		this.cartRepository = cartRepository;
+	}
     
     @Override
     public void insert(CartDTO dto) throws Exception {
@@ -28,19 +33,25 @@ public class CartServiceImpl implements CartService {
     	cartRepository.delete(cart_id);
     }
  
-    @Override
-    public void update(int cart_id) throws Exception {
-    	cartRepository.update(cart_id);
-    }
  
     @Override
     public int sumMoney(String userid) throws Exception {
         return cartRepository.sumMoney(userid);
     }
- 
+     */
     @Override
-    public int countCart(String userid, int qty) throws Exception {
-        return cartRepository.countCart(userid, qty);
+    public void modify(CartDTO dto) throws Exception {
+    	cartRepository.modify(dto);
     }
-    */
+    
+    @Override
+    public void update(CartDTO dto) throws Exception {
+    	cartRepository.update(dto);
+    }
+    
+ 	// 장바구니 상품 확인하기
+    @Override
+    public int countCart(int pid, String userid) throws Exception {
+        return cartRepository.countCart(pid, userid);
+    }
 }

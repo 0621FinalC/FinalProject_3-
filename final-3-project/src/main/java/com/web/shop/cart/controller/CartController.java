@@ -1,18 +1,13 @@
 package com.web.shop.cart.controller;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
- 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
- 
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.web.shop.cart.dto.*;
 import com.web.shop.cart.service.*;
  
@@ -23,22 +18,48 @@ public class CartController {
 	@Autowired
     private CartService cartService;
  
-    @RequestMapping("/insert")
-    
-    // 로그인시 장바구니 기능 이용 가능
+    // 장바구니 추가
+	@RequestMapping(value = "/insert")
     public String insert(@ModelAttribute CartDTO dto, HttpSession session) throws Exception {
  
         String userid = (String) session.getAttribute("userid");
- 
-        if (userid == null) {
-            return "";
-            // 로그인 페이지로 이동
+        dto.setUserid(userid);
+        
+        // 장바구니 상품 중복 확인
+        int count = cartService.countCart(dto.getPid(), userid);
+       
+        if(count == 0) {
+        	cartService.update(dto);
+        } else {
+        	cartService.insert(dto);
         }
         
-        dto.setUserid(userid);
-        cartService.insert(dto);
- 
-        return "";
-        // 장바구니 리스트로 이동
+        if(count == 0) {
+        	cartService.insert(dto);
+        } else {
+        	cartService.update(dto);
+        }
+        
+        return "redirect:/cart/list";
+         
     }
+    
+    // 장바구니 수정
+    @RequestMapping(value = "/update")
+    public String update(@RequestParam int[] qty, @RequestParam int[] pid, HttpSession session ) throws Exception {
+    	String userid = (String) session.getAttribute("userid");
+    	
+    	for(int i = 0; i < pid.length; i++) {
+    		CartDTO dto = new CartDTO();
+    		dto.setUserid(userid);
+    		dto.setQty(qty[i]);
+    		dto.setPid(pid[i]);
+    		cartService.modify(dto);	
+    		}
+    	
+    	return "redirect:/cart/list";
+    }
+    
+    
+    
 }
