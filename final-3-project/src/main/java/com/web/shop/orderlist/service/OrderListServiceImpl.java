@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.web.shop.order.dto.OrderDTO;
+import com.web.shop.orderlist.dto.DeliveryDetailDTO;
 import com.web.shop.orderlist.dto.OrderDetailDTO;
 import com.web.shop.orderlist.repository.OrderListRepository;
 
@@ -26,8 +27,8 @@ public class OrderListServiceImpl implements OrderListService {
 	}
 
 	@Override
-	public OrderDTO findDetail(String oid) throws Exception {
-		return dao.selectDetail(oid);
+	public DeliveryDetailDTO findDelivery(String oid) throws Exception {
+		return dao.selectDelivery(oid);
 	}
 
 }

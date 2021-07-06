@@ -35,13 +35,22 @@ public class KakapPayController {
 	private OrderService order;
 	
 	@RequestMapping(value = "")
-	public String payment() {
+	public String payment_init(HttpServletRequest req, Model m) throws Exception {
 		String forward = "kakaopay/payment";
+		
+		// 세션에서 orderid 받아오기. 수정 필요.
+		HttpSession session = req.getSession();
+		session.setAttribute("order_id", 1);
+		
+		OrderDTO dto = order.findInfo((String)session.getAttribute("order_id"));
+		
+		m.addAttribute("order", dto);
+		
 		return forward;
 	}
 	
 	@RequestMapping(value = "/payment")
-	public String payment(HttpServletRequest req) throws Exception {
+	public String payment_ing(HttpServletRequest req) throws Exception {
 		String forward = "";
 		// 주문자가 결제 요청한 상품의 정보를 확인 후 카카오페이 서버에 상품관련 결제준비 정보 전송
 		

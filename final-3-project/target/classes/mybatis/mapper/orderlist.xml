@@ -13,13 +13,18 @@
   </select>
   
   <select id="order" parameterType="string" resultType="orderdetail">
-  	SELECT * FROM order_detail
-  	WHERE oid = #{oid}
+  	SELECT a.pid, a.productname, a.price * b.item_qty AS total_price, b.item_qty
+	FROM product_t a
+	JOIN order_detail b ON a.productname = b.productname
+	WHERE b.oid = #{oid}
+	ORDER BY a.productname DESC
   </select>
   
-  <select id="detail" parameterType="string" resultType="order">
-  	SELECT * FROM order_t
-  	WHERE oid = #{oid}
+  <select id="deliver" parameterType="string" resultType="delivery">
+  	SELECT sender, rec_name, rec_phone, rec_address, shipping_fee,
+		(SELECT username FROM user_t WHERE userid = (SELECT userid FROM order_t WHERE oid = #{oid})) AS username
+	FROM delivery_info
+	WHERE oid = #{oid}
   </select>
   
 </mapper>
