@@ -14,7 +14,7 @@
 		<form action="${login }" method="post">
 		<div>
 			<label>아이디</label>
-			<input id="id" type="text" name="id" required>
+			<input id="userid" type="text" name="userid" required>
 		</div>
 		<div>
 			<label>패스워드</label>

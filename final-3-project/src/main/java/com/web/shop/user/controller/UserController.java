@@ -40,7 +40,7 @@ public class UserController {
 			HttpSession session = req.getSession();
 			session.setAttribute("user", dto);
 			session.setAttribute("logined", true);
-			forward = "redirect:/shop/main";
+			forward = "redirect:/main";
 		} else {
 			// dto.getUserid() 값이 ""이면 로그인 실패
 			m.addAttribute("data", dto);
