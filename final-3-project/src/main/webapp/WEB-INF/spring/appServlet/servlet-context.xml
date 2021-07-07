@@ -37,9 +37,9 @@
 	 <!-- 
 	 	빈에 등록된 데이터베이스 연결 객체를 JdbcTemplate 에 등록(주입: DI - Dependency Injection)한다. 
 	  -->
-<!-- 	<beans:bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+ 	<beans:bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<beans:property name="dataSource" ref="dataSource"></beans:property>
-	</beans:bean> -->
+	</beans:bean> 
 	
 	<!-- mybatis 연동을 위한 bean 등록 -->
 	<beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">

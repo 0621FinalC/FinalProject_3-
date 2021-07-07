@@ -16,16 +16,13 @@ public class OrderDTO {
 	private Date orderdate;
 	private String ordermemo;
 	private String paymentmethod;
-	private Date approved_at;
+	private String approved_at;		// db삽입시 date로 변환.
 	
-	public Date getApproved_at() {
+	public String getApproved_at() {
 		return approved_at;
 	}
-	public void setApproved_at(Date approved_at) {
-		this.approved_at = approved_at;
-	}
 	public void setApproved_at(String approved_at) {
-		this.approved_at = Date.valueOf(approved_at);
+		this.approved_at = approved_at;
 	}
 	public String getTid() {
 		return tid;

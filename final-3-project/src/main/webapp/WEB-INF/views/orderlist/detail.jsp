@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html>
@@ -17,10 +18,11 @@
 	<h1>주문 내역 상세</h1>
 	<div>
 		<table>
-			<caption>주문번호 ${ordno }</caption>
+			<caption>주문번호 ${param.ordno }</caption>
 			<thead>
-				<th>대표이미지</th>
+				<th>이미지</th>
 				<th>상품명</th>
+				<th>수량</th>
 				<th>금액</th>
 			</thead>
 			<tbody>
@@ -28,19 +30,18 @@
 				<c:forEach var="product" items="${product_list }">
 					<tr>
 						<c:set var="pname" value="${product.getProductname() }" />
-						<td><img src="../resources/img/product/${fn:substringBefore(pname, ' 외') }.jpg"></td>
+						<td><img src="../resources/img/product/${pname }.jpg"></td>
 						<td><a href="${detail }?goodsno=${product.getPid() }">${pname }</a></td>
-						<td>${order.getTotal_price() }</td>
+						<td>${product.getItem_qty() }개</td>
+						<td><fmt:formatNumber value="${product.getTotal_price() }" />원</td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 	</div>
 	<div>
-		<table>
-			<caption>배송조회</caption>
-			<h3>서비스 준비중 입니다.</h3>
-		</table>
+		배송조회<br>
+		서비스 준비중 입니다.
 	</div>
 	<div>
 		<table>
@@ -54,10 +55,10 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td>${pay_info.getTotal() - ${delivery_info.getShipping_fee() }</td>
-					<td>${delivery_info.getShipping_fee() }</td>
-					<td>${pay_info.getPoint() }</td>
-					<td>${pay_info.getTotal_pay() }</td>
+					<td><fmt:formatNumber value="${pay_info.getTotal() - delivery_info.getShipping_fee() }" />원</td>
+					<td><fmt:formatNumber value="${delivery_info.getShipping_fee() }" />원</td>
+					<td><fmt:formatNumber value="${pay_info.getPoint() }" />원</td>
+					<td><fmt:formatNumber value="${pay_info.getTotal() - pay_info.getPoint() }" />원</td>
 					<td>${pay_info.getPayment_method_type() }</td>
 				</tr>
 			</tbody>
@@ -74,10 +75,10 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td>${ordno }</td>
+					<td>${param.ordno }</td>
 					<td>${delivery_info.getUsername()}</td>
 					<td>${delivery_info.getSender()}</td>
-					<td>${pay_info.getApproved_at()}</td>
+					<td>${fn:replace(pay_info.getApproved_at(),'T',' ')}</td>
 				</tr>
 			</tbody>
 		</table>

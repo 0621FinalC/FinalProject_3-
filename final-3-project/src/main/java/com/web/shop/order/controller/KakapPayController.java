@@ -40,7 +40,7 @@ public class KakapPayController {
 		
 		// 세션에서 orderid 받아오기. 수정 필요.
 		HttpSession session = req.getSession();
-		session.setAttribute("order_id", 1);
+		session.setAttribute("order_id", "1");
 		
 		OrderDTO dto = order.findInfo((String)session.getAttribute("order_id"));
 		
@@ -147,6 +147,8 @@ public class KakapPayController {
 		String url = "https://kapi.kakao.com/v1/payment/approve";
 		ResponseEntity<String> resp = rest.postForEntity(url, entity, String.class);
 		
+		System.out.println("결제 데이터 : " + resp.getBody());
+		
 		ObjectMapper mapper = new ObjectMapper();
 		Map<String, Object> resp_data = mapper.readValue(resp.getBody(), HashMap.class);
 		
@@ -168,8 +170,6 @@ public class KakapPayController {
 		} else if(resp.getStatusCode() == HttpStatus.BAD_REQUEST) {
 			forward = "kakaopay/fail";
 		}
-		
-		System.out.println(resp.getBody());
 		
 		return forward;
 	}

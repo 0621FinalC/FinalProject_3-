@@ -36,7 +36,7 @@
 						<td><img src="../resources/img/product/${fn:substringBefore(pname, ' 외') }.jpg"></td>
 						<td><a href="${detail }?ordno=${order.getOid() }">${pname }</a></td>
 						<td>${order.getOid() }</td>
-						<td>${order.getTotalprice() }</td>
+						<td><fmt:formatNumber value="${order.getTotalprice() }" />원</td>
 						<td>${order.getOrderstat() }</td>
 					</tr>
 				</c:forEach>

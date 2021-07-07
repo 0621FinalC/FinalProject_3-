@@ -82,10 +82,15 @@ public class OrderListController {
 		ObjectMapper mapper = new ObjectMapper();
 		Map<String, Object> resp_data = mapper.readValue(resp.getBody(), HashMap.class);
 		
+		System.out.println(resp.getBody());
+		
 		PaymentDetailDTO pay_info = new PaymentDetailDTO();
 		
 		HashMap amount = new HashMap();
 		amount = (HashMap)resp_data.get("amount");
+		
+		System.out.println((Integer)amount.get("total"));
+		System.out.println((Integer)amount.get("point"));
 		
 		pay_info.setTotal((Integer)amount.get("total"));
 		pay_info.setPoint((Integer)amount.get("point"));

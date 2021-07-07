@@ -8,18 +8,14 @@ public class PaymentDetailDTO {
 	
 	private int total;
 	private int point;
-	private int total_pay = total - point;
 	private String payment_method_type;
-	private Date approved_at;
+	private String approved_at;
 	
-	public Date getApproved_at() {
+	public String getApproved_at() {
 		return approved_at;
 	}
-	public void setApproved_at(Date approved_at) {
-		this.approved_at = approved_at;
-	}
 	public void setApproved_at(String approved_at) {
-		this.approved_at = Date.valueOf(approved_at);
+		this.approved_at = approved_at;
 	}
 	public int getTotal() {
 		return total;
@@ -33,14 +29,14 @@ public class PaymentDetailDTO {
 	public void setPoint(int point) {
 		this.point = point;
 	}
-	public int getTotal_pay() {
-		return total_pay;
-	}
-	public void setTotal_pay(int total_pay) {
-		this.total_pay = total_pay;
-	}
 	public String getPayment_method_type() {
-		return payment_method_type;
+		String type = "";
+		if(payment_method_type.equals("MONEY")) {
+			type = "카카오페이 머니";
+		} else if(payment_method_type.equals("CARD")) {
+			type = "카드";
+		}
+		return type;
 	}
 	public void setPayment_method_type(String payment_method_type) {
 		this.payment_method_type = payment_method_type;

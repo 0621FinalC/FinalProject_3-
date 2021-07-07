@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +13,7 @@
 	<div>
 		상품명 : ${order.getProductname() }<br>
 		수량 : ${order.getQty() } 개<br>
-		금액 : ${order.getTotalPrice() } 원
+		금액 : <fmt:formatNumber value="${order.getTotalprice() }" />원
 	</div>
 	<div>
 		<c:url var="pay_img" value="/resources" />

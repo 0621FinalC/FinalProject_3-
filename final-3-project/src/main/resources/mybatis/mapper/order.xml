@@ -8,10 +8,10 @@
   <update id="addInfo" parameterType="order">
   	UPDATE order_t
   		<set>
-  			id = #{tid},
+  			tid = #{tid},
   			orderstat = #{orderstat}
-  			<if test="paymentmethod != null">paymentmethod = #{paymentmethod}</if>
-  			<if test="approved_at != null">approved_at = #{approved_at}</if>
+  			<if test="paymentmethod != null">, paymentmethod = #{paymentmethod}</if>
+  			<if test="approved_at != null">, approved_at = TO_DATE(#{approved_at}, 'YYYY-MM-DD"T"HH24:MI:SS')</if>
   		</set>
   	WHERE oid = #{oid}
   </update>
