@@ -12,11 +12,14 @@
 		infrastructure -->
 
 	<!-- Enables the Spring MVC @Controller programming model -->
-	<annotation-driven />
+	<annotation-driven/>
+	
+	<!-- 스캔할 bean들이 모여있는 패키지를 지정한다. -->
+	<context:component-scan base-package="com.web.shop.controller"/>
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
 		up static resources in the ${webappRoot}/resources directory -->
-	<resources mapping="/resources/**" location="/resources/" />
+	<resources mapping="/**" location="/resources/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
 		in the /WEB-INF/views directory -->
@@ -26,18 +29,13 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 
-	<context:component-scan
-		base-package="com.web.shop" />
+	<context:component-scan base-package="com.web.shop" />
 
-	<beans:bean id="loginInterceptor"
-		class="com.web.shop.commons.interceptor.LoginInterceptor" />
-	<interceptors>
-		<interceptor>
-			<mapping path="/user/loginPost" />
-			<beans:ref bean="loginInterceptor" />
-		</interceptor>
-	</interceptors>
-
+	<beans:bean id="sqlSession"
+		class="org.mybatis.spring.SqlSessionTemplate">
+		<beans:constructor-arg index="0"
+			ref="sqlSessionFactory"></beans:constructor-arg>
+	</beans:bean>
 
 
 </beans:beans>
