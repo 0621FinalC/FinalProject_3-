@@ -9,13 +9,13 @@
 </head>
 <body>
 	<div class="navtop">
-		<a class="logo" href="#">
+		<a class="logo" href="/shop/main">
 			<img src="${pageContext.request.contextPath }/resources/img/logo.png" height="20px">
 		</a>
 		<ul>
 			<li><a href="#">Cart</a></li>
-			<li><a href="#">Login</a></li>
-			<li><a href="#">Join</a></li>
+			<li><a href="/shop/user/login">Login</a></li>
+			<li><a href="/shop/user/join">Join</a></li>
 		</ul>
 	</div>
 	<div class="navmenu">
