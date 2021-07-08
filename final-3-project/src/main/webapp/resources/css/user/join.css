@@ -1,1 +1,22 @@
 @charset "UTF-8";
+*{
+	margin: 0;
+	padding:0;
+}
+
+body, input, select, textarea, button {
+    font-family: noto sans,malgun gothic,AppleGothic,dotum;
+    line-height: 1;
+    letter-spacing: -.05em;
+    color: black;
+    font-size: 12px;
+    max-width: 100%;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}

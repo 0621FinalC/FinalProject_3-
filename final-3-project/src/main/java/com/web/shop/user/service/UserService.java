@@ -7,5 +7,5 @@ public interface UserService {
 	public void login(UserDTO dto) throws Exception;
 	public boolean checkUserid(String userid) throws Exception;
 	//회원가입
-	public void join(UserDTO dto) throws Exception;
+	public boolean join(UserDTO dto) throws Exception;
 }
