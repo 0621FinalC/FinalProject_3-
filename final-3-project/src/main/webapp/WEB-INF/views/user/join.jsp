@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="${pageContext.request.contextPath }/resources/css/user/join.css" rel="stylesheet" />
 </head>
 <body>
 

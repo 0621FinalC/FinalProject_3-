@@ -4,6 +4,6 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
   <typeAliases>
-    
+	<typeAlias type="com.web.shop.user.dto.UserDTO" alias="user" />
   </typeAliases>
 </configuration>
