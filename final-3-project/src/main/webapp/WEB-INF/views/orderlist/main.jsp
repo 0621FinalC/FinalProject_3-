@@ -30,11 +30,24 @@
 				<c:url var="detail" value="/order/detail"/>
 				<c:forEach var="order" items="${orderlist }">
 					<tr>
-						<fmt:formatDate var="odate" value="${order.getOrderdate() }" pattern="yyyy.MM.dd (hh시 mm분)"/>
-						<td>${odate }</td>
+						<fmt:parseDate var="dateString" value="${order.getOrderdate() }" pattern="yyyy-MM-dd HH:mm:ss.S" />
+						<fmt:formatDate var="orderDate" value="${dateString }" pattern="yyyy.MM.dd (HH시 mm분)" />
+						<td>${orderDate }</td>
+						
 						<c:set var="pname" value="${order.getProductname() }" />
-						<td><img src="../resources/img/product/${fn:substringBefore(pname, ' 외') }.jpg"></td>
-						<td><a href="${detail }?ordno=${order.getOid() }">${pname }</a></td>
+						<c:choose>
+							<c:when test="${fn:contains(pname , '외') }">
+								<c:set var="pname" value="${fn:substringBefore(pname, ' 외') }"/>
+							</c:when>
+							
+							<c:when test="${fn:contains(pname , '[') or fn:contains(pname , ']') }">
+								<c:set var="pname" value="${fn:replace(pname, '[', '%5B') }" />
+								<c:set var="pname" value="${fn:replace(pname, ']', '%5D') }" />
+							</c:when>
+						</c:choose>
+						
+						<td><img src="../resources/img/product/${pname }.jpg"></td>
+						<td><a href="${detail }?ordno=${order.getOid() }">${order.getProductname() }</a></td>
 						<td>${order.getOid() }</td>
 						<td><fmt:formatNumber value="${order.getTotalprice() }" />원</td>
 						<td>${order.getOrderstat() }</td>

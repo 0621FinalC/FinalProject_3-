@@ -13,7 +13,7 @@ public class OrderDTO {
 	private String address;
 	private String phone;
 	private String orderstat;
-	private Date orderdate;
+	private String orderdate;
 	private String ordermemo;
 	private String paymentmethod;
 	private String approved_at;		// db삽입시 date로 변환.
@@ -78,10 +78,10 @@ public class OrderDTO {
 	public void setOrderstat(String orderstat) {
 		this.orderstat = orderstat;
 	}
-	public Date getOrderdate() {
+	public String getOrderdate() {
 		return orderdate;
 	}
-	public void setOrderdate(Date orderdate) {
+	public void setOrderdate(String orderdate) {
 		this.orderdate = orderdate;
 	}
 	public String getOrdermemo() {

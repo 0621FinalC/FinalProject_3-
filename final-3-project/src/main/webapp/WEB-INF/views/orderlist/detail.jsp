@@ -30,8 +30,13 @@
 				<c:forEach var="product" items="${product_list }">
 					<tr>
 						<c:set var="pname" value="${product.getProductname() }" />
+						<c:if test="${fn:contains(pname , '[') or fn:contains(pname , ']') }">
+							<c:set var="pname" value="${fn:replace(pname, '[', '%5B') }" />
+							<c:set var="pname" value="${fn:replace(pname, ']', '%5D') }" />
+						</c:if>
+						
 						<td><img src="../resources/img/product/${pname }.jpg"></td>
-						<td><a href="${detail }?goodsno=${product.getPid() }">${pname }</a></td>
+						<td><a href="${detail }?goodsno=${product.getPid() }">${product.getProductname() }</a></td>
 						<td>${product.getItem_qty() }개</td>
 						<td><fmt:formatNumber value="${product.getTotal_price() }" />원</td>
 					</tr>

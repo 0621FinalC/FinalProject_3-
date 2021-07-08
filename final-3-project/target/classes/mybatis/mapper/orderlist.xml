@@ -8,7 +8,6 @@
   <select id="all" parameterType="string" resultType="order">
   	SELECT * FROM order_t
   	WHERE userid = #{userid}
-  		AND orderstat = '결제완료'
   	ORDER BY orderdate DESC
   </select>
   
