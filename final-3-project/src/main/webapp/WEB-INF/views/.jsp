@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>KH3SHOP</title>
-<link href="${pageContext.request.contextPath }/resources/css/main.css" rel="stylesheet" />
+<link href="${pageContext.request.contextPath }/resources/css/mainLogined.css" rel="stylesheet" />
 </head>
 <body>
 	<div class="navtop">
@@ -13,9 +13,9 @@
 			<img src="${pageContext.request.contextPath }/resources/img/logo.png" height="20px">
 		</a>
 		<ul>
-			<li><a href="/shop/user/login">Login</a></li>
-			<li><a href="/shop/user/join">Join</a></li>
 			<li><a href="#">Cart</a></li>
+			<li><a href="#">Logout</a></li>
+			<li><a href="#">Mypage</a></li>
 		</ul>
 	</div>
 	<div class="navmenu">

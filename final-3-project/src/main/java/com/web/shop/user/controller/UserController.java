@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.web.shop.user.dto.UserDTO;
 import com.web.shop.user.service.UserService;
@@ -40,15 +41,21 @@ public class UserController {
 			HttpSession session = req.getSession();
 			session.setAttribute("user", dto);
 			session.setAttribute("logined", true);
-			forward = "redirect:/main";
+			forward = "/user/logined";
 		} else {
 			// dto.getUserid() 값이 ""이면 로그인 실패
 			m.addAttribute("data", dto);
 			m.addAttribute("error", "로그인 실패");
 			forward = "user/login";
 		}
-
 		return forward;
+	}
+	
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public ModelAndView logout(HttpSession session) {
+		session.invalidate();
+		ModelAndView mv = new ModelAndView("redirect:/main");
+		return mv;
 	}
 	
 }
