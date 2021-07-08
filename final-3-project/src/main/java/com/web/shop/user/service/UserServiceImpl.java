@@ -30,4 +30,8 @@ public class UserServiceImpl implements UserService {
 			dto.setPassword("");
 		}
 	}
+	
+	public void join(UserDTO dto) throws Exception {
+		
+	}
 }

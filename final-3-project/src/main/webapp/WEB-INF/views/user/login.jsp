@@ -23,8 +23,8 @@
 		<div>
 			<label style="color: red;">${error }</label>
 		</div>
-		<div>
-			<button type="submit">로그인</button>
+		<div class="login_button_form">
+			<button type="submit" class="login_button">로그인</button>
 			<c:url var="main" value="/main" />
 			<button type="button" onclick="location.href='${main }'">취소</button>
 		</div>
