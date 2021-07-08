@@ -1,20 +1,21 @@
 package com.web.shop.cart.dto;
 
 public class CartDTO {
-    private int cart_id; 
-    private String userid;
-    private String username;
-    private int pid;
+	private int cid; 
+	private String userid;
+	private int pid;
+	private int cartqty; // 카드 수량
+	
+	private String username;
     private String productname;
-    private int price;
-    private int qty;
-    private int totalprice;
+    private int price; // 상품 가격
+    private int totalprice; // 총액
     
-	public int getCart_id() {
-		return cart_id;
+	public int getCid() {
+		return cid;
 	}
-	public void setCart_id(int cart_id) {
-		this.cart_id = cart_id;
+	public void setCid(int cid) {
+		this.cid = cid;
 	}
 	public String getUserid() {
 		return userid;
@@ -22,17 +23,23 @@ public class CartDTO {
 	public void setUserid(String userid) {
 		this.userid = userid;
 	}
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
 	public int getPid() {
 		return pid;
 	}
 	public void setPid(int pid) {
 		this.pid = pid;
+	}
+	public int getCartqty() {
+		return cartqty;
+	}
+	public void setCartqty(int cartqty) {
+		this.cartqty = cartqty;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public String getProductname() {
 		return productname;
@@ -46,12 +53,6 @@ public class CartDTO {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	public int getQty() {
-		return qty;
-	}
-	public void setQty(int qty) {
-		this.qty = qty;
-	}
 	public int getTotalprice() {
 		return totalprice;
 	}
@@ -61,9 +62,8 @@ public class CartDTO {
 	
 	@Override
 	public String toString() {
-		return "CartDTO [cart_id=" + cart_id + ", userid=" + userid + ", username=" + username + ", pid=" + pid
-				+ ", productname=" + productname + ", price=" + price + ", qty=" + qty + ", totalprice=" + totalprice
-				+ "]";
+		return "CartDTO [cid=" + cid + ", userid=" + userid + ", pid=" + pid + ", cartqty=" + cartqty + ", username="
+				+ username + ", productname=" + productname + ", price=" + price + ", totalprice=" + totalprice + "]";
 	}
-    
+ 
 }

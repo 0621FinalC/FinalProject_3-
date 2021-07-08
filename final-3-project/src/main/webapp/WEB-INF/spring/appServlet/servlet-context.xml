@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <beans:beans xmlns="http://www.springframework.org/schema/mvc"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:beans="http://www.springframework.org/schema/beans"
@@ -18,6 +19,7 @@
 	
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
@@ -45,15 +47,7 @@
 	</beans:bean>
 
 	<beans:bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
-		<beans:constructor-arg index="0" ref="sqlSessionFactory"></beans:constructor-arg>
+		<beans:constructor-arg index="0" ref="sqlSessionFactory"></beans:constructor-arg>	
 	</beans:bean>
 	
-	<beans:bean id ="CartRepositoryImpl" class="com.web.shop.cart.repository.CartRepositoryImpl"/>
-	<beans:bean id ="CartRepository" class="com.web.shop.cart.repository.CartRepository"/>
-	<beans:bean id ="CartServiceImpl" class="com.web.shop.cart.service.CartServiceImpl"/>
-	<beans:bean id ="CartService" class="com.web.shop.cart.service.CartService"/>	
-	
-	<beans:bean id ="cartRepository" class="com.web.shop.cart.repository.CartRepository"/>
-	<beans:bean id ="serviceImpl" class="com.web.shop.cart.service.CartServiceImpl"/>
-		
 </beans:beans>

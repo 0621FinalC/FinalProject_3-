@@ -1,6 +1,11 @@
 package com.web.shop.cart.service;
 
+import java.util.List;
+
+import javax.inject.Inject;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.web.shop.cart.dto.*;
@@ -10,8 +15,10 @@ import com.web.shop.cart.repository.*;
 public class CartServiceImpl implements CartService {
 	
 
-	@Autowired
+	@Inject
     private CartRepository cartRepository;
+	
+	public CartServiceImpl(){}
 	
 	public CartServiceImpl(CartRepository cartRepository) {
 		this.cartRepository = cartRepository;
@@ -22,23 +29,11 @@ public class CartServiceImpl implements CartService {
     	cartRepository.insert(dto);
     }
     
-    /*
-    @Override
-    public List<CartDTO> listCart(String userid) throws Exception {
-        return cartRepository.listCart(userid);
-    }
- 
     @Override
     public void delete(int cart_id) throws Exception {
     	cartRepository.delete(cart_id);
     }
- 
- 
-    @Override
-    public int sumMoney(String userid) throws Exception {
-        return cartRepository.sumMoney(userid);
-    }
-     */
+    
     @Override
     public void modify(CartDTO dto) throws Exception {
     	cartRepository.modify(dto);
@@ -53,5 +48,15 @@ public class CartServiceImpl implements CartService {
     @Override
     public int countCart(int pid, String userid) throws Exception {
         return cartRepository.countCart(pid, userid);
+    }
+    
+    @Override
+    public List<CartDTO> listCart(String userid) throws Exception {
+    	return cartRepository.listCart(userid);
+    }
+    
+    @Override
+    public int sumtotalmoney(String userid) throws Exception {
+    	return cartRepository.sumtotalmoney(userid);
     }
 }

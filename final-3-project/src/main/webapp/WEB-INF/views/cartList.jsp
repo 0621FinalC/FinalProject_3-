@@ -19,11 +19,11 @@
 <body>
 	<h2> 장바구니 확인</h2>
 	<c:choose>
-		<c:when test="$map.count ==0}">
-		장바구니가 비어있습니다.
-	</c:when>
+		<!-- 장바구니 담긴 상품이 없으면(0) 장바구니가 비었습니다. 출력 아니면(0이 아님) 장바구니 목록 출력  -->
+		<c:when test="$map.count ==0}"> 장바구니가 비어있습니다. </c:when>
 	<c:otherwise> 
-	<form name="form1" id="form1" method="post" action="${path}/cart/update">
+	<!-- 장바구니 목록 -->
+	<form name="form1" id="form1" method="post" action="${path}/shop/cart/update">
 		<table border="1">
 			<tr>
 				<th>상품명</th>
@@ -32,7 +32,8 @@
 				<th>금액</th>
 				<th>취소</th>
 			</tr>
-			<c:forEach var="row" items="${map.list}" varStatus="status">
+			<!-- 장바구니 레코드 출력 -->
+			<c:forEach var="row" items="${map.list}" varStatus="i">
 			<tr>
 				<td>
 					${row.productname}
@@ -41,14 +42,14 @@
 					<fmt:formatNumber pattern="###,###,###" value="${row.price}"/>
 				</td>
 				<td>
-					<input type="number" style="width: 40px" name="qty" value="${row.qty}" min="1">
+					<input type="number" style="width: 40px" name="cartqty" value="${row.cartqty}" min="1">
 					<input type="hidden" name="pid" value="${row.pid}">
 				</td>
 				<td style="width: 100px" align="right">
 					<fmt:formatNumber pattern="###,###,###" value="${row.totalprice}"/>
 				</td>
 				<td>
-					<a href="${path}/cart/delete?cart_id=${row.cart_id}">삭제</a>
+					<a href="${path}/shop/cart/delete?cid=${row.cid}">삭제</a>
 				</td>
 			</tr>	
 			</c:forEach>
