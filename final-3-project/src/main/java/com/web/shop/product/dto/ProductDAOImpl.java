@@ -1,28 +1,28 @@
-package com.web.shop.service;
+package com.web.shop.product.dto;
 
 import java.util.List;
 
 import javax.inject.Inject;
 
-import org.springframework.stereotype.Service;
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
 
 import com.web.shop.product.dto.ProductDAO;
-import com.web.shop.product.dto.ProductDTO;
 
-@Service
-public class ProductServiceImpl implements ProductDAO {
-
+@Repository
+public class ProductDAOImpl implements ProductDAO {
+	
 	@Inject
-	ProductDAO productDao;
+	SqlSession sqlSession;
 	
 	@Override
 	public List<ProductDTO> listProduct() {
-		return productDao.listProduct();
+		return sqlSession.selectList("product.list_product");
 	}
 
 	@Override
 	public ProductDTO detailProduct(int product_id) {
-		return productDao.detailProduct(product_id);
+		return sqlSession.selectOne("product.detail_product", product_id);
 	}
 
 	@Override
