@@ -31,7 +31,18 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 	
-	public void join(UserDTO dto) throws Exception {
-		
+	public boolean checkUserid(String userid) throws Exception {
+		// 사용중인 아이디를 찾는 메소드
+		// 사용중이면 true, 사용하지 않으면 false 반환
+		boolean result = true;
+		int rs = dao.userId(userid);
+		if(rs == 0) {
+			result = false;
+		}
+		return result;
+	}
+	
+	public boolean join(UserDTO dto) throws Exception {
+		return dao.insert(dto);
 	}
 }

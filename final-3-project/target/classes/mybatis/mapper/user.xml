@@ -5,8 +5,16 @@
   
 <mapper namespace="userMapper">
   <select id="checkLogin" parameterType="user" resultType="user">
-    SELECT * FROM user_t
-     WHERE userid = #{userid}
-       AND password = #{password}
+    SELECT * FROM user_t 
+    	WHERE userid = #{userid} AND password = #{password}
   </select>
+  
+  <select id="checkUserid" parameterType="string" resultType="_int">
+  	SELECT count(*) FROM user_t WHERE userid = #{userid}
+  </select>
+  
+  <insert id="insertUser" parameterType="user">
+  	INSERT INTO user_t(userid, username, password, gender, email, phone, address)
+  		VALUES(#{userid}, #{username}, #{password}, #{gender}, #{email}, #{phone}, #{address})
+  </insert>
 </mapper>
