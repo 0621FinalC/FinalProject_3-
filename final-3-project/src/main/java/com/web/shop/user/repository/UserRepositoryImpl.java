@@ -15,4 +15,17 @@ public class UserRepositoryImpl implements UserRepository {
 	public UserDTO checkUser(UserDTO dto) throws Exception {
 		return sqlSession.selectOne("userMapper.checkLogin", dto);
 	}
+	
+	public int userId(String userid) throws Exception {
+		return sqlSession.selectOne("userMapper.checkUserid", userid);
+	}
+	
+	public boolean insert(UserDTO dto) throws Exception {
+		boolean result = false;
+		int rs = sqlSession.insert("userMapper.insertUser", dto);
+		if(rs == 1) {
+			result = true;
+		}
+		return result;
+	}
 }

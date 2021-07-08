@@ -26,6 +26,23 @@ public class UserController {
 		return "user/join";
 	}
 	
+	@RequestMapping(value = "/join", method = RequestMethod.POST)
+	public String join(Model m, @ModelAttribute UserDTO dto) throws Exception {
+		String forward = "";
+		
+		boolean result = user.join(dto);
+		
+		if(result) {
+			forward = "redirect:/main";
+		} else {
+			m.addAttribute("data", dto);
+			m.addAttribute(forward);
+			forward = "account/join";
+		}
+		
+		return forward;
+	}
+	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login() {
 		return "user/login";
