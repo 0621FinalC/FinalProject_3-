@@ -5,10 +5,14 @@
   
 <mapper namespace="orderlistMapper">
 
-  <select id="all" parameterType="string" resultType="order">
+  <select id="all" parameterType="hashmap" resultType="order">
   	SELECT * FROM order_t
-  	WHERE userid = #{userid}
-  	ORDER BY orderdate DESC
+	WHERE userid = #{userid}
+	<if test="year != 0">
+		AND orderdate >= TO_DATE(#{year}, 'YYYY')					
+		AND orderdate &lt; TO_DATE(#{year} + 1, 'YYYY')
+	</if>
+	ORDER BY orderdate DESC
   </select>
   
   <select id="order" parameterType="string" resultType="orderdetail">

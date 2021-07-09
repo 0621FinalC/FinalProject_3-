@@ -17,8 +17,8 @@ public class OrderListServiceImpl implements OrderListService {
 	private OrderListRepository dao;
 	
 	@Override
-	public List<OrderDTO> findAll(String userid) throws Exception {
-		return dao.selectAll(userid);
+	public List<OrderDTO> findAll(String userid, int year) throws Exception {
+		return dao.selectAll(userid, year);
 	}
 
 	@Override

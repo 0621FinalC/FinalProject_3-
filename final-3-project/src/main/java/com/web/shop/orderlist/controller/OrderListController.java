@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -40,13 +41,18 @@ public class OrderListController {
 	
 	@RequestMapping(value = "/list")
 	public String orderlist(HttpServletRequest req, Model m) throws Exception {
+		int year = 0;
+		
+		if(req.getParameter("year") != null) {
+			year = Integer.parseInt(req.getParameter("year"));
+		}
 		
 		List<OrderDTO> orderlist = null;
 		
 		// 로그인 세션 userid값 가져와서 일치하는 주문서 가져오기
 		HttpSession session = req.getSession();
 		// String userid = (String)session.getAttribute("userid");
-		orderlist = order_detail.findAll("admin");
+		orderlist = order_detail.findAll("admin", year);
 		
 		// 가져온 주문서 정보 jsp로 보내주기
 		m.addAttribute("orderlist", orderlist);
@@ -59,8 +65,8 @@ public class OrderListController {
 		m.addAttribute("product_list", order_detail.findOrder(ordno));		// 상세 상품정보
 		m.addAttribute("delivery_info", order_detail.findDelivery(ordno));	// 배송 관련 정보
 		
-		ShopDTO shop = order.shopInfo();
-		OrderDTO dto = order.findInfo(ordno);
+		ShopDTO shop = order.shopInfo();		// 가맹점 정보
+		OrderDTO dto = order.findInfo(ordno);	// 주문서 정보
 		
 		// 카카오페이 주문 조회 api
 		MultiValueMap<String, String> param = new LinkedMultiValueMap<String, String>();
@@ -82,7 +88,7 @@ public class OrderListController {
 		ObjectMapper mapper = new ObjectMapper();
 		Map<String, Object> resp_data = mapper.readValue(resp.getBody(), HashMap.class);
 		
-		PaymentDetailDTO pay_info = new PaymentDetailDTO();
+		PaymentDetailDTO pay_info = new PaymentDetailDTO();		// 결제 정보 
 		
 		HashMap amount = new HashMap();
 		amount = (HashMap)resp_data.get("amount");

@@ -16,6 +16,19 @@
 </head>
 <body>
 	<h1>주문 내역</h1>
+	<h4>지난 3년간의 주문 내역 조회가 가능합니다.</h4>
+	<div>
+		<c:set var="nowYear" value="<%=new java.util.Date() %>"/>
+		<c:set var="year"><fmt:formatDate value="${nowYear }" pattern="yyyy" /></c:set>
+		<form action="${pageContext.request.contextPath }/order/list" method="get">
+			<select name="year" onchange="submit();">
+				<option value="0" ${empty param.year ? "selected" : ""}>전체기간</option>
+				<option value="${year }" ${param.year eq year ? "selected" : ""}>${year }</option>
+				<option value="${year - 1 }" ${param.year eq year-1 ? "selected" : ""}>${year - 1 }</option>
+				<option value="${year - 2 }" ${param.year eq year-2 ? "selected" : ""}>${year - 2 }</option>
+			</select>
+		</form>
+	</div>
 	<div>
 		<table>
 			<thead>

@@ -1,5 +1,6 @@
 package com.web.shop.orderlist.repository;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -17,8 +18,12 @@ public class OrderListRepositoryImpl implements OrderListRepository {
 	private SqlSession sqlSession;
 
 	@Override
-	public List<OrderDTO> selectAll(String userid) throws Exception {
-		return sqlSession.selectList("orderlistMapper.all", userid);
+	public List<OrderDTO> selectAll(String userid, int year) throws Exception {
+		HashMap<String, Object> params = new HashMap<>();
+		params.put("userid", userid);
+		params.put("year", year);
+		
+		return sqlSession.selectList("orderlistMapper.all", params);
 	}
 
 	@Override
