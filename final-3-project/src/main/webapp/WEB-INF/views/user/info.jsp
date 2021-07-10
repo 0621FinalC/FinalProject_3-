@@ -9,33 +9,16 @@
 <title>회원 정보 보기 및 수정</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <link href="${pageContext.request.contextPath }/resources/css/user/info.css" rel="stylesheet" />
-</head>
+<c:url var="update" value="/user/info" />
+<c:url var="delete" value="/user/delete" />
 <script type="text/javascript">
-function updateInfo() {
-	// 일단 다른 체크하는기능은 빼고 구현 - 시간되면 구현할 것
+function send() {
+	// disabled 설정을 submit할때는 풀어준다 (안풀어주면 userid에 null이 들어가고 그러면 user.xml의 updateUser에서 WHERE절 비교 불가)
+	$("input[name=userid]").attr("disabled", false);
 	document.updateInfo.submit();
 }
-
-function expire() {
-	$.ajax({
-		url: "${expire }",
-		type: "post",
-		datatype: "json",
-		data: {
-			id: document.getElementById("userid").value
-		},
-		success: function(data) {
-			if(data.res == "success") {
-				alert("탈퇴 처리가 완료되었습니다.")
-				location.href = "${pageContext.request.contextPath }/user/logout"
-			} else {
-				alert("탈퇴 처리에 실패하였습니다.")
-			}
-		}
-	});
-}
 </script>
-<c:url var="update" value="/user/info" />
+</head>
 <body>
 	<h2>회원 정보</h2>
 	<div class="info-form">
@@ -73,8 +56,8 @@ function expire() {
 			</div>
 	
 			<br>
-			<button class="btn_update" type="button" onclick="updateInfo();">회원정보수정</button>
-			<button type="button" onclick="expire();">회원탈퇴</button>
+			<button class="btn_update" type="button" onclick="send();">회원정보수정</button>
+			<button type="button" onclick="location.href='${delete}'">회원탈퇴</button>
 		</form>
 	</div>
 </body>

@@ -78,7 +78,7 @@
 			
 			<div>
 				<label for="userpass">비밀번호</label>
-	       	 	<input type="password" name="password" id="pass1" maxlength="20" placeholder="영문 최대 20자 까지 가능" required>
+	       	 	<input type="password" name="password" id="pass1" maxlength="20" required>
 			</div>
 			
 			<div>

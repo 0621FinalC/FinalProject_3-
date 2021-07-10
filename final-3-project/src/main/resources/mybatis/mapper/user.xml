@@ -21,4 +21,13 @@
   <select id="readUser" resultType="user">
   	SELECT * FROM user_t WHERE userid = #{userid}
   </select>
+  
+  <update id="updateUser" parameterType="user">
+  	UPDATE user_t set gender=#{gender}, email=#{email}, phone=#{phone}, address=#{address}
+  		WHERE userid = #{userid}
+  </update>
+  
+  <delete id="deleteUser">
+  	DELETE FROM user_t WHERE userid = #{userid} AND password = #{password}
+  </delete>
 </mapper>

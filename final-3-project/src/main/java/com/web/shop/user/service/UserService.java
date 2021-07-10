@@ -7,4 +7,6 @@ public interface UserService {
 	public boolean checkUserid(String userid) throws Exception;
 	public boolean join(UserDTO dto) throws Exception;
 	public UserDTO readUser(String userid) throws Exception;
+	public boolean updateUser(UserDTO dto) throws Exception;
+	public boolean deleteUser(UserDTO dto) throws Exception;
 }
