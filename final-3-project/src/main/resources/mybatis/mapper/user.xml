@@ -17,4 +17,8 @@
   	INSERT INTO user_t(userid, username, password, gender, email, phone, address)
   		VALUES(#{userid}, #{username}, #{password}, #{gender}, #{email}, #{phone}, #{address})
   </insert>
+  
+  <select id="readUser" resultType="user">
+  	SELECT * FROM user_t WHERE userid = #{userid}
+  </select>
 </mapper>

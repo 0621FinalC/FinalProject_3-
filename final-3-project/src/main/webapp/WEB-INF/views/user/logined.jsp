@@ -14,7 +14,7 @@
 		</a>
 		<ul>
 			<li><a href="/shop/user/logout">Logout</a></li>
-			<li><a href="#">Mypage</a></li>
+			<li><a href="/shop/user/info">Mypage</a></li>
 			<li><a href="#">Cart</a></li>
 		</ul>
 	</div>

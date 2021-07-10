@@ -45,4 +45,8 @@ public class UserServiceImpl implements UserService {
 	public boolean join(UserDTO dto) throws Exception {
 		return dao.insert(dto);
 	}
+	
+	public UserDTO readUser(String userid) throws Exception {
+		return dao.readUser(userid);
+	}
 }

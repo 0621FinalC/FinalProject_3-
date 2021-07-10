@@ -57,6 +57,7 @@ public class UserController {
 			// dto.getUserid() 값이 ""이 아니면 로그인 성공
 			HttpSession session = req.getSession();
 			session.setAttribute("user", dto);
+			session.setAttribute("userid", dto.getUserid());
 			session.setAttribute("logined", true);
 			forward = "/user/logined";
 		} else {
@@ -74,5 +75,21 @@ public class UserController {
 		ModelAndView mv = new ModelAndView("redirect:/main");
 		return mv;
 	}
+	
+	// 회원정보 불러오기
+	@RequestMapping(value = "/info", method = RequestMethod.GET)
+	public String info(HttpSession session, Model m) throws Exception {
+		// 세션 객체 안에 있는 id 저장
+		String userid = (String) session.getAttribute("userid");
+		
+		// 서비스의 readUser 호출
+		UserDTO dto = user.readUser(userid);
+		
+		// 정보저장 후 페이지 이동
+		m.addAttribute("userData", dto);
+		return "user/info";
+	}
+	
+	// 회원정보창에서 '회원정보수정'버튼 눌렀을때. 회원정보 수정
 	
 }

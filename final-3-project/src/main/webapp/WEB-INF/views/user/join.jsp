@@ -87,7 +87,7 @@
 			</div>
 		
 			<div>
-				<label for="name">이름</label>
+				<label for="username">이름</label>
 				<input type="text" name="username" id="username" maxlength="20" required>
 			</div>
 			

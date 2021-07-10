@@ -28,4 +28,8 @@ public class UserRepositoryImpl implements UserRepository {
 		}
 		return result;
 	}
+	
+	public UserDTO readUser(String userid) throws Exception {
+		return sqlSession.selectOne("userMapper.readUser", userid);
+	}
 }
