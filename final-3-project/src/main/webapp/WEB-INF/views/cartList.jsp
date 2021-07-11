@@ -67,5 +67,6 @@
 	</c:otherwise>
 	</c:choose>
 	<button type="button" id="btnlist">상품목록</button>
+
 </body>
 </html>

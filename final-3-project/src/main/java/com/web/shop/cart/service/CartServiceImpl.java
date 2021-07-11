@@ -24,21 +24,25 @@ public class CartServiceImpl implements CartService {
 		this.cartRepository = cartRepository;
 	}
     
+	// 장바구니 추가
     @Override
     public void insert(CartDTO dto) throws Exception {
     	cartRepository.insert(dto);
     }
     
+    // 장바구니 삭제
     @Override
     public void delete(int cart_id) throws Exception {
     	cartRepository.delete(cart_id);
     }
     
+    // 장바구니 수정
     @Override
     public void modify(CartDTO dto) throws Exception {
     	cartRepository.modify(dto);
     }
     
+    // 장바구니 수량 변경
     @Override
     public void update(CartDTO dto) throws Exception {
     	cartRepository.update(dto);
@@ -50,11 +54,13 @@ public class CartServiceImpl implements CartService {
         return cartRepository.countCart(pid, userid);
     }
     
+    // 장바구니 목록
     @Override
     public List<CartDTO> listCart(String userid) throws Exception {
     	return cartRepository.listCart(userid);
     }
     
+    // 장바구니 금액 합계
     @Override
     public int sumtotalmoney(String userid) throws Exception {
     	return cartRepository.sumtotalmoney(userid);

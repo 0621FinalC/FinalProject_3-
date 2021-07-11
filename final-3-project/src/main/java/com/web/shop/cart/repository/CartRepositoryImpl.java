@@ -25,23 +25,26 @@ public class CartRepositoryImpl implements CartRepository {
 		  this.sqlSession = sqlSession;
 	  }
 	
+	  // 장바구니 추가
 	  @Override
 	  public void insert(CartDTO dto) throws Exception {
 		  sqlSession.insert("cart.insert", dto);
 	  } 
 	 
-	  
+	  // 장바구니 삭제
 	  @Override
 	  public void delete(int cart_id) throws Exception {
 		  sqlSession.delete("cart.delete", cart_id);
 	  }
 	  
+	  // 장바구니 수정
 	  @Override
 	  public void modify(CartDTO dto) throws Exception {
 		  sqlSession.update("cart.modify", dto);
 		  
 	  }
 	 
+	  // 장바구니 수량 변경
 	  @Override
 	  public void update(CartDTO dto) throws Exception {
 		  sqlSession.update("cart.update", dto);
@@ -57,11 +60,13 @@ public class CartRepositoryImpl implements CartRepository {
 		  return sqlSession.selectOne("cart.countCart", map);
 	  } 
 	  
+	  // 장바구니 목록
 	  @Override
       public List<CartDTO> listCart(String userid) throws Exception {
 		  return sqlSession.selectList("cart.listCart", userid);
 	  }
 	  
+	  // 장바구니 금액 합계
 	  @Override
 	  public int sumtotalmoney(String userid) {
 		  sqlSession.selectOne("cart.sumtotalmoney",userid);

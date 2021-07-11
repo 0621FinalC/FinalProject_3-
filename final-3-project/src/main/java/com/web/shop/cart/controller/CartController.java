@@ -27,6 +27,7 @@ public class CartController {
 	@RequestMapping(value = "/insert")
     public String insert(@ModelAttribute CartDTO dto, HttpSession session) throws Exception {
  
+		
         String userid = (String) session.getAttribute("userid");
         dto.setUserid(userid);
         
