@@ -40,7 +40,7 @@ public class KakapPayController {
 		
 		// 세션에서 orderid 받아오기. 수정 필요.
 		HttpSession session = req.getSession();
-		session.setAttribute("order_id", "3");
+		session.setAttribute("order_id", "3"); //order_detail 주문번호
 		
 		OrderDTO dto = order.findInfo((String)session.getAttribute("order_id"));
 		
@@ -75,9 +75,9 @@ public class KakapPayController {
 		param.add("quantity", Integer.toString(dto.getQty()));
 		param.add("total_amount", Integer.toString(dto.getTotalprice()));
 		param.add("tax_free_amount", "0");		// 상품 비과세 금액 일단 0으로 설정
-		param.add("approval_url", "http://localhost/shop/pay/success");
-		param.add("cancel_url", "http://localhost/shop/pay/cancel");
-		param.add("fail_url", "http://localhost/shop/pay/fail");
+		param.add("approval_url", "http://localhost:8080/shop/pay/success");
+		param.add("cancel_url", "http://localhost:8080/shop/pay/cancel");
+		param.add("fail_url", "http://localhost:8080/shop/pay/fail");
 		
 		System.out.println("요청 데이터 : " + param.toString());
 		

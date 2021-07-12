@@ -98,6 +98,8 @@ public class OrderListController {
 		pay_info.setPayment_method_type((String)resp_data.get("payment_method_type"));
 		pay_info.setApproved_at((String)resp_data.get("approved_at"));
 		
+		System.out.println("* point : " + pay_info.getPoint());
+		
 		m.addAttribute("pay_info", pay_info);
 		
 		return "orderlist/detail";

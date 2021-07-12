@@ -10,13 +10,10 @@
 	<properties>
 		<java-version>1.8</java-version>
 		<org.springframework-version>4.3.30.RELEASE</org.springframework-version>
-<<<<<<< HEAD
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
-=======
 		<org.aspectj-version>1.9.6</org.aspectj-version>
 		<org.slf4j-version>1.7.30</org.slf4j-version>
->>>>>>> refs/remotes/origin/권유정
 	</properties>
 	<dependencies>
 		<!-- Spring -->
