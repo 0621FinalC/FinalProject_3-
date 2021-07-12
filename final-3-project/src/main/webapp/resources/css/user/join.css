@@ -10,7 +10,7 @@
 
 /* content 랩 */
 .wrap{
-	width : 800px;
+	width : 500px;
 	margin: auto;
 }
 /* 페이지 제목 */
@@ -165,8 +165,32 @@
 }
 
 /* 성별 영역 */
+.gender_wrap{
+	width: 100%;
+    margin-top: 20px;
+}
+.gender_name{
+	font-size: 25px;
+    font-weight: bold;
+	
+}
+.gender_input{
+	
+}
 
 /* 핸드폰 번호 영역 */
+.phone_wrap{
+	width: 100%;
+    margin-top: 20px;
+	
+}
+.phone_name{
+	font-size: 25px;
+    font-weight: bold;
+}
+.phone_input_box{
+	
+}
 
 /* 주소 영역 */
 .address_wrap{

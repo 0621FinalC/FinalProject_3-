@@ -20,9 +20,32 @@ public class UserRepositoryImpl implements UserRepository {
 		return sqlSession.selectOne("userMapper.checkUserid", userid);
 	}
 	
-	public boolean insert(UserDTO dto) throws Exception {
+	public boolean join(UserDTO dto) throws Exception {
 		boolean result = false;
 		int rs = sqlSession.insert("userMapper.insertUser", dto);
+		if(rs == 1) {
+			result = true;
+		}
+		return result;
+	}
+	
+	public UserDTO readUser(String userid) throws Exception {
+		return sqlSession.selectOne("userMapper.readUser", userid);
+	}
+	
+	public boolean updateUser(UserDTO dto) throws Exception {
+		boolean result = false;
+//		System.out.println("userid " + dto.getUserid());
+		int rs = sqlSession.update("userMapper.updateUser", dto);
+		if(rs == 1) {
+			result = true;
+		}
+		return result;
+	}
+
+	public boolean deleteUser(UserDTO dto) throws Exception {
+		boolean result = false;
+		int rs = sqlSession.update("userMapper.deleteUser", dto);
 		if(rs == 1) {
 			result = true;
 		}

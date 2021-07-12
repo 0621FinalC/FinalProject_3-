@@ -17,4 +17,13 @@
   	INSERT INTO user_t(userid, username, password, gender, email, phone, address)
   		VALUES(#{userid}, #{username}, #{password}, #{gender}, #{email}, #{phone}, #{address})
   </insert>
+  
+  <update id="updateUser" parameterType="user">
+  	UPDATE user_t set gender=#{gender}, email=#{email}, phone=#{phone}, address=#{address}
+  		WHERE userid = #{userid}
+  </update>
+
+  <delete id="deleteUser">
+  	DELETE FROM user_t WHERE userid = #{userid} AND password = #{password}
+  </delete>
 </mapper>
