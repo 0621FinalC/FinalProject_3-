@@ -15,9 +15,12 @@
 8. 결제
 9. 주문완료 
 
-## 설계의 주안점
-
 ## 사용기술 및 개발환경
+- 운영체제 종류 : Window10, Mac OS
+- 프로그래밍 언어 종류 : Java 1.8, HTML5, CSS, JavaScript, MySQL
+- 사용한 라이브러리 종류 : JQuery 3.6.0, JSTL, Ojdbc6, MyBatis 3.5.6 
+- IDE : Eclipse 4.17.0
+- 형상관리 도구 : Git
 
 ## 역할 분담
 1. 메인페이지 / 검색기능 / 회원관련기능 / 총괄 / 발표 : 전희민
