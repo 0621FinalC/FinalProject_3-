@@ -23,6 +23,7 @@
 	
 	<context:component-scan base-package="com.web.shop" />
 	
+<<<<<<< HEAD
 	<!--
 	    데이터베이스 연결 객체를 빈(bean)에 등록한다.
 	-->
@@ -33,7 +34,27 @@
 	    <beans:property name="username" value="webfinal"></beans:property>
 	    <beans:property name="password" value="webfinal"></beans:property>
 	</beans:bean>
+=======
+	<!-- 
+		데이터베이스 연결 객체를 빈(bean)에 등록한다.
+	 -->
+	 <beans:bean id="dataSource" 
+	 			 class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	 	<beans:property name="driverClassName" value="oracle.jdbc.OracleDriver"></beans:property>
+	 	<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"></beans:property>
+	 	<beans:property name="username" value="webfinal"></beans:property>
+	 	<beans:property name="password" value="webfinal"></beans:property>
+	 </beans:bean>
+	 
+	 <!-- 
+	 	빈에 등록된 데이터베이스 연결 객체를 JdbcTemplate 에 등록(주입: DI - Dependency Injection)한다. 
+	  -->
+ 	<beans:bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<beans:property name="dataSource" ref="dataSource"></beans:property>
+	</beans:bean> 
+>>>>>>> refs/remotes/origin/권유정
 	
+<<<<<<< HEAD
 	<!--
 	    빈에 등록된 데이터베이스 연결 객체를 JdbcTemplate 에 등록(주입: DI - Dependency Injection) 한다.
 	-->
@@ -54,6 +75,17 @@
 	<beans:bean id="sqlSession"
 	            class="org.mybatis.spring.SqlSessionTemplate">
 	    <beans:constructor-arg index="0" ref="sqlSessionFactory"></beans:constructor-arg>
+=======
+	<!-- mybatis 연동을 위한 bean 등록 -->
+	<beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<beans:property name="dataSource" ref="dataSource"></beans:property>
+		<beans:property name="configLocation" value="classpath:/mybatis/mybatis-config.xml"></beans:property>
+		<beans:property name="mapperLocations" value="classpath:/mybatis/mapper/*.xml"></beans:property>
+	</beans:bean>
+	
+	<beans:bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<beans:constructor-arg index="0" ref="sqlSessionFactory"></beans:constructor-arg>
+>>>>>>> refs/remotes/origin/권유정
 	</beans:bean>
 	
 </beans:beans>

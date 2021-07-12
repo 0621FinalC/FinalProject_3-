@@ -5,5 +5,9 @@
 <configuration>
   <typeAliases>
     <typeAlias type="com.web.shop.user.dto.UserDTO" alias="user" />
+    <typeAlias type="com.web.shop.order.dto.OrderDTO" alias="order" />
+    <typeAlias type="com.web.shop.order.dto.ShopDTO" alias="shop" />
+    <typeAlias type="com.web.shop.orderlist.dto.OrderDetailDTO" alias="orderdetail" />
+    <typeAlias type="com.web.shop.orderlist.dto.DeliveryDetailDTO" alias="delivery" />
   </typeAliases>
 </configuration>
