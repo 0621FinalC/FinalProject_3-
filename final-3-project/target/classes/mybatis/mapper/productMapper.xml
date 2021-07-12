@@ -6,12 +6,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- 목록을 뽑아야되므로 select SQL 구문을 추가. -->
 <mapper namespace="product">
     <select id = "list_product" resultType = "com.web.shop.product.dto.ProductDTO"> 
-        select * from product
+        select * from product_t
         order by product_id 
     </select>
     
     <select id = "detail_product" resultType = "com.web.shop.product.dto.ProductDTO"> 
-        select * from product
+        select * from product_t
         where product_id=#{product_id} 
     </select>
 </mapper>

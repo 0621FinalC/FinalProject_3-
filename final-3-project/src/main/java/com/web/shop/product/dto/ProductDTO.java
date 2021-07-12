@@ -9,8 +9,6 @@ public class ProductDTO {
     private int price;
     private String description;
     private String picture_url;
-    private MultipartFile file1;
-    
     
     public int getProduct_id() {
         return product_id;
@@ -42,16 +40,10 @@ public class ProductDTO {
     public void setPrcture_url(String picture_url) {
         this.picture_url = picture_url;
     }
-    public MultipartFile getFile1() {
-        return file1;
-    }
-    public void setFile1(MultipartFile file1) {
-        this.file1 = file1;
-    }
     
     @Override
     public String toString() {
         return "ProductDTO [product_id=" + product_id + ", product_name=" + product_name + ", price=" + price
-                + ", description=" + description + ", prcture_url=" + picture_url + ", file1=" + file1 + "]";
+                + ", description=" + description + ", prcture_url=" + picture_url + "]";
     }
 }

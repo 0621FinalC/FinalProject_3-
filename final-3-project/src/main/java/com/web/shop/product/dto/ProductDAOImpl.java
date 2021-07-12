@@ -5,6 +5,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.web.shop.product.dto.ProductDAO;
@@ -12,7 +13,7 @@ import com.web.shop.product.dto.ProductDAO;
 @Repository
 public class ProductDAOImpl implements ProductDAO {
 	
-	@Inject
+	@Autowired
 	SqlSession sqlSession;
 	
 	@Override
@@ -28,19 +29,19 @@ public class ProductDAOImpl implements ProductDAO {
 	@Override
 	public void updateProduct(ProductDTO dto) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
 	public void deleteProduct(int product_id) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
 	public void insertProduct(ProductDTO dto) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
