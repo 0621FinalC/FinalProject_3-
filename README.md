@@ -13,8 +13,11 @@
 6. 장바구니
 7. 주문서 작성
 8. 결제
-9. 주문완료 (취소/배송조회/환불)
+9. 주문완료 
 
+## 설계의 주안점
+
+## 사용기술 및 개발환경
 
 ## 역할 분담
 1. 메인페이지 / 검색기능 / 회원관련기능 / 총괄 / 발표 : 전희민
@@ -27,7 +30,7 @@
 
 
 ## DB구조 (개발하면서 필요에 따라 수정)
-https://drive.google.com/file/d/14M3s8ISMB2VmWgHYZ4Fi0XwTEPBTKy9v/view?usp=sharing
+
 
 ## 웹페이지 흐름도
 <img width="1023" alt="스크린샷 2021-06-23 오후 2 39 59" src="https://user-images.githubusercontent.com/86212850/123041936-078b7c80-d431-11eb-84e7-3289ce5e009f.png">
