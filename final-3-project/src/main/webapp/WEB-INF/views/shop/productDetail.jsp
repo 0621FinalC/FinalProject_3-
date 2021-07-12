@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +23,7 @@
 					</tr>
 					<tr align="center">
 						<td colspan="2">
-							<form name="form1" method="post" action="${path}/shop/cart/insert">
+							<form name="form1" method="post" action="${path}/cart/insert.do">
 								<input type="hidden" name="pid" value="${dto.pid}">
 								<select name="cartqty">
 									<c:forEach begin="1" end="10" var="i">
@@ -32,7 +32,7 @@
 								</select>&nbsp;개
 								<input type="submit" value="장바구니에 담기">
 							</form>
-							<a href="${path}/shop/product/list">상품목록</a>
+							<a href="${path}/product/list.do">상품목록</a>
 						</td>
 					</tr>
 				</table>

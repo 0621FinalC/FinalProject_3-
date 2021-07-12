@@ -40,7 +40,7 @@ public class CartController {
         	cartService.update(dto);
         }
         
-        return "redirect:/cart/list";
+        return "redirect:/cart/list.do";
          
     }
 	
@@ -53,7 +53,7 @@ public class CartController {
 			int sumtotalmoney = cartService.sumtotalmoney(userid); // 장바구니 전체 금액 호출
 			// 장바구니 전체 긍액에 따라 배송비 구분
 			// 배송료(10만원이상 => 무료, 미만 => 2500원)
-			int charge = sumtotalmoney >= 100000 ? 0 : 2500;
+			int charge = sumtotalmoney >= 40000 ? 0 : 2500;
 			map.put("list", list);				// 장바구니 정보를 map에 저장
 			map.put("count", list.size());		// 장바구니 상품의 유무
 			map.put("sumtotalmoney", sumtotalmoney);		// 장바구니 전체 금액
@@ -66,14 +66,14 @@ public class CartController {
 	
 	// 장바구니 삭제
 	@RequestMapping(value = "/delete")
-	public String delete(@RequestParam int cid) throws Exception {
+	public String delete(@RequestParam(required = false) Integer cid) throws Exception {
 		cartService.delete(cid);
-		return "redirect:/cart/list";
+		return "redirect:/cart/list.do";
 	}
     
     // 장바구니 수정
     @RequestMapping(value = "/update")
-    public String update(@RequestParam int[] cartqty, @RequestParam int[] pid, HttpSession session ) throws Exception {
+    public String update(@RequestParam(required = false) Integer[] cartqty, @RequestParam(required = false) Integer[] pid, HttpSession session ) throws Exception {
     	String userid = (String) session.getAttribute("userid");
     	
     	for(int i = 0; i < pid.length; i++) {
@@ -84,7 +84,7 @@ public class CartController {
     		cartService.modify(dto);	
     		}
     	
-    	return "redirect:/cart/list";
+    	return "redirect:/cart/list.do";
     }
     
     

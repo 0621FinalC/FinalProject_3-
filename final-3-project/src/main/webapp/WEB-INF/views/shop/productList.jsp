@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +32,7 @@
 								</select>&nbsp;개
 								<input type="submit" value="장바구니에 담기">
 							</form>
-							<a href="${path}/shop/product/list">상품목록</a>
+							<a href="${path}/product/list.do">상품목록</a>
 						</td>
 					</tr>
 				</table>

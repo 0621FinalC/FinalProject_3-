@@ -33,8 +33,8 @@ public class CartRepositoryImpl implements CartRepository {
 	 
 	  // 장바구니 삭제
 	  @Override
-	  public void delete(int cart_id) throws Exception {
-		  sqlSession.delete("cart.delete", cart_id);
+	  public void delete(Integer cid) throws Exception {
+		  sqlSession.delete("cart.delete", cid);
 	  }
 	  
 	  // 장바구니 수정
@@ -53,7 +53,7 @@ public class CartRepositoryImpl implements CartRepository {
 	  
 	  // 장바구니 같은 상품 확인
 	  @Override
-	  public int countCart(int pid, String userid) {
+	  public int countCart(Integer pid, String userid) {
 		  Map<String, Object> map = new HashMap<String, Object>();
 		  map.put("pid", pid);
 		  map.put("userid", userid);

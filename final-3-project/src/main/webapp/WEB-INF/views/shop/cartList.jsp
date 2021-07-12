@@ -11,19 +11,19 @@
 	$(document).ready(function(){
 		// 리스트 페이지 이동
 		$("#btnList").click(function(){
-			location.href="${path}/shop/product/list";
+			location.href="${path}/product/list.do";
 		});
 	});
 </script>
 </head>
 <body>
 	<h2> 장바구니 확인</h2>
+	<!-- 장바구니 담긴 상품이 없으면(0) 장바구니가 비었습니다. 출력 아니면(0이 아님) 장바구니 목록 출력  -->
 	<c:choose>
-		<!-- 장바구니 담긴 상품이 없으면(0) 장바구니가 비었습니다. 출력 아니면(0이 아님) 장바구니 목록 출력  -->
 		<c:when test="$map.count ==0}"> 장바구니가 비어있습니다. </c:when>
 	<c:otherwise> 
 	<!-- 장바구니 목록 -->
-	<form name="form1" id="form1" method="post" action="${path}/shop/cart/update">
+	<form name="form1" id="form1" method="post" action="${path}/cart/update">
 		<table border="1">
 			<tr>
 				<th>상품명</th>
@@ -49,7 +49,7 @@
 					<fmt:formatNumber pattern="###,###,###" value="${row.totalprice}"/>
 				</td>
 				<td>
-					<a href="${path}/shop/cart/delete?cid=${row.cid}">삭제</a>
+					<a href="${path}/cart/delete?cid=${row.cid}">삭제</a>
 				</td>
 			</tr>	
 			</c:forEach>

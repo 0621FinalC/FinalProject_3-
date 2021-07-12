@@ -32,8 +32,8 @@ public class CartServiceImpl implements CartService {
     
     // 장바구니 삭제
     @Override
-    public void delete(int cart_id) throws Exception {
-    	cartRepository.delete(cart_id);
+    public void delete(Integer cid) throws Exception {
+    	cartRepository.delete(cid);
     }
     
     // 장바구니 수정
@@ -50,7 +50,7 @@ public class CartServiceImpl implements CartService {
     
  	// 장바구니 상품 확인하기
     @Override
-    public int countCart(int pid, String userid) throws Exception {
+    public int countCart(Integer pid, String userid) throws Exception {
         return cartRepository.countCart(pid, userid);
     }
     
