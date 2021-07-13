@@ -43,10 +43,10 @@
 				</ul>
 			</li>
 			<li>
-				<a href="#">신상품</a>
+				<a href="/shop/shop/product/list.do">전체보기</a>
 			</li>
 			<li>
-				<a href="#">베스트</a>
+				<a href="#">신상품</a>
 			</li>
 			<li>
 				<a href="#">할인상품</a>
