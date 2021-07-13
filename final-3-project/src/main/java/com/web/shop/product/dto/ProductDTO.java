@@ -12,7 +12,7 @@ public class ProductDTO {
     private int PRICE;
     private String EXPLANATION;
     private String picture_url;
-    private Date REGISTER;
+    private Date REGISTERDATE;
     private int INVENTORY;
     
 
@@ -53,11 +53,11 @@ public class ProductDTO {
     public void setPrcture_url(String picture_url) {
         this.picture_url = picture_url;
     }
-    public Date getREGISTER() {
-		return REGISTER;
+    public Date getREGISTERDATE() {
+		return REGISTERDATE;
 	}
 	public void setREGISTER(Date rEGISTER) {
-		REGISTER = rEGISTER;
+		REGISTERDATE = rEGISTER;
 	}
 	public int getINVENTORY() {
 		return INVENTORY;
@@ -68,6 +68,6 @@ public class ProductDTO {
     @Override
     public String toString() {
         return "ProductDTO [PID=" + PID + ", CATEGORY=" + CATEGORY + ", PRODUCTNAME=" + PRODUCTNAME + ", PRICE=" + PRICE
-                + ", EXPLANATION=" + EXPLANATION + ", picture_url=" + picture_url + ", REGISTER=" + REGISTER + ", INVENTORY=" + INVENTORY + "]";
+                + ", EXPLANATION=" + EXPLANATION + ", picture_url=" + picture_url + ", REGISTER=" + REGISTERDATE + ", INVENTORY=" + INVENTORY + "]";
     }
 }

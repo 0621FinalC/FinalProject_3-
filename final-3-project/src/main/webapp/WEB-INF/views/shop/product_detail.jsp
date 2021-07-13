@@ -45,7 +45,7 @@
                     </tr>
                     <tr>
                     	<td>등록일자</td>
-                    	<td>${dto.REGISTER }</td>
+                    	<td>${dto.REGISTERDATE }</td>
                     </tr>
                   
                     <tr>
