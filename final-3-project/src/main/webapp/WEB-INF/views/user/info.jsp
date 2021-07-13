@@ -11,10 +11,12 @@
 <link href="${pageContext.request.contextPath }/resources/css/user/info.css" rel="stylesheet" />
 <c:url var="update" value="/user/info" />
 <c:url var="delete" value="/user/delete" />
+<c:url var="home" value="/main"/>
 <script type="text/javascript">
 function send() {
 	// disabled 설정을 submit할때는 풀어준다 (안풀어주면 userid에 null이 들어가고 그러면 user.xml의 updateUser에서 WHERE절 비교 불가)
 	$("input[name=userid]").attr("disabled", false);
+	$("input[name=username]").attr("disabled", false);
 	document.updateInfo.submit();
 }
 </script>
@@ -54,10 +56,13 @@ function send() {
 				<label for="address">주소</label>
 				<input type="text" name="address" id="address" value="${userData.getAddress() }">
 			</div>
-	
+			<div>
+				<label style="color: red;">${error }</label>
+			</div>
 			<br>
 			<button class="btn_update" type="button" onclick="send();">회원정보수정</button>
 			<button type="button" onclick="location.href='${delete}'">회원탈퇴</button>
+			<button type="button" onclick="location.href='${home}'">홈으로 돌아가기</button>
 		</form>
 	</div>
 </body>

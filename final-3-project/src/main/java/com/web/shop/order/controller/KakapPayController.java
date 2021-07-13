@@ -40,7 +40,7 @@ public class KakapPayController {
 		
 		// 세션에서 orderid 받아오기. 수정 필요.
 		HttpSession session = req.getSession();
-		session.setAttribute("order_id", "3"); //order_detail 주문번호
+		session.setAttribute("order_id", "1"); //order_detail 주문번호
 		
 		OrderDTO dto = order.findInfo((String)session.getAttribute("order_id"));
 		

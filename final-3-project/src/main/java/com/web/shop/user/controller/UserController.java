@@ -59,7 +59,7 @@ public class UserController {
 			session.setAttribute("user", dto);
 			session.setAttribute("userid", dto.getUserid());
 			session.setAttribute("logined", true);
-			forward = "/user/logined";
+			forward = "/main";
 		} else {
 			// dto.getUserid() 값이 ""이면 로그인 실패
 			m.addAttribute("data", dto);
@@ -92,15 +92,20 @@ public class UserController {
 	
 	// 회원정보창에서 '회원정보수정'버튼 눌렀을때. 회원정보 수정
 	@RequestMapping(value = "/info", method = RequestMethod.POST)
-	public String info(@ModelAttribute UserDTO dto) throws Exception {
+	public String info(@ModelAttribute UserDTO dto, HttpSession session, Model m) throws Exception {
 		String forward = "";
 //		System.out.println("userid " + dto.getUserid());
 		boolean result = user.updateUser(dto);
 		
 		if(result) {
-			forward = "/user/logined";
+			String userid = (String) session.getAttribute("userid");
+			m.addAttribute("userData", dto);
+			forward = "/user/info";
 		} else {
 			// update failed
+			String userid = (String) session.getAttribute("userid");
+			m.addAttribute("userData", dto);
+			m.addAttribute("error", "정보 수정 실패");
 			forward = "/user/info";
 		}
 		return forward;
@@ -134,5 +139,10 @@ public class UserController {
 			forward = "user/delete";
 		}
 		return forward;
+	}
+	
+	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
+	public String mypage() {
+		return "user/mypage";
 	}
 }
