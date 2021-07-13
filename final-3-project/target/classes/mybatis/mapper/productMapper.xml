@@ -7,11 +7,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="product">
     <select id = "list_product" resultType = "com.web.shop.product.dto.ProductDTO"> 
         select * from product_t
-        order by product_id 
+        order by PID 
     </select>
     
     <select id = "detail_product" resultType = "com.web.shop.product.dto.ProductDTO"> 
         select * from product_t
-        where product_id=#{product_id} 
+        where PID=#{PID} 
     </select>
 </mapper>

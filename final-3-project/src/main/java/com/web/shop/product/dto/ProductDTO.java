@@ -1,49 +1,73 @@
 package com.web.shop.product.dto;
 
+import java.sql.Date;
+
 import org.springframework.web.multipart.MultipartFile;
 
 public class ProductDTO {
     
-    private int product_id;
-    private String product_name;
-    private int price;
-    private String description;
+    private int PID;
+    private String CATEGORY;
+	private String PRODUCTNAME;
+    private int PRICE;
+    private String EXPLANATION;
     private String picture_url;
+    private Date REGISTER;
+    private int INVENTORY;
     
-    public int getProduct_id() {
-        return product_id;
-    }
-    public void setProduct_id(int product_id) {
-        this.product_id = product_id;
-    }
-    public String getProduct_name() {
-        return product_name;
-    }
-    public void setProduct_name(String product_name) {
-        this.product_name = product_name;
-    }
-    public int getPrice() {
-        return price;
-    }
-    public void setPrice(int price) {
-        this.price = price;
-    }
-    public String getDescription() {
-        return description;
-    }
-    public void setDescription(String description) {
-        this.description = description;
-    }
-    public String getPicture_url() {
+
+	public int getPID() {
+		return PID;
+	}
+	public void setPID(int pID) {
+		PID = pID;
+	}
+	public String getCATEGORY() {
+		return CATEGORY;
+	}
+	public void setCATEGORY(String cATEGORY) {
+		CATEGORY = cATEGORY;
+	}
+
+	public String getPRODUCTNAME() {
+		return PRODUCTNAME;
+	}
+	public void setPRODUCTNAME(String pRODUCTNAME) {
+		PRODUCTNAME = pRODUCTNAME;
+	}
+	public int getPRICE() {
+		return PRICE;
+	}
+	public void setPRICE(int pRICE) {
+		PRICE = pRICE;
+	}
+	public String getEXPLANATION() {
+		return EXPLANATION;
+	}
+	public void setEXPLANATION(String eXPLANATION) {
+		EXPLANATION = eXPLANATION;
+	}
+	public String getPicture_url() {
         return picture_url;
     }
     public void setPrcture_url(String picture_url) {
         this.picture_url = picture_url;
     }
-    
+    public Date getREGISTER() {
+		return REGISTER;
+	}
+	public void setREGISTER(Date rEGISTER) {
+		REGISTER = rEGISTER;
+	}
+	public int getINVENTORY() {
+		return INVENTORY;
+	}
+	public void setINVENTORY(int iNVENTORY) {
+		INVENTORY = iNVENTORY;
+	}
     @Override
     public String toString() {
-        return "ProductDTO [product_id=" + product_id + ", product_name=" + product_name + ", price=" + price
-                + ", description=" + description + ", prcture_url=" + picture_url + "]";
+        return "ProductDTO [PID=" + PID + ", CATEGORY=" + CATEGORY + ", PRODUCTNAME=" + PRODUCTNAME + ", PRICE=" + PRICE
+                + ", EXPLANATION=" + EXPLANATION + ", picture_url=" + picture_url + ", REGISTER=" + REGISTER + ", INVENTORY=" + INVENTORY + "]";
     }
 }
