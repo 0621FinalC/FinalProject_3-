@@ -69,5 +69,23 @@
 			</tbody>
 		</table>
 	</div>
+	
+	<div>
+		<c:set var="st_page" value="${st_page_num }"/>
+		<c:set var="ed_page" value="${ed_page_num }"/>
+		<c:set var="page_num" value="${page }"/>
+		
+		<c:forEach var="p" begin="${st_page }" end="${ed_page }" step="1">
+			<c:choose>
+				<c:when test="${p eq page_num }">
+					<a style="color: red;">[${p }]</a>
+				</c:when>
+				
+				<c:otherwise>
+					<a href="<%=request.getContextPath() %>/order/list?page=${p }">${p }]</a>
+				</c:otherwise>
+			</c:choose>
+		</c:forEach>
+	</div>
 </body>
 </html>

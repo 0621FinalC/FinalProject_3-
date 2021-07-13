@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 
 public class OrderDTO {
+	private int rnum;
 	private String tid;
 	private String oid;
 	private String productname;
