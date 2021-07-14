@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h1>결제가 완료되었습니다.</h1>
-	<c:url var="home" value="/main"/>
+	<c:url var="home" value="/"/>
 	<c:url var="order_list" value="/order/list" />
 	<button type="button" onclick="location.href='${home}'">홈으로 돌아가기</button>
 	<button type="button" onclick="location.href='${order_list}'">주문내역 확인하기</button>

@@ -14,6 +14,11 @@
 <title>KH3SHOP</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <link href="${pageContext.request.contextPath }/resources/css/main.css" rel="stylesheet" />
+<c:url var="main" value="/" />
+<c:url var="logout" value="/user/logout" />
+<c:url var="mypage" value="/user/mypage" />
+<c:url var="login" value="/user/login" />
+<c:url var="join" value="/user/join" />
 <c:url var="board_list" value="/shop/product/list" />
 <c:url var="search_list" value="/shop/product/search" />
 <script type="text/javascript">
@@ -31,16 +36,16 @@
 </head>
 <body>
 	<div class="navtop">
-		<a class="logo" href="/shop/main">
+		<a class="logo" href="${main }">
 			<img src="${pageContext.request.contextPath }/resources/img/logo.png" height="20px">
 		</a>
 		<ul>
 			<% if(logined) { %>  <!-- 로그인했을 경우와 아닌경우 메뉴를 다르게  -->
-				<li><a href="/shop/user/logout">Logout</a></li>
-				<li><a href="/shop/user/mypage">Mypage</a></li>
+				<li><a href="${logout }">Logout</a></li>
+				<li><a href="${mypage }">Mypage</a></li>
 			<% } else { %>
-				<li><a href="/shop/user/login">Login</a></li>
-				<li><a href="/shop/user/join">Join</a></li>
+				<li><a href="${login }">Login</a></li>
+				<li><a href="${join }">Join</a></li>
 			<% } %>
 			<li><a href="#">Cart</a></li>
 		</ul>

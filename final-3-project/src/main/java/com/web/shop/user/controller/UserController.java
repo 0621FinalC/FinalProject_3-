@@ -33,7 +33,7 @@ public class UserController {
 		boolean result = user.join(dto);
 		
 		if(result) {
-			forward = "redirect:/main";
+			forward = "redirect:/";
 		} else {
 			// join failed
 			m.addAttribute("data", dto);
@@ -59,7 +59,7 @@ public class UserController {
 			session.setAttribute("user", dto);
 			session.setAttribute("userid", dto.getUserid());
 			session.setAttribute("logined", true);
-			forward = "/main";
+			forward = "redirect:/";
 		} else {
 			// dto.getUserid() 값이 ""이면 로그인 실패
 			m.addAttribute("data", dto);
@@ -72,7 +72,7 @@ public class UserController {
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public ModelAndView logout(HttpSession session) {
 		session.invalidate();
-		ModelAndView mv = new ModelAndView("redirect:/main");
+		ModelAndView mv = new ModelAndView("redirect:/");
 		return mv;
 	}
 	
@@ -131,7 +131,7 @@ public class UserController {
 		
 		if(result) {
 			session.invalidate();
-			forward = "redirect:/main";
+			forward = "redirect:/";
 		} else {
 			// delete failed
 			m.addAttribute("userData", dto);

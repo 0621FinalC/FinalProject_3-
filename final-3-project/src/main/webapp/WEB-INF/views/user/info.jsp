@@ -11,7 +11,7 @@
 <link href="${pageContext.request.contextPath }/resources/css/user/info.css" rel="stylesheet" />
 <c:url var="update" value="/user/info" />
 <c:url var="delete" value="/user/delete" />
-<c:url var="home" value="/main"/>
+<c:url var="home" value="/"/>
 <script type="text/javascript">
 function send() {
 	// disabled 설정을 submit할때는 풀어준다 (안풀어주면 userid에 null이 들어가고 그러면 user.xml의 updateUser에서 WHERE절 비교 불가)
