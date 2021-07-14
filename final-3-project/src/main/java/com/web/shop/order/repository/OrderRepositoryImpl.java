@@ -1,5 +1,7 @@
 package com.web.shop.order.repository;
 
+import java.util.HashMap;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -34,6 +36,16 @@ public class OrderRepositoryImpl implements OrderRepository {
 	@Override
 	public ShopDTO selectShopInfo() throws Exception {
 		return sqlSession.selectOne("orderMapper.selectShop");
+	}
+
+	@Override
+	public void updateQty(String name, int num) throws Exception {
+
+		HashMap<String, Object> params = new HashMap<>();
+		params.put("productname", name);
+		params.put("qty", num);
+		
+		sqlSession.update("orderMapper.inventory", params);
 	}
 
 }

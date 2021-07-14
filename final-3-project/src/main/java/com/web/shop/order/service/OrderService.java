@@ -8,5 +8,6 @@ public interface OrderService {
 	public boolean updateInfo(OrderDTO dto) throws Exception;
 	public OrderDTO findInfo(String id) throws Exception;
 	public ShopDTO shopInfo() throws Exception;
+	public void updateInven(String productnum, int qty) throws Exception;
 		
 }

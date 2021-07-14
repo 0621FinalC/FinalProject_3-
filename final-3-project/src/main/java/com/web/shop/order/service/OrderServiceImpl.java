@@ -40,5 +40,10 @@ public class OrderServiceImpl implements OrderService {
 	public ShopDTO shopInfo() throws Exception {
 		return dao.selectShopInfo();
 	}
+
+	@Override
+	public void updateInven(String productname, int qty) throws Exception {
+		dao.updateQty(productname, qty);
+	}
 	
 }
