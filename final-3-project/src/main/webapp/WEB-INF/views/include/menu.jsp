@@ -3,7 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <a href="${path}/product/list">상품목록</a> |
 <a href="${path}/cart/list">장바구니</a> |
-<a href="${path}/board/list">게시판</a> |
 
 
 <c:choose>

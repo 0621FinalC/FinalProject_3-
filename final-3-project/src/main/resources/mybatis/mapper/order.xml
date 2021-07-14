@@ -6,16 +6,10 @@
 <mapper namespace="orderMapper">
 
 <insert id="orderInfo">
- insert into ORDER_T(oid, userid, address, phone)
-     values(#{oid}, #{userid}, #{address}, #{phone})
+ insert into DELIVERY_INFO(oid, sender, rec_name, rec_phone, rec_address, shipping_fee)
+     values(#{oid}, #{sender}, #{rec_name}, #{rec_phone}, #{rec_address}, #{shipping_fee})
 </insert>
    
-<!-- 주문 상세 정보 --> 
-<insert id="orderInfo_Details">
- insert into ORDER_DETAIL(oid, productname, item_qty)
-     values(#{oid}, #{productname}, #{item_qty})     
-</insert> 
-
 <!-- 카트 비우기 -->
 <delete id="cartAllDelete">
  delete CART_T

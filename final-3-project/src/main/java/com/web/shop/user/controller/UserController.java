@@ -16,8 +16,6 @@ import com.web.shop.user.service.*;
 @Controller // 현재 클래스를 스프링에서 관리하는 컨트롤러 bean으로 생성
 @RequestMapping(value = "/user") // 모든맵핑은 /member/를 상속
 public class UserController {
-	// 로깅을 위한 변수
-	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 	
 	@Inject
 	UserService userservice;

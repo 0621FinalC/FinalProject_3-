@@ -98,6 +98,7 @@ ALTER TABLE delivery_info MODIFY rec_name CONSTRAINT delivery_name_NN NOT NULL;
 ALTER TABLE delivery_info MODIFY rec_phone CONSTRAINT delivery_phone_NN NOT NULL;
 ALTER TABLE delivery_info MODIFY rec_address CONSTRAINT delivery_address_NN NOT NULL;
 ALTER TABLE delivery_info MODIFY shipping_fee CONSTRAINT delivery_fee_NN NOT NULL;
+
 SELECT * FROM CART_T;
 
 SELECT * FROM product_t;

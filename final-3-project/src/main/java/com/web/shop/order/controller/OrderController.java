@@ -23,8 +23,6 @@ import com.web.shop.user.dto.UserDTO;
 @Controller
 @RequestMapping
 public class OrderController {
-
-	private static final Logger logger = LoggerFactory.getLogger(OrderController.class);
 	
 	@Inject
 	OrderService service;
@@ -36,7 +34,9 @@ public class OrderController {
 			
 			UserDTO dto = (UserDTO)session.getAttribute("dto");		
 			String userid = dto.getUserid();
+			System.out.println(userid);
 			
+			/*
 			// 캘린더 호출
 			Calendar cal = Calendar.getInstance();
 			int year = cal.get(Calendar.YEAR);  // 연도 추출
@@ -53,13 +53,13 @@ public class OrderController {
 			order.setOid(oid);
 			order.setUserid(userid);
 			
-			service.orderInfo(order);
-			
-			orderDetail.setOid(oid);;			
+			 */
+			service.orderInfo(order);		
 			service.orderInfo_Details(orderDetail);
 			
 			// 주문 테이블, 주문 상세 테이블에 데이터를 전송하고, 카트 비우기
 			service.cartAllDelete(userid);
+			
 			
 			return "redirect:/order/list";		
 		}
@@ -67,8 +67,7 @@ public class OrderController {
 		// 주문 목록
 		@RequestMapping(value = "/order/list", method = RequestMethod.GET)
 		public void getOrderList(HttpSession session, OrderDTO order, Model model) throws Exception {
-			logger.info("get order list");
-			
+		
 			UserDTO member = (UserDTO)session.getAttribute("member");
 			String userid = member.getUserid();
 			

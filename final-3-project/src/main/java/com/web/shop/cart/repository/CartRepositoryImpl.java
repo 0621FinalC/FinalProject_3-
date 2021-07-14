@@ -28,12 +28,9 @@ public class CartRepositoryImpl implements CartRepository {
 	  // 장바구니 추가
 	  @Override
 	  public void insert(CartDTO dto) throws Exception {
-		  System.out.println("getCid : " + dto.getCid());
-		  System.out.println("getUserid : " + dto.getUserid());
-		  System.out.println("getPid : " + dto.getPid());
-		  System.out.println("getCartqty : " + dto.getCartqty());
+		  
 		  int res = sqlSession.insert("cart.insert", dto);
-		  System.out.println("반영된 로우 수 : " + res);
+		 
 	  } 
 	 
 	  // 장바구니 삭제

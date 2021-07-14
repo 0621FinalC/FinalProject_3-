@@ -93,20 +93,29 @@
 		<div class="orderInfo">
  		<form role="form" method="post" autocomplete="off">
     
+		<div class="inputArea">
+	   <label for="sender">발송인</label>
+	   <input type="text" name="sender" id="sender" required="required" />
+	 	 </div>
+	 	 
+	 	 <div class="inputArea">
+	   <label for="rec_name">수령인</label>
+	   <input type="text" name="rec_name" id="rec_name" required="required" />
+	 	 </div>
+    
  		 <div class="inputArea">
-  		 <label for="phone">연락처</label>
-  		 <input type="text" name="phone" id="phone" required="required" />
+  		 <label for="rec_phone">수령인 연락처</label>
+  		 <input type="text" name="rec_phone" id="rec_phone" required="required" />
   		</div>
   
 	  <div class="inputArea">
-	   <label for="address">주소</label>
-	   <input type="text" name="address" id="address" required="required" />
+	   <label for="rec_address">주소</label>
+	   <input type="text" name="rec_address" id="rec_address" required="required" />
 	  </div>
 	  
 	  <div class="inputArea">
 	   <button type="submit" class="order_btn">주문</button>
 	   <button type="button" class="cancel_btn">취소</button> 
-	   
 	   <script>
 			$(".cancel_btn").click(function(){
  			$(".orderInfo").slideUp();
