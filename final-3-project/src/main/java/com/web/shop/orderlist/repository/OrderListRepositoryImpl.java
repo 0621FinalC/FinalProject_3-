@@ -18,10 +18,16 @@ public class OrderListRepositoryImpl implements OrderListRepository {
 	private SqlSession sqlSession;
 
 	@Override
-	public List<OrderDTO> selectAll(String userid, int year) throws Exception {
+	public List<OrderDTO> selectAll(String userid, int year, int page, int list_cnt) throws Exception {
+		int total = totalRow();
+		int startNum = total - (list_cnt * (page - 1)) - list_cnt + 1;
+		int endNum = total - (list_cnt * (page - 1));
+		
 		HashMap<String, Object> params = new HashMap<>();
 		params.put("userid", userid);
 		params.put("year", year);
+		params.put("startNum", startNum);
+		params.put("endNum", endNum);
 		
 		return sqlSession.selectList("orderlistMapper.all", params);
 	}
@@ -34,6 +40,11 @@ public class OrderListRepositoryImpl implements OrderListRepository {
 	@Override
 	public DeliveryDetailDTO selectDelivery(String oid) throws Exception {
 		return sqlSession.selectOne("orderlistMapper.deliver", oid);
+	}
+	
+	@Override
+	public int totalRow() throws Exception {
+		return sqlSession.selectOne("orderlistMapper.totalRow");
 	}
 
 }

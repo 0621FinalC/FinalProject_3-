@@ -17,8 +17,8 @@ public class OrderListServiceImpl implements OrderListService {
 	private OrderListRepository dao;
 	
 	@Override
-	public List<OrderDTO> findAll(String userid, int year) throws Exception {
-		return dao.selectAll(userid, year);
+	public List<OrderDTO> findAll(String userid, int year, int page, int list_cnt) throws Exception {
+		return dao.selectAll(userid, year, page, list_cnt);
 	}
 
 	@Override
@@ -31,4 +31,9 @@ public class OrderListServiceImpl implements OrderListService {
 		return dao.selectDelivery(oid);
 	}
 
+	@Override
+	public int totalRow() throws Exception {
+		return dao.totalRow();
+	}
+	
 }

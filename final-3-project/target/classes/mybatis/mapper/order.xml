@@ -23,4 +23,11 @@
   <select id="selectShop" resultType="shop">
   	SELECT * FROM shop_info
   </select>
+  
+  <update id="inventory" parameterType="hashmap">
+  	UPDATE product_t
+	SET inventory = inventory - #{qty}
+	WHERE productname = #{productname}
+  </update>
+  
 </mapper>

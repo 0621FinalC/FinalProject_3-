@@ -1,6 +1,7 @@
 package com.web.shop.order.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -26,6 +27,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.web.shop.order.dto.OrderDTO;
 import com.web.shop.order.dto.ShopDTO;
 import com.web.shop.order.service.OrderService;
+import com.web.shop.orderlist.dto.OrderDetailDTO;
+import com.web.shop.orderlist.service.OrderListService;
 
 @Controller
 @RequestMapping(value = "/pay")
@@ -33,6 +36,9 @@ public class KakapPayController {
 	
 	@Autowired
 	private OrderService order;
+	
+	@Autowired
+	private OrderListService detail;
 	
 	@RequestMapping(value = "")
 	public String payment_init(HttpServletRequest req, Model m) throws Exception {
@@ -163,6 +169,12 @@ public class KakapPayController {
 			dto.setApproved_at(approved_at);
 			
 			order.updateInfo(dto);	// 주문서db정보 수정(결제 수단, 주문 상태, 결제 승인 시각)
+			
+			List<OrderDetailDTO> order_list = detail.findOrder(dto.getOid());
+
+			for(OrderDetailDTO detail : order_list) {
+				order.updateInven(detail.getProductname(), detail.getItem_qty());
+			}
 			
 			m.addAttribute("info", dto);
 			

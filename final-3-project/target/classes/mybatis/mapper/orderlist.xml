@@ -4,15 +4,21 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="orderlistMapper">
-
+  <select id="totalRow" resultType="_int">
+  	SELECT count(*) FROM order_t
+  </select>
+  
   <select id="all" parameterType="hashmap" resultType="order">
-  	SELECT * FROM order_t
+  	SELECT * 
+  	FROM (SELECT ROWNUM as rnum, oid, productname, qty, totalprice, userid, orderstat, orderdate
+  			FROM order_t
+			ORDER BY orderdate DESC)
 	WHERE userid = #{userid}
+		AND rnum BETWEEN #{startNum} AND #{endNum}
 	<if test="year != 0">
 		AND orderdate >= TO_DATE(#{year}, 'YYYY')					
 		AND orderdate &lt; TO_DATE(#{year} + 1, 'YYYY')
 	</if>
-	ORDER BY orderdate DESC
   </select>
   
   <select id="order" parameterType="string" resultType="orderdetail">
