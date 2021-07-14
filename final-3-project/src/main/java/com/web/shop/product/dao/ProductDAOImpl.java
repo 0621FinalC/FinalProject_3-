@@ -1,5 +1,6 @@
 package com.web.shop.product.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -19,6 +20,13 @@ public class ProductDAOImpl implements ProductDAO {
 	@Override
 	public List<ProductDTO> listProduct() {
 		return sqlSession.selectList("product.list_product");
+	}
+	
+	@Override
+	public List<ProductDTO> listSearchProduct(String keyword) {
+		// 검색 키워드 저장
+//		System.out.println("** keyword(daoImpl) : " + keyword);
+		return sqlSession.selectList("product.listSearch", keyword);
 	}
 
 	@Override

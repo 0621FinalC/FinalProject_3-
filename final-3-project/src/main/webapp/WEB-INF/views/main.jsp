@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" isELIgnored="false" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
 	boolean logined = false;
 	if(session.getAttribute("logined") != null){
@@ -11,7 +12,22 @@
 <head>
 <meta charset="UTF-8">
 <title>KH3SHOP</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <link href="${pageContext.request.contextPath }/resources/css/main.css" rel="stylesheet" />
+<c:url var="board_list" value="/shop/product/list" />
+<c:url var="search_list" value="/shop/product/search" />
+<script type="text/javascript">
+	// 검색: url에 키워드 붙여주는 함수
+	$(document).ready(function(){
+		$("#btn_search").click(function(){
+			// url 붙여주기
+			var url = "${search_list }";
+			url += "?keyword=" + $('#keyword').val();
+			location.href = url;
+			console.log(url); // 콘솔에 출력해서 확인
+		});
+	})
+</script>
 </head>
 <body>
 	<div class="navtop">
@@ -43,7 +59,7 @@
 				</ul>
 			</li>
 			<li>
-				<a href="/shop/shop/product/list.do">전체보기</a>
+				<a href="${board_list }">전체보기</a>
 			</li>
 			<li>
 				<a href="#">신상품</a>
@@ -51,10 +67,11 @@
 			<li>
 				<a href="#">할인상품</a>
 			</li>
+			<li class="search">
+				<input type="text" class="search_form" name="keyword" id="keyword" value="${map.keyword }">
+				<button class="search_button" name="btn_search" id="btn_search">검색</button>
+			</li>
 		</ul>
-		<div class="search">
-			<!-- 검색 -->
-		</div>
 	</div>
 	
 	<img class="headimg" src="${pageContext.request.contextPath }/resources/img/headimg.png">

@@ -20,6 +20,11 @@ public class ProductServiceImpl implements ProductService {
 	public List<ProductDTO> listProduct() {
 		return productDao.listProduct();
 	}
+	
+	
+	public List<ProductDTO> listSearchProduct(String keyword) {
+		return productDao.listSearchProduct(keyword);
+	}
 
 	@Override
 	public ProductDTO detailProduct(int product_id) {

@@ -14,7 +14,8 @@ public class ProductDTO {
     private String picture_url;
     private Date REGISTERDATE;
     private int INVENTORY;
-    
+    // 검색용으로 추가 (db에는 없어도 됨!)
+    private String keyword;
 
 	public int getPID() {
 		return PID;
@@ -65,6 +66,14 @@ public class ProductDTO {
 	public void setINVENTORY(int iNVENTORY) {
 		INVENTORY = iNVENTORY;
 	}
+	
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+	public String getKeyword() {
+		return this.keyword;
+	}
+	
     @Override
     public String toString() {
         return "ProductDTO [PID=" + PID + ", CATEGORY=" + CATEGORY + ", PRODUCTNAME=" + PRODUCTNAME + ", PRICE=" + PRICE

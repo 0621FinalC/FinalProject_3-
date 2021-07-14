@@ -6,6 +6,7 @@ import com.web.shop.product.dto.ProductDTO;
 
 public interface ProductService {
     List<ProductDTO> listProduct();
+    List<ProductDTO> listSearchProduct(String keyword);
     ProductDTO detailProduct(int product_id);
     void updateProduct(ProductDTO dto);
     void deleteProduct(int product_id);

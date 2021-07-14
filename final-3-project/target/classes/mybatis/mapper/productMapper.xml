@@ -6,8 +6,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- 목록을 뽑아야되므로 select SQL 구문을 추가. -->
 <mapper namespace="product">
     <select id = "list_product" resultType = "com.web.shop.product.dto.ProductDTO"> 
-        select * from product_t
-        order by PID 
+         select * from product_t
+        order by PID
+    </select>
+    
+    <select id="listSearch" resultType="product">
+    	 <!-- 검색 구현 -->
+        SELECT * FROM product_t
+        	WHERE PRODUCTNAME like '%'||#{keyword}||'%'
+        	ORDER BY PID
     </select>
     
     <select id = "detail_product" resultType = "com.web.shop.product.dto.ProductDTO"> 
