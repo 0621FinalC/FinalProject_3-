@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
+<mapper namespace="user">
+	
+	<select id="loginCheck" resultType="String">
+		SELECT username AS username FROM USER_T
+		WHERE userid = #{userid} AND password = #{password}
+	</select>
+	
+	<select id="viewMember" resultType="com.web.shop.user.dto.UserDTO">
+		SELECT 
+			username AS username,
+			userid AS userid,
+			email AS email,
+			registerdate AS registerdate
+		FROM USER_T
+		WHERE userid = #{userid} AND password = #{password}
+	</select>
+	
+	<!-- 페이징 sql -->
+	<sql id="pagingHeader">
+		SELECT * FROM (
+			SELECT ROWNUM AS rn, A.* FROM (
+	</sql>
+	<sql id="pagingFooter">
+			) A
+		) WHERE rn BETWEEN #{start} AND #{end}
+	</sql>
+</mapper>

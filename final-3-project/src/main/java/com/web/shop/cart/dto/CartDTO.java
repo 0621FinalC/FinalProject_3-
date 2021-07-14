@@ -3,8 +3,8 @@ package com.web.shop.cart.dto;
 public class CartDTO {
 	private int cid; 
 	private String userid;
-	private Integer pid;
-	private Integer cartqty; // 카드 수량
+	private int pid;
+	private int cartqty; // 카드 수량
 	
 	private String username;
     private String productname;
@@ -23,16 +23,16 @@ public class CartDTO {
 	public void setUserid(String userid) {
 		this.userid = userid;
 	}
-	public Integer getPid() {
+	public int getPid() {
 		return pid;
 	}
-	public void setPid(Integer pid) {
+	public void setPid(int pid) {
 		this.pid = pid;
 	}
-	public Integer getCartqty() {
+	public int getCartqty() {
 		return cartqty;
 	}
-	public void setCartqty(Integer cartqty) {
+	public void setCartqty(int cartqty) {
 		this.cartqty = cartqty;
 	}
 	public String getUsername() {

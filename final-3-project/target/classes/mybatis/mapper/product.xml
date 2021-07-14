@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
+<mapper namespace="product">
+	
+	<!-- 01. 상품 전체 리스트 -->
+	<select id="listProduct" resultType="com.web.shop.product.dto.ProductDTO">
+		SELECT  
+			pid AS pid
+			, productname AS productname 
+			, price AS price 
+			, explanation AS explanation
+		FROM PRODUCT_T ORDER BY productname
+	</select>
+	
+	<!-- 02. 상품 상세보기 -->
+	<select id="detailProduct" resultType="com.web.shop.product.dto.ProductDTO">
+		SELECT
+			pid AS pid 
+			, productname AS productname 
+			, price AS price 
+			, explanation AS explanation 
+		FROM PRODUCT_T 
+		WHERE pid = #{pid}
+	</select>
+</mapper>

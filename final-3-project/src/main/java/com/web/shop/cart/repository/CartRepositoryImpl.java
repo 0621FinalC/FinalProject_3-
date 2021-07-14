@@ -28,12 +28,17 @@ public class CartRepositoryImpl implements CartRepository {
 	  // 장바구니 추가
 	  @Override
 	  public void insert(CartDTO dto) throws Exception {
-		  sqlSession.insert("cart.insert", dto);
+		  System.out.println("getCid : " + dto.getCid());
+		  System.out.println("getUserid : " + dto.getUserid());
+		  System.out.println("getPid : " + dto.getPid());
+		  System.out.println("getCartqty : " + dto.getCartqty());
+		  int res = sqlSession.insert("cart.insert", dto);
+		  System.out.println("반영된 로우 수 : " + res);
 	  } 
 	 
 	  // 장바구니 삭제
 	  @Override
-	  public void delete(Integer cid) throws Exception {
+	  public void delete(int cid) throws Exception {
 		  sqlSession.delete("cart.delete", cid);
 	  }
 	  
@@ -53,7 +58,7 @@ public class CartRepositoryImpl implements CartRepository {
 	  
 	  // 장바구니 같은 상품 확인
 	  @Override
-	  public int countCart(Integer pid, String userid) {
+	  public int countCart(int pid, String userid) {
 		  Map<String, Object> map = new HashMap<String, Object>();
 		  map.put("pid", pid);
 		  map.put("userid", userid);

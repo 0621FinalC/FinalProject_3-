@@ -7,6 +7,9 @@
 		<setting name="jdbcTypeForNull" value="NULL"/>
 </settings>
   <typeAliases>
+  <typeAlias type="com.web.shop.user.dto.UserDTO" alias="user" />
     <typeAlias type="com.web.shop.cart.dto.CartDTO" alias="cart" />
+     <typeAlias type="com.web.shop.product.dto.ProductDTO" alias="product" />
+     <typeAlias type="com.web.shop.order.dto.OrderDTO" alias="order" />
   </typeAliases>
 </configuration>

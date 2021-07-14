@@ -6,24 +6,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="cart">
 
 	<!-- 장바구니 추가 -->
-	<insert id="insert">
+	<insert id="insert" parameterType="com.web.shop.cart.dto.CartDTO">
 		INSERT INTO CART_T(
-			CID, USERID, PID, CARTQTY
+			cid, userid, pid, cartqty
 		) VALUES (
-			#{cid}, #{userid}, #{pid}, #{cartqty}
+			seq_cart.NEXTVAL, #{userid}, #{pid}, #{cartqty}
 		)
 	</insert>
-	
+
 	<!-- 장바구니 목록 -->
 	<select id="listCart" resultType="com.web.shop.cart.dto.CartDTO">
 		SELECT
-			c.cid AS cid,
-			c.userid AS userid,
-			p.pid AS pid,
-			u.username AS username,
-			p.productname AS productname,
-			c. cartqty,
-			p. price AS price,
+			c.CID AS cid,
+			c.USERID AS userid,
+			p.PID AS pid,
+			u.USERNAME AS username,
+			p.PRODUCTNAME AS productname,
+			c.CARTQTY,
+			p.PRICE AS price,
 			(price * cartqty) totalprice
 		FROM
 			USER_T u, PRODUCT_T p, CART_T c
@@ -35,7 +35,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
     <!-- 장바구니 전체 금액 -->
-    <select id="sumtotalmoney" resultType ="Integer">
+    <select id="sumtotalmoney" resultType ="int">
     	SELECT NVL(SUM(price * cartqty), 0) totalprice
     	FROM CART_T c, PRODUCT_T p
     	WHERE c.pid = p.pid AND c.userid = #{userid}
@@ -56,7 +56,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </delete>
     
     <!-- 장바구니 상품 중복 확인 -->
-    <select id="countCart" resultType="Integer">
+    <select id="countCart" resultType="int">
     	SELECT COUNT(*)
     	FROM CART_T
     	WHERE userid = #{userid}

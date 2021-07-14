@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="orderMapper">
+
+<insert id="orderInfo">
+ insert into ORDER_T(oid, userid, address, phone)
+     values(#{oid}, #{userid}, #{address}, #{phone})
+</insert>
+   
+<!-- 주문 상세 정보 --> 
+<insert id="orderInfo_Details">
+ insert into ORDER_DETAIL(oid, productname, item_qty)
+     values(#{oid}, #{productname}, #{item_qty})     
+</insert> 
+
+<!-- 카트 비우기 -->
+<delete id="cartAllDelete">
+ delete CART_T
+     where userid = #{userid}
+</delete>
+</mapper>
