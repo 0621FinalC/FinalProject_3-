@@ -6,7 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입</title>
+<link href=”https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap” rel=”stylesheet”>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<link href="${pageContext.request.contextPath }/resources/css/main.css" rel="stylesheet" />
 <link href="${pageContext.request.contextPath }/resources/css/user/join.css" rel="stylesheet" />
 <c:url var="userid_check" value="/ajax/userid" />
 <script type="text/javascript">
@@ -68,56 +70,70 @@
 </head>
 <c:url var="join" value="/user/join" />
 <body>
+	<div class="navtop">
+		<a class="logo" href="/shop/main">
+			<img src="${pageContext.request.contextPath }/resources/img/logo.png" height="20px">
+		</a>
+		<ul>
+			<li><a href="/shop/user/login">Login</a></li>
+			<li><a href="/shop/user/join">Join</a></li>
+			<li><a href="#">Cart</a></li>
+		</ul>
+	</div>
+	<div>
+		<h3 class="tit">회원가입</h3>
+	</div>
 	<div class="wrapper">
 		<form name="userInfo" action="${join }" method="post">
 			<div class="wrap">
-			<div class="id_wrap">
-				<label class="id_name" for="userid">아이디</label>
-	       	 	<input  class="id_input_box" type="text" name="userid" id="userid" maxlength="20" placeholder="영문 최대 20자 까지 가능" required>
-	       	 	<button type="button" onclick="idCheck();">중복확인</button>
+			<div class="join_wrap">
+				<label class="join_name" for="userid">아이디</label>
+	       	 	<input class="input_box" type="text" name="userid" id="userid" maxlength="16" placeholder="영문 최대 20자 까지 가능" required>
+	       	 	<button class="id_check_btn" type="button" onclick="idCheck();">중복확인</button>
 				<label id="id_check_res"></label>
 			</div>
 			
-			<div class="pw_wrap">
-				<label class="pw_name" for="userpass">비밀번호</label>
-	       	 	<input class="pw_input_box" type="password" name="password" id="pass1" maxlength="20" required>
+			<div class="join_wrap">
+				<label class="join_name" for="userpass">비밀번호</label>
+	       	 	<input class="input_box" type="password" name="password" id="pass1" maxlength="20" required>
 			</div>
 			
-			<div class="pwck_wrap">
-				<label class="pwck_name" for="userpass2">비밀번호 확인</label>
-				<input class="pwck_input_box" type="password" name="password2" id="pass2" maxlength="20" required>
+			<div class="join_wrap">
+				<label class="join_name" for="userpass2">비밀번호 확인</label>
+				<input class="input_box" type="password" name="password2" id="pass2" maxlength="20" required>
 			</div>
 		
-			<div class="user_wrap">
-				<label class="user_name" for="name">이름</label>
-				<input class="user_input_box" type="text" name="username" id="username" maxlength="20" required>
+			<div class="join_wrap">
+				<label class="join_name" for="name">이름</label>
+				<input class="input_box" type="text" name="username" id="username" maxlength="20" required>
 			</div>
 			
-			<div class="mail_wrap">
-				<label class="mail_name" for="email">이메일</label>
-				<input class="mail_input_box" type="email" name="email" id="email" maxlength="50" required>
+			<div class="join_wrap">
+				<label class="join_name" for="email">이메일</label>
+				<input class="input_box" type="email" name="email" id="email" maxlength="50" required>
 			</div>
 			
-			<div class="gender_wrap">
-				<label class="gender_name" for="gender">성별</label>
+			<div class="join_wrap">
+				<label class="join_name" for="gender">성별</label>
 				<input id="gender_m" type="radio" name="gender" value="m" checked><label for="gender_m"> 남</label>
 				<input id="gender_w" type="radio" name="gender" value="w"><label for="gender_w"> 여</label>
 			</div>
 			
-			<div class="phone_wrap">
-				<label class="phone_name" for="phone">핸드폰 번호</label>
-				<input class="phone_input_box" type="text" name="phone" id="phone" maxlength="20" placeholder="(-) 입력해주세요" required>
+			<div class="join_wrap">
+				<label class="join_name" for="phone">핸드폰 번호</label>
+				<input class="input_box" type="text" name="phone" id="phone" maxlength="20" placeholder="(-) 입력해주세요" required>
 			</div>	
 			
-			<div class="address_wrap">
-				<label class="address_name" for="address">주소</label>
-				<input class="" type="text" name="address" id="address" maxlength="100" required>
+			<div class="join_wrap">
+				<label class="join_name" for="address">주소</label>
+				<input class="input_box" type="text" name="address" id="address" maxlength="100" required>
 			</div>
 	
 			<br>
 			<div class="join_button_wrap">
-				<button class="join_button" type="button" onclick="send();">가입</button>
-				<button type="button" onclick="history.back();">취소</button>
+				<button class="join_button" type="button" onclick="send();">가입하기</button>
+				<!--  취소 버튼 주석처리 디자인 고민
+				<button type="button" onclick="history.back();">취소</button>-->
 			</div>
 			
 			</div>		

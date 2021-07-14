@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>회원 탈퇴</title>
+<link href=”https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap” rel=”stylesheet”>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <link href="${pageContext.request.contextPath }/resources/css/user/delete.css" rel="stylesheet" />
 <c:url var="delete" value="/user/delete" />
@@ -24,24 +25,29 @@ function send() {
 </script>
 </head>
 <body>
-	<h3>비밀번호를 입력해주세요</h3>
-	<div class="delete-form">
+<div class="wrapper">
+	<div class="wrap">
+		<div class="logo_wrap">
+			<span>회원탈퇴</span>>
+		</div>
 		<form name="deleteInfo" action="${delete }" method="post">
 			<div>
-				<label for="userid">아이디</label>
-		     	<input type="text" name="userid" id="userid" maxlength="20" value="${userData.getUserid() }" disabled>
+				<label class="delete_name" for="userid">아이디</label>
+		     	<input class="delete_box" type="text" name="userid" id="userid" maxlength="20" value="${userData.getUserid() }" disabled>
 			</div>
 			<div>
-				<label for="userpass">비밀번호</label>
-		      	<input type="password" name="password" id="password" maxlength="20" required>
+				<label class="delete_name" for="userpass">비밀번호</label>
+		      	<input class="delete_box" type="password" name="password" id="password" maxlength="20" required>
 			</div>
 			<div>
 				<label style="color: red;">${error }</label>
 			</div>
-			<br>
-			<button class="btn_delete" type="button" onclick="send();">탈퇴하기</button>
-			<button type="button" onclick="history.go(-1);">취소</button>
+			<div class="btn_form">
+				<button class="btn_delete_1" type="button" onclick="send();">탈퇴하기</button>
+				<button class="btn_delete_2" type="button" onclick="history.go(-1);">취소</button>
+			</div>
 		</form>
 	</div>
+</div>
 </body>
 </html> 

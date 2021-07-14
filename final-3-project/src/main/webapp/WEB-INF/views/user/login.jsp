@@ -6,9 +6,21 @@
 <head>
 <meta charset="UTF-8">
 <title>로그인</title>
+<link href="${pageContext.request.contextPath }/resources/css/main.css" rel="stylesheet" />
 <link href="${pageContext.request.contextPath }/resources/css/user/login.css" rel="stylesheet" />
+<link href=”https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap” rel=”stylesheet”>
 </head>
 <body>
+	<div class="navtop">
+		<a class="logo" href="/shop/main">
+			<img src="${pageContext.request.contextPath }/resources/img/logo.png" height="20px">
+		</a>
+		<ul>
+			<li><a href="/shop/user/login">Login</a></li>
+			<li><a href="/shop/user/join">Join</a></li>
+			<li><a href="#">Cart</a></li>
+		</ul>
+	</div>
 
 <div class="wrapper">
 	<div class="wrap">
@@ -21,12 +33,12 @@
 		<form action="${login }" method="post">
 			<div class="id_wrap">
 					<div class="id_input_box">
-					<input class="id_input" id="userid" type="text" name="userid" placeholder="아이디를 입력해 주세요"required>
+					<input class="id_input" id="userid" type="text" name="userid" size="20" placeholder="아이디를 입력해 주세요"required>
 				</div>
 			</div>
 			<div class="pw_wrap">
 				<div class="pw_input_box">
-					<input class="pw_iput" id="password" type="password" name="password" placeholder="비밀번호를 입력해 주세요"required>
+					<input class="pw_iput" id="password" type="password" name="password" size="20" placeholder="비밀번호를 입력해 주세요"required>
 				</div>
 			</div>
 		<div>
