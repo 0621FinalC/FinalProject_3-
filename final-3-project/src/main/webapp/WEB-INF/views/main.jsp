@@ -67,7 +67,7 @@
 				<a href="${board_list }">전체보기</a>
 			</li>
 			<li>
-				<a href="#">신상품</a>
+				<a href="#">인기상품</a>
 			</li>
 			<li>
 				<a href="#">할인상품</a>
