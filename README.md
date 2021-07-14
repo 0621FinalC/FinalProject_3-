@@ -17,11 +17,11 @@
 
 
 ## 역할 분담
-<img width="1024" alt="스크린샷 2021-06-23 오후 3 17 42" src="https://user-images.githubusercontent.com/86212850/123045782-48d25b00-d436-11eb-87eb-06186ed6b0dc.png">
+
 
 
 ## DB구조 (개발하면서 필요에 따라 수정될 수 있음)
-<img width="653" alt="스크린샷 2021-06-25 오후 12 02 43" src="https://user-images.githubusercontent.com/86212850/123363379-52ca9a00-d5ad-11eb-82c0-fa36f6631205.png">
+
 
 
 ## 웹페이지 흐름도
