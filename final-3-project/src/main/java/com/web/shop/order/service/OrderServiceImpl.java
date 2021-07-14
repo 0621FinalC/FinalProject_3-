@@ -46,4 +46,10 @@ public class OrderServiceImpl implements OrderService {
 		dao.updateQty(productname, qty);
 	}
 	
+	// 카트 비우기 : 아직 구현x
+	@Override
+	public void cartAllDelete(String userid) throws Exception {
+		dao.cartAllDelete(userid);
+	}
+	
 }

@@ -30,4 +30,16 @@
 	WHERE productname = #{productname}
   </update>
   
+  <!-- 동국님 코드 -->
+  <insert id="orderInfo">
+    insert into DELIVERY_INFO(oid, sender, rec_name, rec_phone, rec_address, shipping_fee)
+    	values(#{oid}, #{sender}, #{rec_name}, #{rec_phone}, #{rec_address}, #{shipping_fee})
+  </insert>
+   
+  <!-- 카트 비우기 -->
+  <delete id="cartAllDelete">
+     delete CART_T
+		 where userid = #{userid}
+  </delete>
+  
 </mapper>

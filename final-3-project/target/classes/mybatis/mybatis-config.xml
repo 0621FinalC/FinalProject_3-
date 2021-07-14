@@ -3,6 +3,9 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+  <settings>
+	<setting name="jdbcTypeForNull" value="NULL"/>
+  </settings>
   <typeAliases>
     <typeAlias type="com.web.shop.user.dto.UserDTO" alias="user" />
     <typeAlias type="com.web.shop.order.dto.OrderDTO" alias="order" />
@@ -10,5 +13,6 @@
     <typeAlias type="com.web.shop.orderlist.dto.OrderDetailDTO" alias="orderdetail" />
     <typeAlias type="com.web.shop.orderlist.dto.DeliveryDetailDTO" alias="delivery" />
     <typeAlias type="com.web.shop.product.dto.ProductDTO" alias="product" />
+    <typeAlias type="com.web.shop.cart.dto.CartDTO" alias="cart" />
   </typeAliases>
 </configuration>

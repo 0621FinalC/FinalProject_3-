@@ -8,4 +8,6 @@ public interface OrderRepository {
 	public OrderDTO select(String id) throws Exception;
 	public ShopDTO selectShopInfo() throws Exception;
 	public void updateQty(String name, int num) throws Exception;
+	// 카트 비우기
+	public void cartAllDelete(String userId) throws Exception;
 }

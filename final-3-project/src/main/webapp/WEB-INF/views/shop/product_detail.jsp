@@ -52,13 +52,20 @@
                     	<td>재고</td>
                     	<td>${dto.INVENTORY }</td>
                     </tr>
-                    
-                    <tr>
-                    	<td>                         
-                            <a href="${path}/shop/product/list.do">상품목록</a>
-                        </td>
-                    </tr>
-                </table>
+                    <tr align="center">
+						<td colspan="2">
+							<form name="form1" method="post" action="${path}/cart/insert">
+								<input type="hidden" name="pid" value="${dto.PID}">
+								<select name="cartqty">
+									<c:forEach begin="1" end="10" var="i">
+										<option value="${i}">${i}</option>
+									</c:forEach>
+								</select>&nbsp;개
+								<input type="submit" value="장바구니에 담기">
+							</form>
+							<a href="${path}/product/list.do">상품목록</a>
+						</td>
+					</tr>
     </table>
 </body>
 </html>

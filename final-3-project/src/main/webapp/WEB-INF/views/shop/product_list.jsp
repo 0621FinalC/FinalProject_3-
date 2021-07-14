@@ -44,7 +44,7 @@
 			<c:set var="picture_url" value="${fn:replace(picture_url, ']', '%5D') }" />
 		</c:if>
         <td><img src="${path}/resources/img/product/${picture_url}" width="100" height="100"></td>
-        <td><a href="${path}/shop/product/detail/${row.PID}">${row.PRODUCTNAME}</a></td>
+        <td><a href="${path}/product/detail/${row.PID}">${row.PRODUCTNAME}</a></td>
         <td><fmt:formatNumber value="${row.PRICE}" type="currency" /> </td>    
         <td>${row.REGISTERDATE }</td>
         <td>${row.INVENTORY }</td>

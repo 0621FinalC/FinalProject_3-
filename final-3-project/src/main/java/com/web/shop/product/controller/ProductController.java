@@ -18,7 +18,7 @@ import com.web.shop.product.dto.ProductDTO;
 import com.web.shop.product.service.ProductService;
 
 @Controller
-@RequestMapping("/shop/product/*")
+@RequestMapping("/product/*")
 public class ProductController {
 	
 	@Autowired

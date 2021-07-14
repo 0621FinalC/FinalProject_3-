@@ -19,8 +19,9 @@
 <c:url var="mypage" value="/user/mypage" />
 <c:url var="login" value="/user/login" />
 <c:url var="join" value="/user/join" />
-<c:url var="board_list" value="/shop/product/list" />
-<c:url var="search_list" value="/shop/product/search" />
+<c:url var="board_list" value="/product/list" />
+<c:url var="search_list" value="/product/search" />
+<c:url var="cart" value="/cart/list" />
 <script type="text/javascript">
 	// 검색: url에 키워드 붙여주는 함수
 	$(document).ready(function(){
@@ -47,7 +48,7 @@
 				<li><a href="${login }">Login</a></li>
 				<li><a href="${join }">Join</a></li>
 			<% } %>
-			<li><a href="#">Cart</a></li>
+			<li><a href="${cart }">Cart</a></li>
 		</ul>
 	</div>
 	<div class="navmenu">

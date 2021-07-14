@@ -47,4 +47,10 @@ public class OrderRepositoryImpl implements OrderRepository {
 
 		sqlSession.update("orderMapper.inventory", params);
 	}
+	
+	// 카트 비우기
+	@Override
+	public void cartAllDelete(String userid) throws Exception {
+		sqlSession.delete("orderMapper.cartAllDelete", userid);
+	}
 }
