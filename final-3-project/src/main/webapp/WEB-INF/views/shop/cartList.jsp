@@ -116,6 +116,10 @@
 		  </div>
 		  
 		  <div class="inputArea">
+		   <input type="hidden" name="shipping_fee" id="shipping_fee" value="${map.charge}"  />
+		  </div>
+		  
+		  <div class="inputArea">
 		   <button type="submit" class="order_btn">주문</button>
 		   <button type="button" class="cancel_btn">주문 정보 입력 가리기</button> 
 		   <script>

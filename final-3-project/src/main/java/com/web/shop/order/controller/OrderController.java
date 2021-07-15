@@ -29,42 +29,49 @@ public class OrderController {
 	@RequestMapping(value = "/insertOrderInfo", method = RequestMethod.POST)
 	public String order(HttpSession session, @ModelAttribute DeliveryDetailDTO deliveryDetail) throws Exception {
 
-		OrderDTO order;
-		OrderDetailDTO orderDetail;
+		OrderDTO order = new OrderDTO();
+		OrderDetailDTO orderDetail = new OrderDetailDTO();
 		List<CartDTO> list = (List<CartDTO>) session.getAttribute("cartList");
-		System.out.println(list.get(0).getPrice() + " " + list.size());
+//		System.out.println(list.get(0).getPrice() + " " + list.size());
+	
+		String userid = (String)session.getAttribute("userid");	
 
-		UserDTO dto = (UserDTO)session.getAttribute("dto");		
-		String userid = dto.getUserid();
-		System.out.println(userid);
-
-		int qty;
-		int totalprice;
+		int qty = 0;
+		int totalprice = 0;
+		int temp_num = 1;
 
 		for(CartDTO cart1 : list) {
 			qty += cart1.getCartqty();
 			totalprice += cart1.getTotalprice();
 		}
+		
+		order.setTemp_num(temp_num);
 
 		// 주문 DB 생성
-		order.setOid();
-		order.setProductname(list.get(0).getProductname() + "외 " + (list.size() - 1) + "건");
+//		order.setOid(service.getOid(temp_num));
+		System.out.print("* service.getOid(temp_num) : " + service.getOid(temp_num));
+		service.deleteTemp(temp_num);
+		order.setProductname(list.size() > 1 ? list.get(0).getProductname() + " 외 " + (list.size() - 1) + "건" : list.get(0).getProductname());
 		order.setQty(qty);
-		order.setTotalprice(totalprice >= 4000 ? totalprice : totalprice + 2500);
+		order.setTotalprice(totalprice >= 40000 ? totalprice : totalprice + 2500);
 		order.setUserid(userid);
 
 		service.order(order);
-
+		
+		String oid = service.getOid(temp_num);
+		
+//		System.out.print("* order.getOid()" + order.getOid());
+		
 		// 상세 주문 DB 생성
 		for(CartDTO cart2 : list) {
-			orderDetail.setOid();
+			orderDetail.setOid(oid);
 			orderDetail.setProductname(cart2.getProductname());
 			orderDetail.setItem_qty(cart2.getCartqty());
 			service.orderDetail(orderDetail);
 		}
 
-
-
+		
+		deliveryDetail.setOid(oid);
 		service.deliveryDetail(deliveryDetail);
 
 		/*
@@ -89,8 +96,8 @@ public class OrderController {
 		service.cartAllDelete(userid);
 
 		// 세션으로 oid 전송
-		session.setAttribute("order", );
+		session.setAttribute("order", oid);
 
-		return "redirect:/order/pay";		
+		return "redirect:/pay";		
 	}
 }

@@ -65,7 +65,7 @@ public class KakapPayController {
 		
 		// 세션에서 받아온 orderid로 주문서db 정보조회
 		HttpSession session = req.getSession();
-		OrderDTO dto = order.findInfo((String)session.getAttribute("order_id"));
+		OrderDTO dto = order.findInfo((String)session.getAttribute("order"));
 		
 		// 결제요청한 데이터(주문db)랑 실제 전달된 결제 데이터가 같은지 확인?
 		
@@ -131,7 +131,7 @@ public class KakapPayController {
 		
 		// 세션의 oid로 주문서db조회
 		HttpSession session = req.getSession();
-		OrderDTO dto = order.findInfo((String)session.getAttribute("order_id"));
+		OrderDTO dto = order.findInfo((String)session.getAttribute("order"));
 		// shop정보 가져옴
 		ShopDTO shop = order.shopInfo();
 		

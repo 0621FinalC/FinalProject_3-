@@ -18,7 +18,14 @@ public class OrderDTO {
 	private String ordermemo;
 	private String paymentmethod;
 	private String approved_at;		// db삽입시 date로 변환.
+	private int temp_num;
 	
+	public int getTemp_num() {
+		return temp_num;
+	}
+	public void setTemp_num(int temp_num) {
+		this.temp_num = temp_num;
+	}
 	public String getApproved_at() {
 		return approved_at;
 	}

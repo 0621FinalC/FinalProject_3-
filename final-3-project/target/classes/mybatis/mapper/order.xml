@@ -37,8 +37,8 @@
   </insert>
   
   <insert id="order" parameterType="order">
-    insert into order_t(oid, tid, qty, userid, address, phone, orderstat, orderdate, ordermemo, paymentmethod, approved_at)
-        values(#{oid}, #{tid}, #{qty}, #{userid}, #{address}, #{phone}, #{orderstat}, #{orderdate}, #{ordermemo}, #{paymentmethod}, #{approved_at})
+   insert into order_t(oid, tid, productname, qty, totalprice, userid, temp_num)
+        values(order_seq.NEXTVAL, #{tid}, #{productname}, #{qty}, #{totalprice}, #{userid}, #{temp_num})
   </insert>
 
   <insert id="orderDetail" parameterType="orderdetail">
@@ -57,12 +57,16 @@
 		 where userid = #{userid}
   </delete>
   
+  <insert id="setTemp" parameterType="_int">
+  	insert into order_t(temp_num) values(#{temp_num})
+  </insert>
+  
   <select id="getOid" parameterType="_int" resultType="String">
   	SELECT oid FROM order_t WHERE temp_num = #{temp_num}
   </select>
   
-  <delete id="deleteTemp" parameterType="_int">
-  	DELETE FROM order_t WHERE temp_num = #{temp_num}
-  </delete>
+  <update id="deleteTemp">
+  	UPDATE order_t SET temp_num=0 WHERE temp_num=1
+  </update>
   
 </mapper>

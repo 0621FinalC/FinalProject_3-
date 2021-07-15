@@ -52,6 +52,10 @@
 						<c:choose>
 							<c:when test="${fn:contains(pname , '외') }">
 								<c:set var="pname" value="${fn:substringBefore(pname, ' 외') }"/>
+								<!-- <script>
+									console.log("${pname}");
+								</script> -->
+								
 							</c:when>
 							
 							<c:when test="${fn:contains(pname , '[') or fn:contains(pname , ']') }">
@@ -83,7 +87,7 @@
 				</c:when>
 
 				<c:otherwise>
-					<a href="<%=request.getContextPath() %>/order/list?page=${p }">${p }]</a>
+					<a href="<%=request.getContextPath() %>/order/list?page=${p }">[${p }]</a>
 				</c:otherwise>
 			</c:choose>
 		</c:forEach>

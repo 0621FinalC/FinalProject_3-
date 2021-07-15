@@ -67,4 +67,19 @@ public class OrderRepositoryImpl implements OrderRepository {
 	public void deliveryDetail(DeliveryDetailDTO dto) throws Exception {
 		sqlSession.insert("orderMapper.deliveryDetail", dto);
 	}
+	
+	@Override
+	public String getOid(int temp_num) throws Exception {
+		return sqlSession.selectOne("orderMapper.getOid", temp_num);
+	}
+
+	@Override
+	public void deleteTemp(int temp_num) throws Exception {
+		sqlSession.update("orderMapper.deleteTemp", temp_num);
+	}
+	
+	@Override
+	public void setTemp(int temp_num) throws Exception {
+		sqlSession.insert("orderMapper.setTemp", temp_num);
+	}
 }
