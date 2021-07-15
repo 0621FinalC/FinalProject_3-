@@ -1,40 +1,32 @@
 package com.web.shop.order.controller;
 
-import java.text.DecimalFormat;
-import java.util.Calendar;
-import java.util.List;
-
-import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.web.shop.order.dto.OrderDTO;
 import com.web.shop.order.service.OrderService;
+import com.web.shop.orderlist.dto.DeliveryDetailDTO;
 import com.web.shop.orderlist.dto.OrderDetailDTO;
 import com.web.shop.user.dto.UserDTO;
 
 @Controller
-@RequestMapping
+@RequestMapping(value = "/order")
 public class OrderController {
 	
-	@Inject
-	OrderService service;
+	@Autowired
+	private OrderService service;
 	
-		// 주문
-		@RequestMapping(value = "/cart/list", method = RequestMethod.POST)
-		public String order(HttpSession session, OrderDTO order, OrderDetailDTO orderDetail) throws Exception {
+		// 주문(각 DB들에 정보 넣어주고 /pay 로 forward
+		@RequestMapping(value = "/insertOrderInfo", method = RequestMethod.POST)
+		public String order(HttpSession session, OrderDTO order, OrderDetailDTO orderDetail, DeliveryDetailDTO deliveryDetail) throws Exception {
 		
 			
 			UserDTO dto = (UserDTO)session.getAttribute("dto");		
 			String userid = dto.getUserid();
-			System.out.println(userid);
 			
 			/*
 			// 캘린더 호출
@@ -54,8 +46,11 @@ public class OrderController {
 			order.setUserid(userid);
 			
 			 */
-			service.orderInfo(order);		
-			service.orderInfo_Details(orderDetail);
+			
+			
+			service.order(order);		
+			service.orderDetail(orderDetail);
+			service.deliveryDetail(deliveryDetail);
 			
 			// 주문 테이블, 주문 상세 테이블에 데이터를 전송하고, 카트 비우기
 			service.cartAllDelete(userid);
@@ -63,18 +58,4 @@ public class OrderController {
 			
 			return "redirect:/order/list";		
 		}
-		
-		// 주문 목록
-		@RequestMapping(value = "/order/list", method = RequestMethod.GET)
-		public void getOrderList(HttpSession session, OrderDTO order, Model model) throws Exception {
-		
-			UserDTO member = (UserDTO)session.getAttribute("member");
-			String userid = member.getUserid();
-			
-			order.setUserid(userid);
-			
-			List<OrderDTO> orderList = service.orderList(order);
-			
-			model.addAttribute("orderList", orderList);
-		}	
 }

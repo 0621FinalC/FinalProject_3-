@@ -106,3 +106,9 @@ SELECT * FROM product_t;
 SELECT * FROM user_t;
 
 SELECT * FROM ORDER_T;
+
+SELECT * FROM delivery_info;
+
+SELECT * FROM order_detail;
+
+SELECT * FROM ORDER_T;

@@ -20,6 +20,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.web.shop.order.dto.OrderDTO;
 import com.web.shop.order.dto.ShopDTO;
 import com.web.shop.order.repository.OrderRepository;
+import com.web.shop.orderlist.dto.DeliveryDetailDTO;
 import com.web.shop.orderlist.dto.OrderDetailDTO;
 
 @Service
@@ -28,28 +29,41 @@ public class OrderServiceImpl implements OrderService {
 	@Autowired
 	private OrderRepository dao;
 	
-	// 주문 정보
 	@Override
-	public void orderInfo(OrderDTO order) throws Exception {
-		dao.orderInfo(order);
+	public boolean updateInfo(OrderDTO dto) throws Exception {
+		return dao.update(dto);
 	}
 
-	// 주문 상세 정보
 	@Override
-	public void orderInfo_Details(OrderDetailDTO orderDetail) throws Exception {
-		dao.orderInfo_Details(orderDetail);
+	public OrderDTO findInfo(String id) throws Exception {
+		return dao.select(id);
+	}
+
+	@Override
+	public ShopDTO shopInfo() throws Exception {
+		return dao.selectShopInfo();
 	}
 	
-	// 주문 목록
 	@Override
-	public List<OrderDTO> orderList(OrderDTO order) throws Exception {
-		return dao.orderList(order);
+	public void updateInven(String productname, int qty) throws Exception {
+		dao.updateQty(productname, qty);
 	}
 	
-	// 카트 비우기 
+	// 카트 비우기 : 아직 구현x
 	@Override
 	public void cartAllDelete(String userid) throws Exception {
 		dao.cartAllDelete(userid);
+	}
+	
+	public void order(OrderDTO dto) throws Exception {
+		dao.order(dto);
+	}
+	
+	public void orderDetail(OrderDetailDTO dto) throws Exception {
+		dao.orderDetail(dto);
+	}
+	public void deliveryDetail(DeliveryDetailDTO dto) throws Exception {
+		dao.deliveryDetail(dto);
 	}
 	
 }

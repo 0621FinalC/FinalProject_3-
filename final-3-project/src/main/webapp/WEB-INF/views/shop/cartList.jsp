@@ -37,7 +37,6 @@
 				<th>취소</th>
 			</tr>
 			<!-- 장바구니 레코드 출력 -->
-			<c:set var="sum" value="0" />
 			<c:forEach var="row" items="${map.list}" varStatus="i">
 			<tr>
 				<td>
@@ -58,7 +57,6 @@
 					<a href="${path}/cart/delete?cid=${row.cid}">삭제</a>
 				</td>
 			</tr>	
-			<c:set var="sum" value="${map.allsummoney}"/>
 			</c:forEach>
 			<tr>
 				<td colspan="5" align="right">
@@ -74,10 +72,7 @@
 	</c:otherwise>
 	</c:choose>
 	<button type="button" id="btnList">상품목록</button>
-		<div class="listResult">
- 		<div class="sum">
-  			총 합계 : <fmt:formatNumber pattern="###,###,###" value="${sum}" />원
- 		</div>
+		
  		<div class="orderOpen">
  		 	<button type="button" class="orderOpen_bnt">주문 정보 입력</button>
  		 	
@@ -88,10 +83,9 @@
 				});      
 			</script>
  		</div>
-		</div>
 		
 		<div class="orderInfo">
- 		<form role="form" method="post" autocomplete="off">
+ 			<form role="form" method="post" autocomplete="off" >
     
 		<div class="inputArea">
 	   <label for="sender">발송인</label>
