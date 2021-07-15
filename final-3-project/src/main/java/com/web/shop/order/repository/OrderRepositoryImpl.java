@@ -8,6 +8,8 @@ import org.springframework.stereotype.Repository;
 
 import com.web.shop.order.dto.OrderDTO;
 import com.web.shop.order.dto.ShopDTO;
+import com.web.shop.orderlist.dto.DeliveryDetailDTO;
+import com.web.shop.orderlist.dto.OrderDetailDTO;
 
 @Repository
 public class OrderRepositoryImpl implements OrderRepository {
@@ -52,5 +54,17 @@ public class OrderRepositoryImpl implements OrderRepository {
 	@Override
 	public void cartAllDelete(String userid) throws Exception {
 		sqlSession.delete("orderMapper.cartAllDelete", userid);
+	}
+	
+	public void order(OrderDTO dto) throws Exception {
+		sqlSession.insert("orderMapper.order", dto);
+	}
+	
+	public void orderDetail(OrderDetailDTO dto) throws Exception {
+		sqlSession.insert("orderMapper.orderDetail", dto);
+	}
+	
+	public void deliveryDetail(DeliveryDetailDTO dto) throws Exception {
+		sqlSession.insert("orderMapper.deliveryDetail", dto);
 	}
 }

@@ -1,14 +1,19 @@
 package com.web.shop.order.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.web.shop.cart.dto.CartDTO;
 import com.web.shop.order.dto.OrderDTO;
 import com.web.shop.order.service.OrderService;
+import com.web.shop.orderlist.dto.DeliveryDetailDTO;
 import com.web.shop.orderlist.dto.OrderDetailDTO;
 import com.web.shop.user.dto.UserDTO;
 
@@ -34,15 +39,17 @@ public class OrderController {
 	
 		// 주문 (각 DB들에 정보 넣어주고 /pay 로 forward
 		@RequestMapping(value = "/insertOrderInfo", method = RequestMethod.POST)
-		public String order(HttpSession session, OrderDTO order, OrderDetailDTO orderDetail) throws Exception {
-		
+		public String order(HttpSession session, @ModelAttribute DeliveryDetailDTO deliveryDetail) throws Exception {
+			
+			List<CartDTO> list = (List<CartDTO>) session.getAttribute("cartList");
+			System.out.println(list.get(0).getPrice() + " " + list.size());
 			
 			UserDTO dto = (UserDTO)session.getAttribute("dto");		
 			String userid = dto.getUserid();
 			System.out.println(userid);
 			
 			/*
-			// 캘린더 호출
+			// 주문번호 생성을 위한 캘린더 호출
 			Calendar cal = Calendar.getInstance();
 			int year = cal.get(Calendar.YEAR);  // 연도 추출
 			String ym = year + new DecimalFormat("00").format(cal.get(Calendar.MONTH) + 1);  // 월 추출
@@ -58,10 +65,10 @@ public class OrderController {
 			order.setOid(oid);
 			order.setUserid(userid);
 			 */
-			
-//			이거 service랑 repository에 구현 안해놔서 일단 주석
-//			service.orderInfo(order);		
-//			service.orderInfo_Details(orderDetail);
+		
+//			service.order(order);		
+//			service.orderDetail(orderDetail);
+//			service.deliveryDetail(deliveryDetail);
 			
 			// 주문 테이블, 주문 상세 테이블에 데이터를 전송하고, 카트 비우기
 			service.cartAllDelete(userid);

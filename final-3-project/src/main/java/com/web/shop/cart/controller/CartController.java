@@ -62,6 +62,8 @@ public class CartController {
 			// 장바구니 전체 긍액에 따라 배송비 구분
 			// 배송료(4만원이상 => 무료, 미만 => 2500원)
 			int charge = sumtotalmoney >= 40000 ? 0 : 2500;
+			// OrderController에서 사용할 정보
+			session.setAttribute("cartList", list);
 			map.put("list", list);				// 장바구니 정보를 map에 저장
 			map.put("count", list.size());		// 장바구니 상품의 유무
 			map.put("sumtotalmoney", sumtotalmoney);		// 장바구니 전체 금액

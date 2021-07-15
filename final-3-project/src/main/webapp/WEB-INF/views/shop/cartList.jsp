@@ -9,6 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>상품장바구니 목록페이지</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<link href="${pageContext.request.contextPath }/resources/css/shop/cartList.css" rel="stylesheet" />
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <script>
 	$(document).ready(function(){
@@ -92,7 +93,7 @@
 		
 		<div class="orderInfo">
 		<c:url var="insertOrderInfo" value="/order/insertOrderInfo" />
- 		<form role="form" method="post" autocomplete="off" action="${path}/cart/update" >
+ 		<form role="form" method="post" autocomplete="off" action="${path}/order/insertOrderInfo" >
     
 			<div class="inputArea">
 		   <label for="sender">발송인</label>

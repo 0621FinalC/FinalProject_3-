@@ -10,6 +10,7 @@
 <meta charset="UTF-8">
 <title>상품 목록</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<link href="${pageContext.request.contextPath }/resources/css/shop/listSearch.css" rel="stylesheet" />
 <c:url var="search_list" value="/product/search" />
 <script type="text/javascript">
 	// 검색: url에 키워드 붙여주는 함수

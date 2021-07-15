@@ -39,6 +39,9 @@ public class ProductController {
 		map.put("list", list);
 		map.put("keyword", keyword);
 //		System.out.println("** keyword(controller) : " + map.get("keyword"));
+//		for(int i = 0; i < list.size(); i++) {
+//			System.out.println(list.get(i).getPRODUCTNAME());
+//		}
 		mav.addObject("map", map);
         mav.setViewName("/shop/listSearch"); 
      

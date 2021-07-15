@@ -9,14 +9,9 @@
 <head>
 <meta charset="UTF-8">
 <title>상품 목록</title>
-
+<link href=”https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap” rel=”stylesheet”>
+<link href="${pageContext.request.contextPath }/resources/css/shop/product_list.css" rel="stylesheet" />
 </head>
-<style type="text/css">
- a:link { color: black; text-decoration: none;}
- a:visited { color: black; text-decoration: none;}
- a:hover { color: black; text-decoration: none;}
-</style>
-
 <body>
 
 <h2>상품 목록</h2>

@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>결제 화면</title>
+<link href="${pageContext.request.contextPath }/resources/css/kakaopay/payment.css" rel="stylesheet" />
 </head>
 <body>
 	<h1>결제 화면</h1>

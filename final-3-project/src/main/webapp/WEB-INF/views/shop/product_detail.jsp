@@ -8,6 +8,7 @@
 <head>
 <meta charset="UTF-8">	
 <title>상품</title>
+<link href="${pageContext.request.contextPath }/resources/css/shop/product_detail.css" rel="stylesheet" />
  
 </head>
 <body>

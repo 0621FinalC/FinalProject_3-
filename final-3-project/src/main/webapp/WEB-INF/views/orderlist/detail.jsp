@@ -8,6 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>주문내역 상세</title>
+<link href="${pageContext.request.contextPath }/resources/css/orderlist/detail.css" rel="stylesheet" />
 <style type="text/css">
 	img {
 		width:80px; height:80px;

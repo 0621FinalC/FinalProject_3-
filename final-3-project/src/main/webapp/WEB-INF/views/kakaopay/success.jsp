@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>결제 성공</title>
+<link href="${pageContext.request.contextPath }/resources/css/kakaopay/success.css" rel="stylesheet" />
 </head>
 <body>
 	<h1>결제가 완료되었습니다.</h1>

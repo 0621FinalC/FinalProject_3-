@@ -19,6 +19,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.web.shop.order.dto.OrderDTO;
 import com.web.shop.order.dto.ShopDTO;
 import com.web.shop.order.repository.OrderRepository;
+import com.web.shop.orderlist.dto.DeliveryDetailDTO;
+import com.web.shop.orderlist.dto.OrderDetailDTO;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -52,4 +54,15 @@ public class OrderServiceImpl implements OrderService {
 		dao.cartAllDelete(userid);
 	}
 	
+	public void order(OrderDTO dto) throws Exception {
+		dao.order(dto);
+	}
+	
+	public void orderDetail(OrderDetailDTO dto) throws Exception {
+		dao.orderDetail(dto);
+	}
+	
+	public void deliveryDetail(DeliveryDetailDTO dto) throws Exception {
+		dao.deliveryDetail(dto);
+	}
 }

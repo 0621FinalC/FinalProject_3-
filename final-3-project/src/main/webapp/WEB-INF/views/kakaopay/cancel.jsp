@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>결제 취소</title>
+<link href="${pageContext.request.contextPath }/resources/css/kakaopay/cancel.css" rel="stylesheet" />
 </head>
 <body>
 	<h1>결제가 취소되었습니다.</h1>

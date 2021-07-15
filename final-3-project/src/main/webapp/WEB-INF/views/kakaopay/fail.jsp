@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>결제 실패</title>
+<link href="${pageContext.request.contextPath }/resources/css/kakaopay/fail.css" rel="stylesheet" />
 </head>
 <body>
 	<h1>결제에 실패했습니다.</h1>
