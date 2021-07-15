@@ -5,6 +5,7 @@ public class DeliveryDetailDTO {
 	// 배송조회 -> 보류
 	
 	// 주문정보 (주문번호, 주문자명, 보내는 분?, 결제일시) -> order_t, user_t(주문자명)
+	private String oid;
 	private String username;
 	private String sender;
 	
@@ -50,5 +51,10 @@ public class DeliveryDetailDTO {
 	public void setShipping_fee(int shipping_fee) {
 		this.shipping_fee = shipping_fee;
 	}
-	
+	public String getOid() {
+		return oid;
+	}
+	public void setOid(String oid) {
+		this.oid = oid;
+	}
 }

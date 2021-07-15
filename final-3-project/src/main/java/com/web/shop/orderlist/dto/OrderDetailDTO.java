@@ -2,6 +2,7 @@ package com.web.shop.orderlist.dto;
 
 public class OrderDetailDTO {
 	
+	private String oid;
 	private String pid;
 	
 	// 상품별 정보(상품명, 가격, 수량, 배송?주문? 상태) -> product_t, order_detail(수량), order_t(주문상태)
@@ -41,6 +42,12 @@ public class OrderDetailDTO {
 	}
 	public void setOrderstat(String orderstat) {
 		this.orderstat = orderstat;
+	}
+	public String getOid() {
+		return oid;
+	}
+	public void setOid(String oid) {
+		this.oid = oid;
 	}
 	
 }

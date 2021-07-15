@@ -36,17 +36,17 @@
     	values(#{oid}, #{sender}, #{rec_name}, #{rec_phone}, #{rec_address}, #{shipping_fee})
   </insert>
   
-  <insert id="order">
+  <insert id="order" parameterType="order">
     insert into order_t(oid, tid, qty, userid, address, phone, orderstat, orderdate, ordermemo, paymentmethod, approved_at)
         values(#{oid}, #{tid}, #{qty}, #{userid}, #{address}, #{phone}, #{orderstat}, #{orderdate}, #{ordermemo}, #{paymentmethod}, #{approved_at})
   </insert>
 
-  <insert id="orderDetail">
+  <insert id="orderDetail" parameterType="orderdetail">
     insert into order_detail(oid, productname, item_qty)
         values(#{oid}, #{productname}, #{item_qty})
   </insert>
 
-  <insert id="deliveryDetail">
+  <insert id="deliveryDetail" parameterType="delivery">
     insert into delivery_info(oid, sender, rec_name, rec_phone, rec_address, shipping_fee)
         values(#{oid}, #{sender}, #{rec_name}, #{rec_phone}, #{rec_address}, #{shipping_fee})
   </insert>

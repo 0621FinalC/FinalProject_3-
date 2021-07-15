@@ -44,11 +44,12 @@ public class KakapPayController {
 	public String payment_init(HttpServletRequest req, Model m) throws Exception {
 		String forward = "kakaopay/payment";
 		
-		// 세션에서 orderid 받아오기. 수정 필요.
-		HttpSession session = req.getSession();
-		session.setAttribute("order_id", "1"); //order_detail 주문번호
 		
-		OrderDTO dto = order.findInfo((String)session.getAttribute("order_id"));
+		HttpSession session = req.getSession();
+//		session.setAttribute("order_id", "1"); //order_detail 주문번호
+		
+		// 세션에서 orderid 받아오기.
+		OrderDTO dto = order.findInfo((String)session.getAttribute("order"));
 		
 		m.addAttribute("order", dto);
 		
