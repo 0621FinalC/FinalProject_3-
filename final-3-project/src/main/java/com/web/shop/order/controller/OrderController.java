@@ -38,7 +38,9 @@ public class OrderController {
 
 		int qty = 0;
 		int totalprice = 0;
-		int temp_num = 1;
+		// order_detail, delivery_info 에 oid값을 넣어주려면 order_t 에서 현재 oid를 가져올 수 있어야함
+		// oid를 order_t 에서 가져오기 위해 temp_num 을 order_t에 넣어주고 temp_num=1 인 oid를 가져오게 구현
+		int temp_num = 1; 
 
 		for(CartDTO cart1 : list) {
 			qty += cart1.getCartqty();
@@ -48,8 +50,6 @@ public class OrderController {
 		order.setTemp_num(temp_num);
 
 		// 주문 DB 생성
-//		order.setOid(service.getOid(temp_num));
-		System.out.print("* service.getOid(temp_num) : " + service.getOid(temp_num));
 		service.deleteTemp(temp_num);
 		order.setProductname(list.size() > 1 ? list.get(0).getProductname() + " 외 " + (list.size() - 1) + "건" : list.get(0).getProductname());
 		order.setQty(qty);
@@ -60,8 +60,6 @@ public class OrderController {
 		
 		String oid = service.getOid(temp_num);
 		
-//		System.out.print("* order.getOid()" + order.getOid());
-		
 		// 상세 주문 DB 생성
 		for(CartDTO cart2 : list) {
 			orderDetail.setOid(oid);
@@ -70,28 +68,9 @@ public class OrderController {
 			service.orderDetail(orderDetail);
 		}
 
-		
 		deliveryDetail.setOid(oid);
 		service.deliveryDetail(deliveryDetail);
-
-		/*
-		// 주문번호 생성을 위한 캘린더 호출
-		Calendar cal = Calendar.getInstance();
-		int year = cal.get(Calendar.YEAR);  // 연도 추출
-		String ym = year + new DecimalFormat("00").format(cal.get(Calendar.MONTH) + 1);  // 월 추출
-		String ymd = ym +  new DecimalFormat("00").format(cal.get(Calendar.DATE));  // 일 추출
-		String subNum = "";  // 랜덤 숫자를 저장할 문자열 변수
 		
-		for(int i = 1; i <= 6; i ++) {  // 6회 반복
-			subNum += (int)(Math.random() * 10);  // 0~9까지의 숫자를 생성하여 subNum에 저장
-		}
-		
-		String oid = ymd + "_" + subNum;  // [연월일]_[랜덤숫자] 로 구성된 문자
-		
-		order.setOid(oid);
-		order.setUserid(userid);
-		 */
-
 		// 주문 테이블, 주문 상세 테이블에 데이터를 전송하고, 카트 비우기
 		service.cartAllDelete(userid);
 

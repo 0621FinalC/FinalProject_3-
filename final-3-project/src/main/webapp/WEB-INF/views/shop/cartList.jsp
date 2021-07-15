@@ -10,8 +10,23 @@
 <title>상품장바구니 목록페이지</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <link href="${pageContext.request.contextPath }/resources/css/shop/cartList.css" rel="stylesheet" />
+<link href="${pageContext.request.contextPath }/resources/include/header.css" rel="stylesheet" />
+<link href=”https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap” rel=”stylesheet”>
+<c:url var="main" value="/" />
+<c:url var="search_list" value="/product/search" />
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <script>
+	//검색: url에 키워드 붙여주는 함수
+	$(document).ready(function(){
+		$("#btn_search").click(function(){
+			// url 붙여주기
+			var url = "${search_list }";
+			url += "?keyword=" + $('#keyword').val();
+			location.href = url;
+			console.log(url); // 콘솔에 출력해서 확인
+		});
+	})
+	
 	$(document).ready(function(){
 		// 리스트 페이지로 이동
 		$("#btnList").click(function(){
@@ -21,6 +36,7 @@
 </script>
 </head>
 <body>
+	<%@ include file="../include/header.jsp" %>
 	<h2> 장바구니 확인</h2>
 	<!-- 장바구니 담긴 상품이 없으면(0) 장바구니가 비었습니다. 출력 아니면(0이 아님) 장바구니 목록 출력  -->
 	<c:choose>

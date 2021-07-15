@@ -8,14 +8,27 @@
 <head>
 <meta charset="UTF-8">
 <title>주문내역</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <link href="${pageContext.request.contextPath }/resources/css/orderlist/ordermain.css" rel="stylesheet" />
-<style type="text/css">
-	img {
-		width:80px; height:80px;
-	}
-</style>
+<link href="${pageContext.request.contextPath }/resources/include/header.css" rel="stylesheet" />
+<link href=”https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap” rel=”stylesheet”>
+<c:url var="main" value="/" />
+<c:url var="search_list" value="/product/search" />
+<script type="text/javascript">
+	// 검색: url에 키워드 붙여주는 함수
+	$(document).ready(function(){
+		$("#btn_search").click(function(){
+			// url 붙여주기
+			var url = "${search_list }";
+			url += "?keyword=" + $('#keyword').val();
+			location.href = url;
+			console.log(url); // 콘솔에 출력해서 확인
+		});
+	})
+</script>
 </head>
 <body>
+	<%@ include file="../include/header.jsp" %>
 	<h1>주문 내역</h1>
 	<h4>지난 3년간의 주문 내역 조회가 가능합니다.</h4>
 	<div>
@@ -30,7 +43,7 @@
 			</select>
 		</form>
 	</div>
-	<div>
+	<div class="orderlist_main">
 		<table>
 			<thead>
 				<th>주문일자</th>

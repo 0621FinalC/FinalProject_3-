@@ -9,11 +9,26 @@
 <title>회원 정보 보기 및 수정</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <link href="${pageContext.request.contextPath }/resources/css/user/info.css" rel="stylesheet" />
+<link href="${pageContext.request.contextPath }/resources/include/header.css" rel="stylesheet" />
+<link href=”https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap” rel=”stylesheet”>
+<c:url var="main" value="/" />
+<c:url var="search_list" value="/product/search" />
 <c:url var="update" value="/user/info" />
 <c:url var="delete" value="/user/delete" />
 <c:url var="home" value="/"/>
 <script type="text/javascript">
 function send() {
+	// 검색: url에 키워드 붙여주는 함수
+	$(document).ready(function(){
+		$("#btn_search").click(function(){
+			// url 붙여주기
+			var url = "${search_list }";
+			url += "?keyword=" + $('#keyword').val();
+			location.href = url;
+			console.log(url); // 콘솔에 출력해서 확인
+		});
+	})
+	
 	// disabled 설정을 submit할때는 풀어준다 (안풀어주면 userid에 null이 들어가고 그러면 user.xml의 updateUser에서 WHERE절 비교 불가)
 	$("input[name=userid]").attr("disabled", false);
 	$("input[name=username]").attr("disabled", false);
@@ -22,6 +37,7 @@ function send() {
 </script>
 </head>
 <body>
+	<%@ include file="../include/header.jsp" %>
 	<h2>회원 정보</h2>
 	<div class="info-form">
 		<form name="updateInfo" action="${update }" method="post">

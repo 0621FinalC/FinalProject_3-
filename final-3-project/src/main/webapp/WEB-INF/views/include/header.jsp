@@ -1,11 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" %>
+    pageEncoding="UTF-8" isELIgnored="false" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
 	boolean logined = false;
 	if(session.getAttribute("logined") != null){
 		logined = (boolean)session.getAttribute("logined");
 	}	
 %>
+<c:url var="main" value="/" />
+<c:url var="logout" value="/user/logout" />
+<c:url var="mypage" value="/user/mypage" />
+<c:url var="login" value="/user/login" />
+<c:url var="join" value="/user/join" />
+<c:url var="board_list" value="/product/list" />
+<c:url var="search_list" value="/product/search" />
+<c:url var="cart" value="/cart/list" />
 
 	<div class="navtop">
 		<a class="logo" href="${main }">
