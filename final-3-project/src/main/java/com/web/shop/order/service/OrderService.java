@@ -15,5 +15,7 @@ public interface OrderService {
 	public void cartAllDelete(String userId) throws Exception;
 	public void order(OrderDTO dto) throws Exception;
 	public void orderDetail(OrderDetailDTO dto) throws Exception; 
-	public void deliveryDetail(DeliveryDetailDTO dto) throws Exception; 
+	public void deliveryDetail(DeliveryDetailDTO dto) throws Exception;
+	public String getOid(int temp_num) throws Exception;
+	public void deleteTemp(int temp_num) throws Exception;
 }

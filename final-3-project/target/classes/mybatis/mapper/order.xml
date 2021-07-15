@@ -37,8 +37,8 @@
   </insert>
   
   <insert id="order" parameterType="order">
-    insert into order_t(oid, tid, qty, userid, address, phone, orderstat, orderdate, ordermemo, paymentmethod, approved_at)
-        values(#{oid}, #{tid}, #{qty}, #{userid}, #{address}, #{phone}, #{orderstat}, #{orderdate}, #{ordermemo}, #{paymentmethod}, #{approved_at})
+    insert into order_t(oid, tid, productname, qty, totalprice, userid)
+        values(#{oid}, #{tid}, #{productname}, #{qty}, #{totalprice}, #{userid})
   </insert>
 
   <insert id="orderDetail" parameterType="orderdetail">
@@ -55,6 +55,14 @@
   <delete id="cartAllDelete">
      delete CART_T
 		 where userid = #{userid}
+  </delete>
+  
+  <select id="getOid" parameterType="_int" resultType="String">
+  	SELECT oid FROM order_t WHERE temp_num = #{temp_num}
+  </select>
+
+  <delete id="deleteTemp" parameterType="_int">
+  	DELETE FROM order_t WHERE temp_num = #{temp_num}
   </delete>
   
 </mapper>

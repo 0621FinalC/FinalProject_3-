@@ -65,4 +65,14 @@ public class OrderServiceImpl implements OrderService {
 	public void deliveryDetail(DeliveryDetailDTO dto) throws Exception {
 		dao.deliveryDetail(dto);
 	}
+
+	@Override
+	public String getOid(int temp_num) throws Exception {
+		return dao.getOid(temp_num);
+	}
+
+	@Override
+	public void deleteTemp(int temp_num) throws Exception {
+		dao.deleteTemp(temp_num);
+	}
 }
