@@ -55,4 +55,13 @@ public class ProductController {
     	mav.addObject("dto", productService.detailProduct(product_id));
     	return mav;
     }
+    
+//    detail.jsp 에서 62번째줄 : 명규씨랑 유정이 서로 파라미터 넘겨주는 형식 달라서 하나 더 만들었음
+    @RequestMapping("/detail")
+    public ModelAndView detail2(
+    		@RequestParam int goodsno, ModelAndView mav) {
+    	mav.setViewName("/shop/product_detail");
+    	mav.addObject("dto", productService.detailProduct(goodsno));
+    	return mav;
+    }
 }

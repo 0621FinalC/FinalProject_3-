@@ -40,7 +40,7 @@ public class OrderListController {
 	private OrderService order;
 	
 	@RequestMapping(value = "/list")
-	public String orderlist(HttpServletRequest req, Model m) throws Exception {
+	public String orderlist(HttpServletRequest req, Model m, HttpSession session) throws Exception {
 		int year = 0;
 		
 		if(req.getParameter("year") != null) {
@@ -62,9 +62,9 @@ public class OrderListController {
 		List<OrderDTO> orderlist = null;
 		
 		// 로그인 세션 userid값 가져와서 일치하는 주문서 가져오기
-		HttpSession session = req.getSession();
-		// String userid = (String)session.getAttribute("userid");
-		orderlist = order_detail.findAll("admin", year, page, list_cnt);
+//		HttpSession session = req.getSession();
+		String userid = (String)session.getAttribute("userid");
+		orderlist = order_detail.findAll(userid, year, page, list_cnt);
 		
 		// 가져온 주문서 정보 jsp로 보내주기
 		m.addAttribute("orderlist", orderlist);

@@ -33,16 +33,23 @@
 </head>
 <body>
 	<%@ include file="../include/header.jsp" %>
-	<h1>결제 화면</h1>
-	<div>
-		상품명 : ${order.getProductname() }<br>
-		수량 : ${order.getQty() } 개<br>
-		금액 : <fmt:formatNumber value="${order.getTotalprice() }" />원
+	<div class="tit_wrap">
+		<h3 class="tit">결제 화면</h3>
 	</div>
-	<div>
-		<c:url var="pay_img" value="/resources" />
-		<c:url var="pay_url" value="/pay/payment" />
-		<a href="${pay_url }"><img src="${pay_img }/img/kakaopay/payment_icon_yellow_medium.png"></a>
+	<div class="wrapper">
+		<div class="wrap">
+			<div class="pay_page">
+				상품명 : ${order.getProductname() }<br><br>
+				수량 : ${order.getQty() } 개<br><br>
+				금액 : <fmt:formatNumber value="${order.getTotalprice() }" />원
+			</div>
+			<div>
+				<c:url var="pay_img" value="/resources" />
+				<c:url var="pay_url" value="/pay/payment" />
+				<a href="${pay_url }"><img src="${pay_img }/img/kakaopay/payment_icon_yellow_medium.png"></a>
+			</div>
+		</div>
 	</div>
+	<%@ include file="../include/footer.jsp" %>
 </body>
 </html>

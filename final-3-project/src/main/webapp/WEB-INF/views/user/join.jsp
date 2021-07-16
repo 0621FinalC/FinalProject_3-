@@ -89,7 +89,7 @@
 <body>
 	<%@ include file="../include/header.jsp" %>
 	<div class="tit_wrap">
-		<h3 class="tit">&nbsp;회원가입</h3>
+		<h3 class="tit">회원가입</h3>
 	</div>
 	<div class="wrapper">
 		<form name="userInfo" action="${join }" method="post">
@@ -102,17 +102,17 @@
 				</div>
 				
 				<div class="join_wrap">
-					<label class="join_name" for="userpass">비밀번호</label>
+					<label class="join_name" for="pass1">비밀번호</label>
 		       	 	<input class="input_box" type="password" name="password" id="pass1" maxlength="30" required>
 				</div>
 				
 				<div class="join_wrap">
-					<label class="join_name" for="userpass2">비밀번호 확인</label>
+					<label class="join_name" for="pass2">비밀번호 확인</label>
 					<input class="input_box" type="password" name="password2" id="pass2" maxlength="30" required>
 				</div>
 			
 				<div class="join_wrap">
-					<label class="join_name" for="name">이름</label>
+					<label class="join_name" for="username">이름</label>
 					<input class="input_box" type="text" name="username" id="username" maxlength="30" required>
 				</div>
 				
@@ -146,5 +146,6 @@
 			</div>		
 		</form>
 	</div>
+	<%@ include file="../include/footer.jsp" %>
 </body>
 </html>

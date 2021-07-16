@@ -1,63 +1,59 @@
 @charset "UTF-8";
+
 *{
 	margin: 0;
 	padding:0;
 }
-
 body {
+	margin: 0;
 	height: 100%;
 	font-family: ‘Noto Sans KR’, sans-serif;
 }
-/* 화면 전체 랩 */
-.wrapper{
-	width: 100%;
-	padding-bottom: 120px;
-}
+/* 페이지 제목 */
 
-/* content 랩 */
-.wrap{
-	padding-top: 36px;
-	width : 500px;
-	/* margin: 10px; */
-}
-
-/* 페이지 로고 */
-.logo_wrap{
+.tit_wrap {
 	text-align: center;	
 	margin-top: 80px;
-	margin-bottom: 30px;
+	margin-bottom: 50px;
 }
 
-.logo_wrap > span{
+.tit {
 	font-size : 17px;
 	font-weight: 450;
 }
 
-
-/* 로그인 area */
-.id_input_box{
-	BORDER-BOTTOM: black 1.4px solid;
-	BORDER-LEFT: medium none;
-	BORDER-RIGHT: medium none;
-	BORDER-TOP: medium none;
-	height: 29px;
-	padding: 5px 14px;	
-	display: block;
-	width : 200px;
-	margin : auto;	
-}
-.id_input{
-	width:100%;
-	height:100%;
-	border:none;
-	font-size:15px;
+/* 화면 전체 렙 */
+.wrapper{
 	text-align: center;
+    padding-bottom: 120px;
+	max-width: 100%;	
 }
 
-.pw_wrap{
-	margin-top: 20px;
+/* content 랩 */
+.wrap{
+	text-align: center;
+	width : 600px;
+	margin: auto;
 }
-.pw_input_box{
+
+/* 아이디 영역 */
+.login_wrap{
+	width: 100%;
+    margin-top: 30px;
+}
+
+.login_label_name {
+	width: 159px;
+    padding: 25px;
+    margin: 5px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    vertical-align: top;
+    text-align: left;
+    font-weight: bold;
+}
+.input_box{
 	BORDER-BOTTOM: black 1.4px solid;
 	BORDER-LEFT: medium none;
 	BORDER-RIGHT: medium none;
@@ -65,17 +61,13 @@ body {
 	height: 29px;
 	padding: 0px 14px;	
 	display: block;
-	width : 200px;
-	margin : auto;
-}
-.pw_iput{
-	width:100%;
-	height:100%;
-	border:none;
-	font-size:15px;
-	text-align: center;	
+	width : 250px;
+	margin : auto;		
+	text-align: center;
 }
 
+
+/* 에러 */
 .error_wrap {
 	margin-top: 20px;
 	text-align: center;
@@ -84,18 +76,14 @@ body {
 	font-size:13px;
 }
 
-.login_button_form{
-	margin-top: 20px;
+/* 버튼 */
+
+.login_button_wrap{
+	margin-top: 40px;
 	text-align: center;
 }
-
-.login_button, .cancel_button{
-	/* width: 120px;
-    height: 30px; */
-    /* font-size: 16px; */
-    /* color: black; */
-   /*  border-radius: 5px; */
-    background-color:white;
+.btn_login, .btn_cancel {
+	background-color:white;
     border: none;
     cursor: pointer;
 }

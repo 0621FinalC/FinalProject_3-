@@ -38,7 +38,7 @@ body {
 /* 아이디 영역 */
 .join_wrap{
 	width: 100%;
-    margin: 20px;
+    margin-top: 20px;
 }
 
 .join_name{
@@ -112,14 +112,16 @@ body {
 .join_wrap input[type=radio]{
     display: none;
 }
-.join_wrapinput[type=radio]+label{
+.join_wrap input[type=radio]+label{
+    margin-top: 10px;
     display: inline-block;
     cursor: pointer;
-    height: 10px;
-    width: 60px;
+    height: 16px;
+    width: 30px;
     border: 1px solid #333;
-    line-height: 24px;
+    line-height: 15px;
     text-align: center;
+    vertical-align: center;
     font-weight:bold;
     font-size:13px;
 }

@@ -32,10 +32,17 @@
 </head>
 <body>
 	<%@ include file="../include/header.jsp" %>
-	<h1>결제가 완료되었습니다.</h1>
+	<div class="tit_wrap">
+		<h3 class="tit">결제가 완료되었습니다.</h3>
+	</div>
 	<c:url var="home" value="/"/>
 	<c:url var="order_list" value="/order/list" />
-	<button type="button" onclick="location.href='${home}'">홈으로 돌아가기</button>
-	<button type="button" onclick="location.href='${order_list}'">주문내역 확인하기</button>
+	<div class="wrap">
+		<button type="button" onclick="location.href='${order_list}'">주문내역 확인하기</button>
+	</div>
+	<div class="wrap">
+		<button type="button" onclick="location.href='${home}'">홈으로 돌아가기</button>
+	</div>
+	<%@ include file="../include/footer.jsp" %>
 </body>
 </html>

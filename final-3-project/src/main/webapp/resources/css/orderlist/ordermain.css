@@ -1,6 +1,78 @@
 @charset "UTF-8";
 
-
 .orderlist_main img {
 	width:80px; height:80px;
 }
+
+*{
+	margin: 0;
+	padding:0;
+}
+
+body {
+	margin: 0;
+	height: 100%;
+	font-family: ‘Noto Sans KR’, sans-serif;
+}
+/* 페이지 제목 */
+
+.tit_wrap {
+	text-align: center;	
+	margin-top: 80px;
+	margin-bottom: 30px;
+}
+
+.tit {
+	font-size : 17px;
+	font-weight: 450;
+}
+
+.tit2 {
+	font-size : 14px;
+	font-weight: 450;
+}
+
+/* 화면 전체 렙 */
+.wrapper{
+	text-align: center;
+    padding-bottom: 120px;
+	max-width: 100%;	
+}
+
+.wrap{
+	text-align: center;
+	width : 800px;
+	margin: auto;
+}
+
+/* 기간선택 */
+.select_year {
+	margin-top: 0px;
+	margin-bottom: 30px;
+}
+
+/* 주문내역 표 : 가운데 정렬 */
+.orderlist_main_table {
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 15px;
+	
+	border-spacing: 1.3em 0.8em;
+ 	padding: 0 2em 1em 0;
+}
+
+.page_num {
+	margin-top: 24px;
+	font-size: 14px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+
+
+
+
+

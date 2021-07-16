@@ -31,8 +31,13 @@
 </head>
 <body>
 	<%@ include file="../include/header.jsp" %>
-	<h1>결제가 취소되었습니다.</h1>
-	<c:url var="home" value="/main"/>
-	<button type="button" onclick="location.href='${home}'">홈으로 돌아가기</button>
+	<div class="tit_wrap">
+		<h3 class="tit">결제가 취소되었습니다.</h3>
+	</div>
+	<c:url var="home" value="/"/>
+	<div class="wrap">
+		<button type="button" onclick="location.href='${home}'">홈으로 돌아가기</button>
+	</div>
+	<%@ include file="../include/footer.jsp" %>
 </body>
 </html>
