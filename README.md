@@ -18,6 +18,7 @@
 
 
 ## DB구조 (개발하면서 필요에 따라 수정)
+![0009](https://user-images.githubusercontent.com/86212850/125954988-02f0c0d4-69d2-4ed9-9e04-1da59ae20a6d.jpg)
 
 
 ## 웹페이지 흐름도
