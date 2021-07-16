@@ -1,5 +1,5 @@
 # FinalProject_team3
-- 프로젝트가 있는 브랜치 : 머지_
+- 프로젝트가 있는 브랜치 : 머지_전체
 
 ## 프로젝트 주제
 <img width="1024" alt="스크린샷 2021-06-23 오후 3 18 25" src="https://user-images.githubusercontent.com/86212850/123045776-45d76a80-d436-11eb-944d-ed84c696347f.png">
