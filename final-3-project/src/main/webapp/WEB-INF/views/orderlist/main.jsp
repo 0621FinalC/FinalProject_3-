@@ -15,14 +15,12 @@
 <c:url var="main" value="/" />
 <c:url var="search_list" value="/product/search" />
 <script type="text/javascript">
-	// 검색: url에 키워드 붙여주는 함수
 	$(document).ready(function(){
 		$("#btn_search").click(function(){
 			// url 붙여주기
 			var url = "${search_list }";
 			url += "?keyword=" + $('#keyword').val();
 			location.href = url;
-			console.log(url); // 콘솔에 출력해서 확인
 		});
 	})
 </script>
@@ -62,20 +60,14 @@
 						<td>${orderDate }</td>
 						
 						<c:set var="pname" value="${order.getProductname() }" />
-						<c:choose>
-							<c:when test="${fn:contains(pname , '외') }">
-								<c:set var="pname" value="${fn:substringBefore(pname, ' 외') }"/>
-								<!-- <script>
-									console.log("${pname}");
-								</script> -->
-								
-							</c:when>
-							
-							<c:when test="${fn:contains(pname , '[') or fn:contains(pname , ']') }">
-								<c:set var="pname" value="${fn:replace(pname, '[', '%5B') }" />
-								<c:set var="pname" value="${fn:replace(pname, ']', '%5D') }" />
-							</c:when>
-						</c:choose>
+						<c:if test="${fn:contains(pname , '외') }">
+							< c:set var="pname" value="${fn:substringBefore(pname, ' 외') }"/>
+						</c:if>
+						
+						<c:if test="${fn:contains(pname , '[') or fn:contains(pname , ']') }">
+							<c:set var="pname" value="${fn:replace(pname, '[', '%5B') }" />
+							<c:set var="pname" value="${fn:replace(pname, ']', '%5D') }" />
+						</c:if>
 						
 						<td><img src="../resources/img/product/${pname }.jpg"></td>
 						<td><a href="${detail }?ordno=${order.getOid() }">${order.getProductname() }</a></td>

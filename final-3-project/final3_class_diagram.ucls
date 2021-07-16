@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="com.web.shop.MainpageController" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/MainpageController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="101" width="223" x="1887" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.web.shop.cart.controller.CartController" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/cart/controller/CartController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="155" width="280" x="3040" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.web.shop.cart.dto.CartDTO" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/cart/dto/CartDTO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="533" width="179" x="518" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="4" language="java" name="com.web.shop.cart.repository.CartRepository" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/cart/repository/CartRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="191" width="187" x="3480" y="934"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="5" language="java" name="com.web.shop.cart.repository.CartRepositoryImpl" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/cart/repository/CartRepositoryImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="245" width="197" x="3600" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="6" language="java" name="com.web.shop.cart.service.CartService" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/cart/service/CartService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="191" width="187" x="3200" y="934"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="7" language="java" name="com.web.shop.cart.service.CartServiceImpl" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/cart/service/CartServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="227" width="200" x="3360" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="com.web.shop.order.controller.KakapPayController" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/order/controller/KakapPayController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="173" width="287" x="4697" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="com.web.shop.order.controller.OrderController" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/order/controller/OrderController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="101" width="264" x="5024" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="com.web.shop.order.dto.OrderDTO" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/order/dto/OrderDTO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="857" width="195" x="42" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="com.web.shop.order.repository.OrderRepositoryImpl" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/order/repository/OrderRepositoryImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="299" width="231" x="5599" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="12" language="java" name="com.web.shop.order.service.OrderService" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/order/service/OrderService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="263" width="231" x="4864" y="934"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="13" language="java" name="com.web.shop.orderlist.controller.OrderListController" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/orderlist/controller/OrderListController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="119" width="252" x="4405" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="14" language="java" name="com.web.shop.order.repository.OrderRepository" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/order/repository/OrderRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="263" width="231" x="5464" y="934"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="15" language="java" name="com.web.shop.order.service.OrderServiceImpl" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/order/service/OrderServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="281" width="231" x="5328" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="com.web.shop.orderlist.dto.DeliveryDetailDTO" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/orderlist/dto/DeliveryDetailDTO.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="461" width="178" x="1669" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="com.web.shop.orderlist.dto.PaymentDetailDTO" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/orderlist/dto/PaymentDetailDTO.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="299" width="231" x="737" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="com.web.shop.order.dto.ShopDTO" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/order/dto/ShopDTO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="191" width="193" x="1436" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="com.web.shop.orderlist.dto.OrderDetailDTO" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/orderlist/dto/OrderDetailDTO.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="407" width="179" x="1008" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="com.web.shop.product.dao.ProductDAOImpl" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/product/dao/ProductDAOImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="227" width="262" x="2738" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="com.web.shop.orderlist.repository.OrderListRepositoryImpl" 
+    project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/orderlist/repository/OrderListRepositoryImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="173" width="250" x="3837" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="com.web.shop.product.service.ProductServiceImpl" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/product/service/ProductServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="209" width="262" x="2436" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="23" language="java" name="com.web.shop.orderlist.repository.OrderListRepository" 
+    project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/orderlist/repository/OrderListRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="137" width="250" x="3982" y="934"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="24" language="java" name="com.web.shop.orderlist.service.OrderListService" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/orderlist/service/OrderListService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="137" width="238" x="4405" y="934"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="25" language="java" name="com.web.shop.user.service.UserServiceImpl" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/user/service/UserServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="191" width="193" x="5870" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="com.web.shop.user.repository.UserRepositoryImpl" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/user/repository/UserRepositoryImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="209" width="195" x="5870" y="934"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="27" language="java" name="com.web.shop.product.service.ProductService" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/product/service/ProductService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="191" width="262" x="2150" y="934"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="28" language="java" name="com.web.shop.user.controller.AjaxUserController" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/user/controller/AjaxUserController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="101" width="167" x="6431" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="com.web.shop.user.controller.UserController" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/user/controller/UserController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="263" width="288" x="6103" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="com.web.shop.user.dto.UserDTO" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/user/dto/UserDTO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="533" width="169" x="1227" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="com.web.shop.product.controller.ProductController" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/product/controller/ProductController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="137" width="246" x="2150" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="32" language="java" name="com.web.shop.user.repository.UserRepository" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/user/repository/UserRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="173" width="195" x="5870" y="1237"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="33" language="java" name="com.web.shop.product.dao.ProductDAO" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/product/dao/ProductDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="191" width="262" x="2587" y="934"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="34" language="java" name="com.web.shop.user.service.UserService" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/user/service/UserService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="173" width="193" x="6105" y="934"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="35" language="java" name="com.web.shop.orderlist.service.OrderListServiceImpl" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/orderlist/service/OrderListServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="155" width="238" x="4127" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="36" language="java" name="com.web.shop.product.dto.ProductDTO" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/product/dto/ProductDTO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="587" width="201" x="277" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <realization id="37">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="14"/>  
+  </realization>  
+  <association id="38">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="39" name="cartRepository"/>      
+      <multiplicity id="40" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="41">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="42" name="order"/>      
+      <multiplicity id="43" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="44">    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="24"/>  
+  </realization>  
+  <association id="45">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="46" name="dao"/>      
+      <multiplicity id="47" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="48">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="49" name="user"/>      
+      <multiplicity id="50" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="34" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="51">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="23"/>  
+  </realization>  
+  <association id="52">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="53" name="productService"/>      
+      <multiplicity id="54" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="55">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="27"/>  
+  </realization>  
+  <association id="56">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="57" name="detail"/>      
+      <multiplicity id="58" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="59">    
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="60" name="productService"/>      
+      <multiplicity id="61" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="62">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="4"/>  
+  </realization>  
+  <association id="63">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="64" name="service"/>      
+      <multiplicity id="65" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="66">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="67" name="dao"/>      
+      <multiplicity id="68" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="69">    
+    <end type="SOURCE" refId="35" navigable="false">      
+      <attribute id="70" name="dao"/>      
+      <multiplicity id="71" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="72">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="73" name="order"/>      
+      <multiplicity id="74" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="75">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="76" name="productDao"/>      
+      <multiplicity id="77" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="33" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="78">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="34"/>  
+  </realization>  
+  <realization id="79">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="32"/>  
+  </realization>  
+  <realization id="80">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <association id="81">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="82" name="user"/>      
+      <multiplicity id="83" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="34" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="84">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="85" name="cartService"/>      
+      <multiplicity id="86" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="87">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="12"/>  
+  </realization>  
+  <realization id="88">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="33"/>  
+  </realization>  
+  <association id="89">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="90" name="order_detail"/>      
+      <multiplicity id="91" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
