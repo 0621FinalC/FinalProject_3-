@@ -8,10 +8,31 @@
 <head>
 <meta charset="UTF-8">	
 <title>상품</title>
- 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<link href="${pageContext.request.contextPath }/resources/css/shop/product_detail.css" rel="stylesheet" />
+<link href="${pageContext.request.contextPath }/resources/include/header.css" rel="stylesheet" />
+<link href=”https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap” rel=”stylesheet”>
+<c:url var="main" value="/" />
+<c:url var="search_list" value="/product/search" />
+<script type="text/javascript">
+	$(do$("#keyword").keydown(function(e){
+		if(e.keyCode == 13) {
+			$("#btn_search").click();
+			return false;
+		} 
+	});
+	
+	$("#btn_search").click(function(){
+		var url = "${search_list }";
+		url += "?keyword=" + $('#keyword').val();
+		location.href = url;
+		console.log(url);
+	});
+	})
+</script>
 </head>
 <body>
-   
+   	<%@ include file="../include/header.jsp" %>
     <h2>상품 정보</h2>
     <table>
         <tr>
@@ -52,13 +73,20 @@
                     	<td>재고</td>
                     	<td>${dto.INVENTORY }</td>
                     </tr>
-                    
-                    <tr>
-                    	<td>                         
-                            <a href="${path}/shop/product/list.do">상품목록</a>
-                        </td>
-                    </tr>
-                </table>
+                    <tr align="center">
+						<td colspan="2">
+							<form name="form1" method="post" action="${path}/cart/insert">
+								<input type="hidden" name="pid" value="${dto.PID}">
+								<select name="cartqty">
+									<c:forEach begin="1" end="10" var="i">
+										<option value="${i}">${i}</option>
+									</c:forEach>
+								</select>&nbsp;개
+								<input type="submit" value="장바구니에 담기">
+							</form>
+							<a href="${path}/product/list.do">상품목록</a>
+						</td>
+					</tr>
     </table>
 </body>
 </html>

@@ -1,1 +1,5 @@
 @charset "UTF-8";
+
+.orderlist_detail img {
+	width:80px; height:80px;
+}

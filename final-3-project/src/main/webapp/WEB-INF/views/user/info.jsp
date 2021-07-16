@@ -18,14 +18,19 @@
 <c:url var="home" value="/"/>
 <script type="text/javascript">
 function send() {
-	// 검색: url에 키워드 붙여주는 함수
 	$(document).ready(function(){
+		$("#keyword").keydown(function(e){
+			if(e.keyCode == 13) {
+				$("#btn_search").click();
+				return false;
+			} 
+		});
+		
 		$("#btn_search").click(function(){
-			// url 붙여주기
 			var url = "${search_list }";
 			url += "?keyword=" + $('#keyword').val();
 			location.href = url;
-			console.log(url); // 콘솔에 출력해서 확인
+			console.log(url);
 		});
 	})
 	

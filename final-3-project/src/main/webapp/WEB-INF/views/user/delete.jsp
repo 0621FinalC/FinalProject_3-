@@ -15,28 +15,33 @@
 <c:url var="delete" value="/user/delete" />
 <script type="text/javascript">
 
-//검색: url에 키워드 붙여주는 함수
-$(document).ready(function(){
-	$("#btn_search").click(function(){
-		// url 붙여주기
-		var url = "${search_list }";
-		url += "?keyword=" + $('#keyword').val();
-		location.href = url;
-		console.log(url); // 콘솔에 출력해서 확인
-	});
-})
-
-function send() {
-	var pass = document.getElementById("password");
-	if (pass.value == "" || pass.value == undefined) {
-		alert("패스워드를 입력하세요.");
-		password.focus();
-		return;
+	$(document).ready(function(){
+		$("#keyword").keydown(function(e){
+			if(e.keyCode == 13) {
+				$("#btn_search").click();
+				return false;
+			} 
+		});
+		
+		$("#btn_search").click(function(){
+			var url = "${search_list }";
+			url += "?keyword=" + $('#keyword').val();
+			location.href = url;
+			console.log(url);
+		});
+	})
+	
+	function send() {
+		var pass = document.getElementById("password");
+		if (pass.value == "" || pass.value == undefined) {
+			alert("패스워드를 입력하세요.");
+			password.focus();
+			return;
+		}
+		// disabled 설정을 submit할때는 풀어준다
+		$("input[name=userid]").attr("disabled", false);
+		document.deleteInfo.submit();
 	}
-	// disabled 설정을 submit할때는 풀어준다
-	$("input[name=userid]").attr("disabled", false);
-	document.deleteInfo.submit();
-}
 </script>
 </head>
 <body>

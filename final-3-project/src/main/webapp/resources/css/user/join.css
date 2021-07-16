@@ -9,23 +9,28 @@ body {
 	font-family: ‘Noto Sans KR’, sans-serif;
 }
 /* 페이지 제목 */
-.tit {
-	padding-top: 64px;
-    font-weight: 900;
-    font-size: 30px;
-    color: #333;
-    line-height: 40px;
-    text-align: center;
-    letter-spacing: -.5px;
+
+.tit_wrap {
+	text-align: center;	
+	margin-top: 80px;
+	margin-bottom: 50px;
 }
+
+.tit {
+	font-size : 17px;
+	font-weight: 450;
+}
+
 /* 화면 전체 렙 */
 .wrapper{
+	text-align: center;
     padding-bottom: 120px;
 	max-width: 100%;	
 }
 
 /* content 랩 */
 .wrap{
+	text-align: center;
 	width : 600px;
 	margin: auto;
 }
@@ -33,12 +38,14 @@ body {
 /* 아이디 영역 */
 .join_wrap{
 	width: 100%;
-    margin-top: 20px;
+    margin: 20px;
 }
+
 .join_name{
 	width: 159px;
-    padding: 20px 0 0 20px;
-    font-weight: 700;
+    padding: 25px;
+    margin: 5px;
+    font-weight: 500;
     font-size: 14px;
     line-height: 20px;
     vertical-align: top;
@@ -46,20 +53,28 @@ body {
     font-weight: bold;
 }
 .input_box{
-	border: 1px solid black;
-	width: 332px;
-	height:25px;
-	padding: 10px 14px;	
-	
+	BORDER-BOTTOM: black 1.4px solid;
+	BORDER-LEFT: medium none;
+	BORDER-RIGHT: medium none;
+	BORDER-TOP: medium none;
+	height: 29px;
+	padding: 0px 14px;	
+	display: block;
+	width : 250px;
+	margin : auto;		
+	text-align: center;
 }
+
 .id_check_btn {
-	border: 1px solid green;
-    background-color: white;
-    color: green;
-    display: inline-block;
-    height: 25px;
-    vertical-align: top;
-   	border-radius: 5px;
+	margin-top: 15px;
+	background-color:white;
+    border: none;
+    cursor: pointer;
+}
+
+#id_check_res {
+	color: #2e76f6;
+	font-size:13px;
 }
 
 /* 메일 영역 */
@@ -94,6 +109,28 @@ body {
 }
 
 /* 성별 영역 */
+.join_wrap input[type=radio]{
+    display: none;
+}
+.join_wrapinput[type=radio]+label{
+    display: inline-block;
+    cursor: pointer;
+    height: 10px;
+    width: 60px;
+    border: 1px solid #333;
+    line-height: 24px;
+    text-align: center;
+    font-weight:bold;
+    font-size:13px;
+}
+.join_wrap input[type=radio]+label{
+    background-color: #fff;
+    color: #333;
+}
+.join_wrap input[type=radio]:checked+label{
+    background-color: #333;
+    color: #fff;
+}
 
 /* 핸드폰 번호 영역 */
 
@@ -131,13 +168,10 @@ body {
 	margin-top: 40px;
 	text-align: center;
 }
-.join_button{
-	width: 240px;
-    height: 56px;
-    background-color:green;
-    font-size: 16px;
-    color: white;
-    border-radius: 5px;
+.join_button, .cancel_button{
+	background-color:white;
+    border: none;
+    cursor: pointer;
 }
 
 /* float 속성 해제 */

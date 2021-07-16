@@ -69,8 +69,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="com.web.shop.order.controller.KakapPayController" project="final-3-project" 
-    file="/final-3-project/src/main/java/com/web/shop/order/controller/KakapPayController.java" binary="false" 
+  <class id="8" language="java" name="com.web.shop.order.controller.KakaoPayController" project="final-3-project" 
+    file="/final-3-project/src/main/java/com/web/shop/order/controller/KakaoPayController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="173" width="287" x="4697" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 

@@ -8,13 +8,32 @@
 <head>
 <meta charset="UTF-8">
 <title>주문내역</title>
-<style type="text/css">
-	img {
-		width:80px; height:80px;
-	}
-</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<link href="${pageContext.request.contextPath }/resources/css/orderlist/ordermain.css" rel="stylesheet" />
+<link href="${pageContext.request.contextPath }/resources/include/header.css" rel="stylesheet" />
+<link href=”https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap” rel=”stylesheet”>
+<c:url var="main" value="/" />
+<c:url var="search_list" value="/product/search" />
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#keyword").keydown(function(e){
+			if(e.keyCode == 13) {
+				$("#btn_search").click();
+				return false;
+			} 
+		});
+		
+		$("#btn_search").click(function(){
+			var url = "${search_list }";
+			url += "?keyword=" + $('#keyword').val();
+			location.href = url;
+			console.log(url);
+		});
+	})
+</script>
 </head>
 <body>
+	<%@ include file="../include/header.jsp" %>
 	<h1>주문 내역</h1>
 	<h4>지난 3년간의 주문 내역 조회가 가능합니다.</h4>
 	<div>
@@ -29,7 +48,7 @@
 			</select>
 		</form>
 	</div>
-	<div>
+	<div class="orderlist_main">
 		<table>
 			<thead>
 				<th>주문일자</th>
@@ -48,16 +67,14 @@
 						<td>${orderDate }</td>
 						
 						<c:set var="pname" value="${order.getProductname() }" />
-						<c:choose>
-							<c:when test="${fn:contains(pname , '외') }">
-								<c:set var="pname" value="${fn:substringBefore(pname, ' 외') }"/>
-							</c:when>
-							
-							<c:when test="${fn:contains(pname , '[') or fn:contains(pname , ']') }">
-								<c:set var="pname" value="${fn:replace(pname, '[', '%5B') }" />
-								<c:set var="pname" value="${fn:replace(pname, ']', '%5D') }" />
-							</c:when>
-						</c:choose>
+						<c:if test="${fn:contains(pname , '외') }">
+							< c:set var="pname" value="${fn:substringBefore(pname, ' 외') }"/>
+						</c:if>
+						
+						<c:if test="${fn:contains(pname , '[') or fn:contains(pname , ']') }">
+							<c:set var="pname" value="${fn:replace(pname, '[', '%5B') }" />
+							<c:set var="pname" value="${fn:replace(pname, ']', '%5D') }" />
+						</c:if>
 						
 						<td><img src="../resources/img/product/${pname }.jpg"></td>
 						<td><a href="${detail }?ordno=${order.getOid() }">${order.getProductname() }</a></td>
@@ -68,6 +85,24 @@
 				</c:forEach>
 			</tbody>
 		</table>
+	</div>
+	
+	<div>
+		<c:set var="st_page" value="${st_page_num }"/>
+		<c:set var="ed_page" value="${ed_page_num }"/>
+		<c:set var="page_num" value="${page }"/>
+
+		<c:forEach var="p" begin="${st_page }" end="${ed_page }" step="1">
+			<c:choose>
+				<c:when test="${p eq page_num }">
+					<a style="color: red;">[${p }]</a>
+				</c:when>
+
+				<c:otherwise>
+					<a href="<%=request.getContextPath() %>/order/list?page=${p }">[${p }]</a>
+				</c:otherwise>
+			</c:choose>
+		</c:forEach>
 	</div>
 </body>
 </html>

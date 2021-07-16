@@ -3,12 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<%-- <%
-	boolean logined = false;
-	if(session.getAttribute("logined") != null){
-		logined = (boolean)session.getAttribute("logined");
-	}	
-%> --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,23 +12,25 @@
 <link href="${pageContext.request.contextPath }/resources/css/main.css" rel="stylesheet" />
 <link href="${pageContext.request.contextPath }/resources/include/header.css" rel="stylesheet" />
 <link href=”https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap” rel=”stylesheet”>
-<c:url var="main" value="/" />
-<c:url var="logout" value="/user/logout" />
-<c:url var="mypage" value="/user/mypage" />
-<c:url var="login" value="/user/login" />
-<c:url var="join" value="/user/join" />
 <c:url var="board_list" value="/product/list" />
 <c:url var="search_list" value="/product/search" />
 <c:url var="cart" value="/cart/list" />
+<!-- 스크립트 내장으로 넣으려고 했는데, url 관련 오류나서 일단 보류 -->
 <script type="text/javascript">
-	// 검색: url에 키워드 붙여주는 함수
 	$(document).ready(function(){
+		
+		$("#keyword").keydown(function(e){
+			if(e.keyCode == 13) {
+				$("#btn_search").click();
+				return false;
+			} 
+		});
+		
 		$("#btn_search").click(function(){
-			// url 붙여주기
+			/* url 붙여주기 */
 			var url = "${search_list }";
 			url += "?keyword=" + $('#keyword').val();
 			location.href = url;
-			console.log(url); // 콘솔에 출력해서 확인
 		});
 	})
 </script>

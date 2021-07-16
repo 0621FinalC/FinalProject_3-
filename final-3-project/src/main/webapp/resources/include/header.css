@@ -101,13 +101,14 @@ body {
 }
 
 .search .search_form {
-	BORDER-BOTTOM: teal 1px solid;
+	BORDER-BOTTOM: black 1px solid;
 	BORDER-LEFT: medium none;
 	BORDER-RIGHT: medium none;
 	BORDER-TOP: medium none;
 }
 
-button {
+.search > button {
 	background-color: white;
 	border: none;
+	cursor: pointer;
 }

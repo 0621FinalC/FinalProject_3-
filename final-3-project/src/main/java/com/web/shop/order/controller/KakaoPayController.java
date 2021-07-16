@@ -32,7 +32,7 @@ import com.web.shop.orderlist.service.OrderListService;
 
 @Controller
 @RequestMapping(value = "/pay")
-public class KakapPayController {
+public class KakaoPayController {
 	
 	@Autowired
 	private OrderService order;
@@ -189,7 +189,7 @@ public class KakapPayController {
 	
 	@RequestMapping(value = "/cancel")
 	public String cancel(){
-		String forward = "kakopay/cancel";
+		String forward = "kakaopay/cancel";
 		return forward;
 	}
 	

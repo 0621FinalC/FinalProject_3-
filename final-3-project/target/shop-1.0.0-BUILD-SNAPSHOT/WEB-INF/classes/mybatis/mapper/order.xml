@@ -23,4 +23,50 @@
   <select id="selectShop" resultType="shop">
   	SELECT * FROM shop_info
   </select>
+  
+  <update id="inventory" parameterType="hashmap">
+  	UPDATE product_t
+	SET inventory = inventory - #{qty}
+	WHERE productname = #{productname}
+  </update>
+  
+  <!-- 동국님 코드 -->
+  <insert id="orderInfo">
+    insert into DELIVERY_INFO(oid, sender, rec_name, rec_phone, rec_address, shipping_fee)
+    	values(#{oid}, #{sender}, #{rec_name}, #{rec_phone}, #{rec_address}, #{shipping_fee})
+  </insert>
+  
+  <insert id="order" parameterType="order">
+   insert into order_t(oid, tid, productname, qty, totalprice, userid, temp_num)
+        values(order_seq.NEXTVAL, #{tid}, #{productname}, #{qty}, #{totalprice}, #{userid}, #{temp_num})
+  </insert>
+
+  <insert id="orderDetail" parameterType="orderdetail">
+    insert into order_detail(oid, productname, item_qty)
+        values(#{oid}, #{productname}, #{item_qty})
+  </insert>
+
+ <insert id="deliveryDetail" parameterType="delivery">
+    insert into delivery_info(oid, sender, rec_name, rec_phone, rec_address, shipping_fee)
+        values(#{oid}, #{sender}, #{rec_name}, #{rec_phone}, #{rec_address}, #{shipping_fee})
+  </insert>
+   
+  <!-- 카트 비우기 -->
+  <delete id="cartAllDelete">
+     delete CART_T
+		 where userid = #{userid}
+  </delete>
+  
+  <insert id="setTemp" parameterType="_int">
+  	insert into order_t(temp_num) values(#{temp_num})
+  </insert>
+  
+  <select id="getOid" parameterType="_int" resultType="String">
+  	SELECT oid FROM order_t WHERE temp_num = #{temp_num}
+  </select>
+  
+  <update id="deleteTemp">
+  	UPDATE order_t SET temp_num=0 WHERE temp_num=1
+  </update>
+  
 </mapper>
