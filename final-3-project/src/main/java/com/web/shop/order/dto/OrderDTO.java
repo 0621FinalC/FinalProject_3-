@@ -20,6 +20,12 @@ public class OrderDTO {
 	private String approved_at;		// db삽입시 date로 변환.
 	private int temp_num;
 	
+	public int getRnum() {
+		return rnum;
+	}
+	public void setRnum(int rnum) {
+		this.rnum = rnum;
+	}
 	public int getTemp_num() {
 		return temp_num;
 	}

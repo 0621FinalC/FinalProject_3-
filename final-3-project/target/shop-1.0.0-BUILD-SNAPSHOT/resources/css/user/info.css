@@ -1,1 +1,121 @@
 @charset "UTF-8";
+
+*{
+	margin: 0;
+	padding:0;
+}
+body {
+	margin: 0;
+	height: 100%;
+	font-family: ‘Noto Sans KR’, sans-serif;
+}
+/* 페이지 제목 */
+
+.tit_wrap {
+	text-align: center;	
+	margin-top: 80px;
+	margin-bottom: 50px;
+}
+
+.tit {
+	font-size : 17px;
+	font-weight: 450;
+}
+
+/* 화면 전체 렙 */
+.wrapper{
+	text-align: center;
+    padding-bottom: 120px;
+	max-width: 100%;	
+}
+
+/* content 랩 */
+.wrap{
+	text-align: center;
+	width : 600px;
+	margin: auto;
+}
+
+/* 아이디 영역 */
+.info_wrap{
+	width: 100%;
+    margin-top: 30px;
+}
+
+.info_label_name {
+	width: 159px;
+    padding: 25px;
+    margin: 5px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    vertical-align: top;
+    text-align: left;
+    font-weight: bold;
+}
+.input_box{
+	BORDER-BOTTOM: black 1.4px solid;
+	BORDER-LEFT: medium none;
+	BORDER-RIGHT: medium none;
+	BORDER-TOP: medium none;
+	height: 29px;
+	padding: 0px 14px;	
+	display: block;
+	width : 250px;
+	margin : auto;		
+	text-align: center;
+}
+
+/* 성별 영역 */
+.info_wrap input[type=radio]{
+    display: none;
+}
+.info_wrap input[type=radio]+label{
+	margin-top: 10px;
+    display: inline-block;
+    cursor: pointer;
+    height: 16px;
+    width: 30px;
+    border: 1px solid #333;
+    line-height: 15px;
+    text-align: center;
+    vertical-align: center;
+    font-weight:bold;
+    font-size:13px;
+}
+.info_wrap input[type=radio]+label{
+	margin-top: 10px;
+    background-color: #fff;
+    color: #333;
+}
+.info_wrap input[type=radio]:checked+label{
+	margin-top: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
+/* 에러 */
+.error_wrap {
+	margin-top: 20px;
+	text-align: center;
+}
+.error {
+	font-size:13px;
+}
+
+/* 버튼 */
+
+.info_button_wrap{
+	margin-top: 40px;
+	text-align: center;
+}
+.btn_update, .btn_delete, .btn_home {
+	background-color:white;
+    border: none;
+    cursor: pointer;
+}
+
+/* float 속성 해제 */
+.clearfix{
+	clear: both;
+}

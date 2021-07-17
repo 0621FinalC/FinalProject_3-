@@ -1,12 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%-- <%
-	boolean logined = false;
-	if(session.getAttribute("logined") != null){
-		logined = (boolean)session.getAttribute("logined");
-	}	
-%> --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,66 +31,32 @@
 </script>
 <body>
 	<%@ include file="../include/header.jsp" %>
+	<div class="tit_wrap">
+		<h3 class="tit">로그인</h3>
+	</div>
 	<div class="wrapper">
-	<div class="wrap">
-		<div class="logo_wrap">
-			<span>로그인</span>
-		</div>
-	
-	<c:url var="login" value="/user/login" />
-	<div class="login_form">
+		<c:url var="login" value="/user/login" />
 		<form action="${login }" method="post">
-			<div class="id_wrap">
-					<div class="id_input_box">
-					<input class="id_input" id="userid" type="text" name="userid" size="20" placeholder="아이디를 입력해 주세요"required>
+			<div class="wrap">
+				<div class="login_wrap">
+					<!-- <label class="login_label_name" for="userid">아이디</label> -->
+					<input class="input_box" id="userid" type="text" name="userid" size="20" placeholder="아이디"required>
+				</div>
+				<div class="login_wrap">
+					<!-- <label class="login_label_name" for="password">비밀번호</label> -->
+					<input class="input_box" id="password" type="password" name="password" size="20" placeholder="비밀번호"required>
+				</div>
+				<div class="error_wrap">
+					<label class="error" style="color: red;">${error }</label>
+				</div>
+				<div class="login_button_wrap">
+					<button class="btn_login" type="submit">로그인</button>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<button class="btn_cancel" type="button" onclick="location.href='${main }}'">취소</button>
 				</div>
 			</div>
-			<div class="pw_wrap">
-				<div class="pw_input_box">
-					<input class="pw_iput" id="password" type="password" name="password" size="20" placeholder="비밀번호를 입력해 주세요"required>
-				</div>
-			</div>
-		<div>
-			<label style="color: red;">${error }</label>
-		</div>
-		<div class="login_button_form">
-			<button type="submit" class="login_button">로그인</button>
-			<!-- 취소버튼 잠깐 비활성화 
-			<c:url var="main" value="/main" />
-			<button type="button" onclick="location.href='${main }'">취소</button>
-			-->
-		</div>
-		<div class="login_button_form">
-			<c:url var="join" value="/user/join" />
-			<button type="button" onclick="location.href='${join }'" class="join_button">회원가입</button>
-		</div>
-	</form>
+		</form>
 	</div>
-	
-	
-	</div>
-	
-</div>
-	<%-- <c:url var="login" value="/user/login" />
-	<div class="login_form">
-		<form action="${login }" method="post">
-		<div>
-			<label>아이디</label>
-			<input id="userid" type="text" name="userid" required>
-		</div>
-		<div>
-			<label>패스워드</label>
-			<input id="password" type="password" name="password" required>
-		</div>
-		<div>
-			<label style="color: red;">${error }</label>
-		</div>
-		<div>
-			<button type="submit">로그인</button>
-			<c:url var="main" value="/main" />
-			<button type="button" onclick="location.href='${main }'">취소</button>
-		</div>
-	</form>
-	</div> --%>
+	<%@ include file="../include/footer.jsp" %>
 </body>
 </html>

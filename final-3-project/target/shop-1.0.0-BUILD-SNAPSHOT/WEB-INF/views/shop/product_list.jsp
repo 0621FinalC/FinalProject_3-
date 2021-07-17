@@ -52,12 +52,6 @@
 		</c:forEach>
 	</div>
 	<div class="clearfix" style="clear: both;"></div>
-	
-	<div class="footer">
-      <a href="#"><img src="${pageContext.request.contextPath }/resources/img/footer/insta.png"></a>
-      <a href="#"><img src="${pageContext.request.contextPath }/resources/img/footer/call.png"></a>
-      <a href="#"><img src="${pageContext.request.contextPath }/resources/img/footer/mail.png"></a>
-    </div>
-
+	<%@ include file="../include/footer.jsp" %>
 </body>
 </html>

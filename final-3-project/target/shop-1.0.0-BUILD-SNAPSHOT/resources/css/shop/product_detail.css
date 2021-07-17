@@ -1,1 +1,91 @@
 @charset "UTF-8";
+
+*{
+	margin: 0;
+	padding:0;
+}
+body {
+	margin: 0;
+	height: 100%;
+	font-family: ‘Noto Sans KR’, sans-serif;
+}
+/* 페이지 제목 */
+
+.tit_wrap {
+	text-align: center;	
+	margin-top: 80px;
+	margin-bottom: 50px;
+}
+
+.tit {
+	font-size : 17px;
+	font-weight: 450;
+}
+
+/* 화면 전체 렙 */
+.wrapper{
+	text-align: center;
+    padding-bottom: 120px;
+	max-width: 100%;	
+}
+
+.wrap{
+	text-align: center;
+	width : 800px;
+	margin: auto;
+}
+
+.img_table {
+	width: 40%;
+	float: left;
+}
+
+.prod_expl_table {
+	width: 60%;
+	float: right;
+	font-size:15px;
+	border-spacing: 1em 0.5em;
+  	padding: 0 2em 1em 0;
+}
+
+.prod_expl_table td {
+	width: 500px;;
+  	height: 1.5em;
+ 	/* background: #d2d2d2; */
+ 	text-align: center;
+ 	vertical-align: middle;
+}
+
+/* table 가운데 정렬 */
+table {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* 수량있고 버튼있는 부분 */
+.cart_info {
+	margin-top: 30px;
+	text-align: center;
+}
+
+.btn_cart, .btn_prod_list {
+	background-color:white;
+    border: none;
+    cursor: pointer;
+}
+
+/* footer */
+.footer{
+	width:100%;
+	text-align: center;
+	position:absolute;
+   	bottom:0;
+}
+
+.footer img{
+  margin-top: 40px;
+  height: 25px;
+  margin-bottom: 80px;
+  margin-left: 10px;
+  margin-right: 10px;
+}

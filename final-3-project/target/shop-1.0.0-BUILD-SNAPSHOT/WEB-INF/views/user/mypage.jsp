@@ -34,7 +34,15 @@
 <c:url var="order_list" value="/order/list" />
 <body>	
 	<%@ include file="../include/header.jsp" %>
-	<button type="button" onclick="location.href='${info}'">회원정보</button>
-	<button type="button" onclick="location.href='${order_list}'">주문내역</button>
+	<div class="tit_wrap">
+		<h3 class="tit">마이페이지</h3>
+	</div>
+	<div class="wrap">
+		<button type="button" onclick="location.href='${info}'">회원정보</button>
+	</div>
+	<div class="wrap">
+		<button type="button" onclick="location.href='${order_list}'">주문내역</button>
+	</div>
+	<%@ include file="../include/footer.jsp" %>
 </body>
 </html>

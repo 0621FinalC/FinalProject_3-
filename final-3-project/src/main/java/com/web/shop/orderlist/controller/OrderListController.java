@@ -65,12 +65,13 @@ public class OrderListController {
 //		HttpSession session = req.getSession();
 		String userid = (String)session.getAttribute("userid");
 		orderlist = order_detail.findAll(userid, year, page, list_cnt);
+//		System.out.println("* orderlist.size() : " + orderlist.size());
 		
 		// 가져온 주문서 정보 jsp로 보내주기
 		m.addAttribute("orderlist", orderlist);
 		
 		// 가장 마지막 페이지 번호를 구하기 위한 부분
-		int total = order_detail.totalRow();
+		int total = order_detail.totalRow(userid);
 		int max_page_num = total / list_cnt;
 		if(total % list_cnt != 0) {	// 나머지 출력 해야하는 목록이 있는 경우 페이지 번호 증가.
 			max_page_num++;

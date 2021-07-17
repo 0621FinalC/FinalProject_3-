@@ -43,48 +43,56 @@ function send() {
 </head>
 <body>
 	<%@ include file="../include/header.jsp" %>
-	<h2>회원 정보</h2>
-	<div class="info-form">
+	<div class="tit_wrap">
+		<h3 class="tit">회원정보</h3>
+	</div>
+	<div class="wrapper">
 		<form name="updateInfo" action="${update }" method="post">
-			<div>
-				<label for="userid">아이디</label>
-	       	 	<input type="text" name="userid" id="userid" maxlength="20" value="${userData.getUserid() }" disabled>
+			<div class="wrap">
+				<div class="info_wrap">
+					<label class="info_label_name" for="userid">아이디</label>
+		       	 	<input class="input_box" type="text" name="userid" id="userid" maxlength="20" value="${userData.getUserid() }" disabled>
+				</div>
+				
+				<div class="info_wrap">
+					<label class="info_label_name" for="username">이름</label>
+					<input class="input_box" type="text" name="username" id="username" value="${userData.getUsername() }" disabled>
+				</div>
+				
+				<div class="info_wrap">
+					<label class="info_label_name" for="email">이메일</label>
+					<input class="input_box" type="email" name="email" id="email" value="${userData.getEmail() }">
+				</div>
+				
+				<div class="info_wrap">
+					<!-- userData.getGender() == 'w' 이렇게 그냥 쓰면 데이터타입이 다르다는 에러가 남 -->
+					<label class="info_label_name" for="gender">성별</label><br>
+					<input id="gender_m" type="radio" name="gender" value="m" ${fn:contains(userData.getGender(), 'm') ? "checked" : "" }><label for="gender_m">남</label>
+					<input id="gender_w" type="radio" name="gender" value="w" ${fn:contains(userData.getGender(), 'w') ? "checked" : "" }><label for="gender_w">여</label>
+				</div>
+				
+				<div class="info_wrap">
+					<label class="info_label_name" for="phone">핸드폰 번호</label>
+					<input class="input_box" type="text" name="phone" id="phone" value="${userData.getPhone() }">
+				</div>	
+				
+				<div class="info_wrap">
+					<label class="info_label_name" for="address">주소</label>
+					<input class="input_box" type="text" name="address" id="address" value="${userData.getAddress() }">
+				</div>
+				<div class="error_wrap">
+					<label class="error" style="color: red;">${error }</label>
+				</div>
+				<br>
+				<div class="info_button_wrap">
+					<button class="btn_update" type="button" onclick="send();">회원정보수정</button>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<button class="btn_delete" type="button" onclick="location.href='${delete}'">회원탈퇴</button>
+					<%-- <button class="btn_home" type="button" onclick="location.href='${home}'">홈으로 돌아가기</button> --%>
+				</div>
 			</div>
-			
-			<div>
-				<label for="username">이름</label>
-				<input type="text" name="username" id="username" value="${userData.getUsername() }" disabled>
-			</div>
-			
-			<div>
-				<label for="email">이메일</label>
-				<input type="email" name="email" id="email" value="${userData.getEmail() }">
-			</div>
-			
-			<div>
-				<!-- userData.getGender() == 'w' 이렇게 그냥 쓰면 데이터타입이 다르다는 에러가 남 -->
-				<label for="gender">성별</label>
-				<input id="gender_m" type="radio" name="gender" value="m" ${fn:contains(userData.getGender(), 'm') ? "checked" : "" }><label for="gender_m">남</label>
-				<input id="gender_w" type="radio" name="gender" value="w" ${fn:contains(userData.getGender(), 'w') ? "checked" : "" }><label for="gender_w">여</label>
-			</div>
-			
-			<div>
-				<label for="phone">핸드폰 번호</label>
-				<input type="text" name="phone" id="phone" value="${userData.getPhone() }">
-			</div>	
-			
-			<div>
-				<label for="address">주소</label>
-				<input type="text" name="address" id="address" value="${userData.getAddress() }">
-			</div>
-			<div>
-				<label style="color: red;">${error }</label>
-			</div>
-			<br>
-			<button class="btn_update" type="button" onclick="send();">회원정보수정</button>
-			<button type="button" onclick="location.href='${delete}'">회원탈퇴</button>
-			<button type="button" onclick="location.href='${home}'">홈으로 돌아가기</button>
 		</form>
 	</div>
+	<%@ include file="../include/footer.jsp" %>
 </body>
 </html>

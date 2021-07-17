@@ -36,4 +36,9 @@ public class OrderListServiceImpl implements OrderListService {
 		return dao.totalRow();
 	}
 	
+	@Override
+	public int totalRow(String userid) throws Exception {
+		return dao.totalRow(userid);
+	}
+	
 }

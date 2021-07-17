@@ -19,9 +19,13 @@ public class OrderListRepositoryImpl implements OrderListRepository {
 
 	@Override
 	public List<OrderDTO> selectAll(String userid, int year, int page, int list_cnt) throws Exception {
-		int total = totalRow();
+		// total == 1이면 -3~1즉 5개 페이지 단위로 넘겨주고, orderlistMapper.all 에서 ROWNUM 이 1인걸 return
+		// total == 2면 -2 ~ 2 , 쿼리에서는 ROWNUM 1, 2인거 찾아서 return
+		int total = totalRow(userid);
 		int startNum = total - (list_cnt * (page - 1)) - list_cnt + 1;
 		int endNum = total - (list_cnt * (page - 1));
+		
+//		System.out.println("total: " + total + "  sn: " + startNum +  " " + endNum);
 		
 		HashMap<String, Object> params = new HashMap<>();
 		params.put("userid", userid);
@@ -29,6 +33,7 @@ public class OrderListRepositoryImpl implements OrderListRepository {
 		params.put("startNum", startNum);
 		params.put("endNum", endNum);
 		
+		List<OrderDTO> list = sqlSession.selectList("orderlistMapper.all", params);
 		return sqlSession.selectList("orderlistMapper.all", params);
 	}
 
@@ -45,6 +50,11 @@ public class OrderListRepositoryImpl implements OrderListRepository {
 	@Override
 	public int totalRow() throws Exception {
 		return sqlSession.selectOne("orderlistMapper.totalRow");
+	}
+	
+	@Override
+	public int totalRow(String userid) throws Exception {
+		return sqlSession.selectOne("orderlistMapper.totalRow_para", userid);
 	}
 
 }

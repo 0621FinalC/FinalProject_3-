@@ -46,24 +46,31 @@
 </head>
 <body>
 	<%@ include file="../include/header.jsp" %>
-	<h3>비밀번호를 입력해주세요</h3>
-	<div class="delete-form">
+	<div class="tit_wrap">
+		<h3 class="tit">비밀번호를 입력해주세요</h3>
+	</div>
+	<div class="wrapper">
 		<form name="deleteInfo" action="${delete }" method="post">
-			<div>
-				<label for="userid">아이디</label>
-		     	<input type="text" name="userid" id="userid" maxlength="20" value="${userData.getUserid() }" disabled>
+			<div class="wrap">
+				<div class="delete_wrap">
+					<label class="del_label_name" for="userid">아이디</label>
+			     	<input class="input_box" type="text" name="userid" id="userid" maxlength="20" value="${userData.getUserid() }" disabled>
+				</div>
+				<div class="delete_wrap">
+					<label class="del_label_name" for="password">비밀번호</label>
+			      	<input class="input_box" type="password" name="password" id="password" maxlength="20" required>
+				</div>
+				<div class="error_wrap">
+					<label class="error" style="color: red;">${error }</label>
+				</div>
+				<div class="del_button_wrap">
+					<button class="btn_delete" type="button" onclick="send();">탈퇴하기</button>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<button class="btn_cancel" type="button" onclick="history.go(-1);">취소</button>
+				</div>
 			</div>
-			<div>
-				<label for="userpass">비밀번호</label>
-		      	<input type="password" name="password" id="password" maxlength="20" required>
-			</div>
-			<div>
-				<label style="color: red;">${error }</label>
-			</div>
-			<br>
-			<button class="btn_delete" type="button" onclick="send();">탈퇴하기</button>
-			<button type="button" onclick="history.go(-1);">취소</button>
 		</form>
 	</div>
+	<%@ include file="../include/footer.jsp" %>
 </body>
 </html>
