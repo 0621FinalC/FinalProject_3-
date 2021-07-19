@@ -10,7 +10,7 @@
 
 
 ## 사용기술 및 개발환경
-![0007](https://user-images.githubusercontent.com/86212850/125954379-bd314e6d-cb20-40f6-9638-946658c99452.jpg)
+<img width="1093" alt="스크린샷 2021-07-19 오전 10 34 50" src="https://user-images.githubusercontent.com/86212850/126090461-329c55ce-c5f4-46eb-b37c-32bae33d8d25.png">
 
 
 ## 역할 분담
