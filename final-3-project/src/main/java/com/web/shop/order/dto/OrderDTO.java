@@ -97,5 +97,11 @@ public class OrderDTO {
 	public void setPaymentmethod(String paymentmethod) {
 		this.paymentmethod = paymentmethod;
 	}
+	public int getRnum() {
+		return rnum;
+	}
+	public void setRnum(int rnum) {
+		this.rnum = rnum;
+	}
 	
 }
