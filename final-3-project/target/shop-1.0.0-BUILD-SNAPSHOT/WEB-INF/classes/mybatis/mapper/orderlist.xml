@@ -4,11 +4,29 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="orderlistMapper">
+
+  <select id="totalRow_para" parameterType="string" resultType="_int">
+  	SELECT count(*) FROM order_t WHERE userid=#{userid}
+  </select>
+  
   <select id="totalRow" resultType="_int">
   	SELECT count(*) FROM order_t
   </select>
   
   <select id="all" parameterType="hashmap" resultType="order">
+  	SELECT rnum, subQuery.*
+		FROM (SELECT ROWNUM as rnum, order_t.*
+		        FROM order_t
+		        WHERE userid = #{userid}
+		        <if test="year != 0">
+					AND orderdate >= TO_DATE(#{year}, 'YYYY')					
+					AND orderdate &lt; TO_DATE(#{year} + 1, 'YYYY')
+				</if>
+		     	ORDER BY orderdate DESC) subQuery
+		WHERE rnum BETWEEN #{startNum} AND #{endNum}
+  </select>
+  
+  <!-- <select id="all" parameterType="hashmap" resultType="order">
   	SELECT * 
   	FROM (SELECT ROWNUM as rnum, oid, productname, qty, totalprice, userid, orderstat, orderdate
   			FROM order_t
@@ -19,7 +37,7 @@
 		AND orderdate >= TO_DATE(#{year}, 'YYYY')					
 		AND orderdate &lt; TO_DATE(#{year} + 1, 'YYYY')
 	</if>
-  </select>
+  </select> -->
   
   <select id="order" parameterType="string" resultType="orderdetail">
   	SELECT a.pid, a.productname, a.price * b.item_qty AS total_price, b.item_qty

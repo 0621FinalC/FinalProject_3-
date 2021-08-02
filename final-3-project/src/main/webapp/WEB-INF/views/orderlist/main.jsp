@@ -26,6 +26,8 @@
 		$("#btn_search").click(function(){
 			var url = "${search_list }";
 			url += "?keyword=" + $('#keyword').val();
+			url.replace('[', '%5B');
+			url.replace(']', '%5D');
 			location.href = url;
 			console.log(url);
 		});
@@ -69,7 +71,8 @@
 						<c:forEach var="order" items="${orderlist }">
 							<tr>
 								<fmt:parseDate var="dateString" value="${order.getOrderdate() }" pattern="yyyy-MM-dd HH:mm:ss.S" />
-								<fmt:formatDate var="orderDate" value="${dateString }" pattern="yyyy.MM.dd (HH시 mm분)" />
+								<fmt:formatDate var="orderDate" value="${dateString }" pattern="yyyy.MM.dd" />
+								<%-- <fmt:formatDate var="orderDate" value="${dateString }" pattern="yyyy.MM.dd (HH시 mm분)" /> --%>
 								<td>${orderDate }</td>
 								
 								<c:set var="pname" value="${order.getProductname() }" />

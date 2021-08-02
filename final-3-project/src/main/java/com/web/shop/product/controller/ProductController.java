@@ -32,8 +32,9 @@ public class ProductController {
     }
 	
 	// 코드 추가 : 검색
+	// 검색시 [, ] 인코딩 관련 : tomcat의 server.xml 에 추가
 	@RequestMapping("/search") 
-    public ModelAndView list(ModelAndView mav, @RequestParam String keyword) {
+    public ModelAndView list(ModelAndView mav, @RequestParam String keyword) {		
 		List<ProductDTO> list = productService.listSearchProduct(keyword);
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("list", list);
