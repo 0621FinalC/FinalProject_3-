@@ -25,7 +25,8 @@
 		
 		$("#btn_search").click(function(){
 			var url = "${search_list }";
-			url += "?keyword=" + $('#keyword').val();
+			var searchKeyword = $('#keyword').val();
+			url += "?keyword=" + encodeURIComponent(searchKeyword);
 			location.href = url;
 			console.log(url);
 		});

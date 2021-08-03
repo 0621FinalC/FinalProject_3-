@@ -15,9 +15,10 @@
 <c:url var="board_list" value="/product/list" />
 <c:url var="search_list" value="/product/search" />
 <c:url var="cart" value="/cart/list" />
-<!-- 스크립트 내장으로 넣으려고 했는데, url 관련 오류나서 일단 보류 -->
+<!-- 스크립트 내장으로 넣으려고 했는데, url 관련 오류나서 일단 보류 : search_list JSTL 관련. 그냥 텍스트로 shop/product/search 하면 컨텍스트루트 변경시 x : 해결중.. -->
+<!-- <script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/searchJs.js"></script> -->
 <script type="text/javascript">
-	$(document).ready(function(){
+$(document).ready(function(){
 		
 		$("#keyword").keydown(function(e){
 			if(e.keyCode == 13) {
@@ -27,9 +28,10 @@
 		});
 		
 		$("#btn_search").click(function(){
-			/* url 붙여주기 */
+			// url 붙여주기
 			var url = "${search_list }";
-			url += "?keyword=" + $('#keyword').val();
+			var searchKeyword = $('#keyword').val();
+			url += "?keyword=" + encodeURIComponent(searchKeyword); //[, ] 처리위해 인코딩
 			location.href = url;
 		});
 	})

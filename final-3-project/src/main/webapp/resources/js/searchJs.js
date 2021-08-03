@@ -12,7 +12,8 @@ $(document).ready(function(){
 	$("#btn_search").click(function(){
 		/* url 붙여주기 */
 		var url = "${search_list }";
-		url += "?keyword=" + $('#keyword').val();
+		var searchKeyword = $('#keyword').val();
+		url += "?keyword=" + encodeURIComponent(searchKeyword);
 		location.href = url;
 	});
 })
