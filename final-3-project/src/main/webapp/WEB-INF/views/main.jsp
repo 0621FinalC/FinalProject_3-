@@ -19,7 +19,6 @@
 <!-- <script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/searchJs.js"></script> -->
 <script type="text/javascript">
 $(document).ready(function(){
-		
 		$("#keyword").keydown(function(e){
 			if(e.keyCode == 13) {
 				$("#btn_search").click();
